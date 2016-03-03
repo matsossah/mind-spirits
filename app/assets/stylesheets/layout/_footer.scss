@@ -1,0 +1,49 @@
+.footer-wrapper {
+  min-height: 120px;
+  background: #333333;
+  padding: 30px;
+
+}
+
+.footer-wrapper p {
+  color: #f6f6f6;
+  line-height: 70px;
+  text-align: center;
+
+}
+
+li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+}
+
+ul {
+  text-align: center;
+  vertical-align: middle;
+}
+
+li > i {
+  color: #f6f6f6;
+  transition: background 0.3s ease;
+  margin: 10px;
+}
+
+li > i:hover {
+  color: #660066;
+  font-size: 35px;
+}
+
+.big-icon {
+  font-size: 30px;
+}
+
+#footer-title {
+  font-size: 30px;
+  text-align: center;
+  color: #f6f6f6;
+
+}
