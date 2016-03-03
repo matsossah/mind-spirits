@@ -25,3 +25,21 @@ cocktail2 = Cocktail.new(
   image: "martini.jpeg"
 )
 cocktail2.save
+
+cocktail3 = Cocktail.new(
+  name: "Blue lagoon",
+  image: "blue_lagoon.jpg"
+)
+cocktail3.save
+
+cocktail4 = Cocktail.new(
+  name: "Purple devil",
+  image: "purple.jpg"
+)
+cocktail4.save
+
+cocktail5 = Cocktail.new(
+  name: "Sex on the beach",
+  image: "sex-on-the-beach.jpg"
+)
+cocktail5.save
