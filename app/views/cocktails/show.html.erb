@@ -1,4 +1,4 @@
-<div class="banner-thin" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path("cocktails.jpg") %>);">
+<div class="banner-thin" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path(@cocktail.image) %>);">
   <h1><%= @cocktail.name %></h1>
 </div>
 
@@ -6,13 +6,17 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(@cocktail.image) %>)">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(@cocktail.image.url) %>);">
         </div>
       </div>
       <div class="col-xs-12 col-md-4 recipe">
         <h3><em>Recette</em></h3>
         <% @cocktail.doses.each do |dose| %>
-          <p>- <%= dose.description %> <%= dose.ingredient.name %></p>
+          <p>- <%= dose.description %> <%= dose.ingredient.name %>
+            <%= link_to dose_path(dose), method: :delete do %>
+              <i class="fa fa-trash "></i>
+            <% end %>
+          </p>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-4 add-cocktail">

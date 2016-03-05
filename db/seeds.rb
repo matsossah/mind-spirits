@@ -10,36 +10,36 @@ Ingredient.create(name: "orange zests")
 
 cocktail = Cocktail.new(
   name: "Tequila Sunrise",
-  image: "tequila_pcxzbl.jpg"
+  image: "tequila.jpg"
 )
 cocktail.save
 
 cocktail1 = Cocktail.new(
   name: "White Russian",
-  image: "white_russian_rzhxkr.jpg"
+  image: "white_russian.jpg"
 )
 cocktail1.save
 
 cocktail2 = Cocktail.new(
   name: "Martini",
-  image: "martini_mli1df.jpeg"
+  image: "martini.jpeg"
 )
 cocktail2.save
 
 cocktail3 = Cocktail.new(
   name: "Blue lagoon",
-  image: "blue_lagoon_jzd2p1.jpg"
+  image: "blue_lagoon.jpg"
 )
 cocktail3.save
 
 cocktail4 = Cocktail.new(
   name: "Purple devil",
-  image: "purple_uxj0kq.jpg"
+  image: "purple.jpg"
 )
 cocktail4.save
 
 cocktail5 = Cocktail.new(
   name: "Sex on the beach",
-  image: "sex-on-the-beach_lssfdc.jpg"
+  image: "sex-on-the-beach.jpg"
 )
 cocktail5.save
