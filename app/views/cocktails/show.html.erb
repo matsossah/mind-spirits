@@ -19,18 +19,16 @@
           </p>
         <% end %>
       </div>
-      <div class="col-xs-12 col-md-4 add-cocktail">
+      <div class="col-xs-12 col-md-4">
         <div class="container dose-form">
-        <div class ="dose-form">
           <p>Add an Ingredient</p>
           <%= simple_form_for([@cocktail, @new_dose]) do |f| %>
             <%= f.error_notification %>
 
             <%= f.input :description, label: false, :placeholder => "Ex: 6cl of" %>
             <%= f.association :ingredient, label: false, :placeholder => "Ex: Vodka"%>
-            <%= f.button :submit %>
+            <%= f.button :submit, 'Add!', :class => 'add_new_dose' %>
           <% end %>
-          </div>
         </div>
       </div>
     </div>

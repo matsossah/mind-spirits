@@ -6,4 +6,8 @@
 //= require turbolinks
 //= require_tree .
 //
-
+$(function() {
+    $('.add_new_dose').click(function() {
+    location.reload();
+  });
+});

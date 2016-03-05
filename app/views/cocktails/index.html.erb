@@ -13,14 +13,13 @@
               </div>
               <div class="back face center" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>);">
                 <div class="card-description">
+                <%= link_to cocktail_path(cocktail) do %>
                   <h3><em>Recipe</em>
-                    <%= link_to new_cocktail_dose_path(cocktail) do %>
-                      <i class="fa fa-plus-square"></i>
-                    <% end %>
+                <% end %>
                   </h3>
                   <% cocktail.doses.each do |dose| %>
                     <p>- <%= dose.description %> <%= dose.ingredient.name %>
-                      <%= link_to dose_path(dose), method: :delete do %>
+                      <%= link_to cocktails_path(dose), method: :delete do %>
                         <i class="fa fa-trash "></i>
                       <% end %>
                     </p>

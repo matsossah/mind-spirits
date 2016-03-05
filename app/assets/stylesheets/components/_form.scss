@@ -1,13 +1,7 @@
 .container.cocktail-form {
   margin-top: 50px;
   margin-bottom: 50px;
-
   width: 500px;
-}
-
-.container.dose-form {
-  width: 245px;
-  height: 250px;
 }
 
 .submit-wagon-button {
@@ -30,8 +24,10 @@
 }
 
 .dose-form {
+  height: 250px;
   width: 245px;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
   padding: 30px 15px;
   background-color: rgba(51, 51, 51,0.2);
