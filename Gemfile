@@ -20,6 +20,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'simple_form_fancy_uploads'
 
 group :development, :test do
   gem 'byebug'

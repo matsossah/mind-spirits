@@ -1,5 +1,42 @@
 .container.cocktail-form {
-  width: 550px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  width: 500px;
+}
+
+.container.dose-form {
+  width: 245px;
+  height: 250px;
+}
+
+.submit-wagon-button {
+  margin-left: 10px;
+  padding: 0 22px;
+  border-radius: 20em;
+  line-height: 40px;
+  color: white;
+  font-size: 14px;
+  background: rgba(254, 1, 128, 0.4);
+  border: none;
+  transition: background 0.3s ease;
+  transition: color 0.3s ease;
+}
+.submit-wagon-button:hover {
+  color: white;
+  padding: 0 22px;
+  background: rgba(254, 1, 128, 0.6);
+  border: none;
+}
+
+.dose-form {
+  width: 245px;
+  margin-top: 30px;
+  text-align: center;
+  padding: 30px 15px;
+  background-color: rgba(51, 51, 51,0.2);
+}
+
+#cocktail_image {
+  margin-bottom: 50px;
 }

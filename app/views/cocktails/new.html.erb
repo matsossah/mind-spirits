@@ -1,14 +1,15 @@
 <div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/dbgwg7vxg/image/upload/v1457085683/cocktails_xjsqwc.jpg');">
   <div class="banner-content">
+    <h2>Add your own cocktail</h2>
     <div class="container cocktail-form">
       <%= simple_form_for(@cocktail) do |f| %>
         <%= f.error_notification %>
 
         <%= f.input :name, label: false, :placeholder => "Cocktail name"%>
-        <%= f.input :image, label: false, :class => 'btn-create text-center' %>
+        <%= f.input :image, as: :image_preview, label: false %>
         <%= f.input :image_cache, as: :hidden %>
 
-        <%= f.button :submit, :class => 'navbar-wagon-item navbar-wagon-button btn' %>
+        <%= f.button :submit, :class => 'submit-wagon-button btn' %>
       <% end %>
     </div>
   </div>
