@@ -7,7 +7,7 @@
           <div id="f1_container">
             <div id="f1_card" class="shadow">
               <div class="front face" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>);">
-                <div class="card-description">
+                <div class="card-category">
                   <h2><%= cocktail.name %></h2>
                 </div>
               </div>
@@ -19,7 +19,7 @@
                   </h3>
                   <% cocktail.doses.each do |dose| %>
                     <p>- <%= dose.description %> <%= dose.ingredient.name %>
-                      <%= link_to cocktails_path(dose), method: :delete do %>
+                      <%= link_to dose_path(dose), method: :delete do %>
                         <i class="fa fa-trash "></i>
                       <% end %>
                     </p>
