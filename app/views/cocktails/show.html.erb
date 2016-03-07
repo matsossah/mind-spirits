@@ -1,5 +1,6 @@
 <div class="banner-thin" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path(@cocktail.image) %>);">
   <h1><%= @cocktail.name %></h1>
+  <p><%= @cocktail.recipe_steps %></p>
 </div>
 
 <div class="wrapper-light wrapper">
@@ -10,13 +11,13 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-3 recipe">
-        <h3><em>Recette</em></h3>
+        <h3><em>Recipe</em></h3>
         <% @cocktail.doses.each do |dose| %>
           <p>
             <%= link_to dose_path(dose), method: :delete do %>
               <i class="fa fa-trash white_trash"></i>
             <% end %>
-            - <%= dose.description %> <%= dose.ingredient.name %>
+            - <%= dose.ingredient.name %>, <%= dose.quantity %>
           </p>
         <% end %>
       </div>
@@ -26,8 +27,8 @@
           <%= simple_form_for([@cocktail, @new_dose]) do |f| %>
             <%= f.error_notification %>
 
-            <%= f.input :description, label: false, :placeholder => "Ex: 6cl of" %>
-            <%= f.association :ingredient, label: false, :placeholder => "Ex: Vodka"%>
+            <%= f.association :ingredient, label: false %>
+            <%= f.input :quantity, label: false, :placeholder => "Quantity?" %>
             <%= f.button :submit, 'Add!', :class => 'add_new_dose' %>
           <% end %>
         </div>
