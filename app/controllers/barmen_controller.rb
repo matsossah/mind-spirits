@@ -15,7 +15,7 @@ class BarmenController < ApplicationController
   def create
     @barman = Barman.new(barman_params)
     if @barman.save
-      redirect_to barman_path(@barman)
+      redirect_to cocktails_path
     else
       render :new
     end

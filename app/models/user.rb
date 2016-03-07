@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates_presence_of :name, :address, :phone_number
+  validates_presence_of :name
   validates_uniqueness_of :phone_number
 end
