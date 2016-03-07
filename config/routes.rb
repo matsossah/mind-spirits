@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :barmen
+  devise_for :users
   root :to => "cocktails#index"
 
   resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
