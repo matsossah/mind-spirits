@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/turbod/simple_form_jasny_fileupload.git
+  revision: 73e3e116bb7483b041c2f2f9c704ddad9fd69383
+  specs:
+    simple_form_jasny_fileupload (0.0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -339,6 +345,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   simple_form
   simple_form_fancy_uploads
+  simple_form_jasny_fileupload!
   spring
   turbolinks
   uglifier (>= 1.3.0)

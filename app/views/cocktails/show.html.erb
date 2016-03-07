@@ -9,13 +9,14 @@
         <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(@cocktail.image.url) %>);">
         </div>
       </div>
-      <div class="col-xs-12 col-md-4 recipe">
+      <div class="col-xs-12 col-md-3 recipe">
         <h3><em>Recette</em></h3>
         <% @cocktail.doses.each do |dose| %>
-          <p>- <%= dose.description %> <%= dose.ingredient.name %>
+          <p>
             <%= link_to dose_path(dose), method: :delete do %>
               <i class="fa fa-trash white_trash"></i>
             <% end %>
+            - <%= dose.description %> <%= dose.ingredient.name %>
           </p>
         <% end %>
       </div>
@@ -30,6 +31,11 @@
             <%= f.button :submit, 'Add!', :class => 'add_new_dose' %>
           <% end %>
         </div>
+      </div>
+      <div class="col-xs-12 col-md-1">
+        <%= link_to cocktail_path, method: :delete, data: {confirm: "Delete this cocktail?"} do %>
+          <i class="fa fa-trash big-grey"></i>
+        <% end %>
       </div>
     </div>
   </div>

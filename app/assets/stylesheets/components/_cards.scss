@@ -24,8 +24,9 @@
   left: 10px;
   text-align: left;
 }
-.card-description a {
+.card-description h3 a {
   color: white;
+  font-size: bold;
 }
 
 .card-description p {
@@ -86,6 +87,7 @@
 }
 #f1_container:hover #f1_card {
   transform: rotateY(180deg);
+  // transition-delay: 0.8s;
 }
 .face {
   position: absolute;
