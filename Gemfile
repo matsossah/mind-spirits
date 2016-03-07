@@ -22,6 +22,9 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'simple_form_fancy_uploads'
 gem 'devise'
+gem 'slim'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 group :development, :test do
   gem 'byebug'

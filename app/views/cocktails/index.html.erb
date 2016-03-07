@@ -1,32 +1,11 @@
-<div class="wrapper-grey wrapper">
-  <div class="container">
-    <div class="row">
-    <h1>Choose one of our delicious cocktails</h1>
-      <% @cocktails.each do |cocktail| %>
-        <div class="col-xs-12 col-md-4" id="card">
-          <div id="f1_container">
-            <div id="f1_card" class="shadow">
-              <div class="front face" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>);">
-                <div class="card-category">
-                  <h2><%= cocktail.name %></h2>
-                </div>
-              </div>
-              <div class="back face center" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>);">
-                <div class="card-description">
-                <%= link_to cocktail_path(cocktail) do %>
-                  <h3><em>Recipe</em>
-                <% end %>
-                  </h3>
-                  <% cocktail.doses.each do |dose| %>
-                    <p>- <%= dose.ingredient.name %> <%= dose.quantity %>
-                    </p>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+<div class="banner">
+  <%= render 'shared/navbar'%>
+  <div class="content-banner">
+    <h1>Find a barman for your reception</h1>
+    <div class="home_form">
+      <%= render "shared/home_form"%>
     </div>
   </div>
 </div>
+
+
