@@ -57,6 +57,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap3-datetimepicker-rails (4.17.37)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (8.2.2)
     carrierwave (0.10.0)
@@ -128,7 +130,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.9.0)
+    fog-aws (0.9.1)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -226,13 +228,15 @@ GEM
     mini_magick (4.4.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    momentjs-rails (2.11.0)
+      railties (>= 3.1)
     multi_json (1.11.2)
     netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
-    puma (3.0.2)
+    puma (3.1.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -307,6 +311,9 @@ GEM
       carrierwave
       rails (>= 4.0.0)
       simple_form (~> 3.1)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -315,6 +322,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    temple (0.7.6)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -341,6 +349,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap3-datetimepicker-rails (~> 4.17.37)
   byebug
   carrierwave
   cloudinary
@@ -351,6 +360,7 @@ DEPENDENCIES
   font-awesome-sass
   jquery-rails
   mini_magick
+  momentjs-rails (>= 2.9.0)
   pg (~> 0.15)
   puma
   rails (= 4.2.5.2)
@@ -360,6 +370,7 @@ DEPENDENCIES
   simple_form
   simple_form_fancy_uploads
   simple_form_jasny_fileupload!
+  slim
   spring
   turbolinks
   uglifier (>= 1.3.0)

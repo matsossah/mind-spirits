@@ -5,9 +5,13 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-//
+//= require moment
+//= require bootstrap-datetimepicker
+
 $(function() {
     $('.add_new_dose').click(function() {
     location.reload();
   });
 });
+
+
