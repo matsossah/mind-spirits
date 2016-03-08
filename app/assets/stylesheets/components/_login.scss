@@ -1,0 +1,44 @@
+.login {
+  background-color: rgba(40,40,40,0.8);
+  border-radius: 4px;
+  color: white;
+  padding:30px;
+  margin: 60px;
+
+  input {
+    background: transparent;
+    border: none;
+    border-bottom: solid 1px white;
+    color: white;
+  }
+
+}
+
+  input:focus, textarea:focus {
+    background: transparent;
+    border: none;
+    border-bottom: solid 1px white;
+    color:white;
+    box-shadow: none;
+  }
+#log {
+  border: 1px solid white;
+  color: white;
+  border-radius: 20px;
+  padding-left:20px;
+  padding-right: 20px;
+}
+
+#log:hover {
+  background: transparent;
+  border: 1px solid #469AE0;
+  color: #469AE0;
+  border-radius: 20px;
+  padding-left:20px;
+  padding-right: 20px;
+}
+
+#password {
+  color: rgb(190,190,190);
+  font-size: 10px;
+}
