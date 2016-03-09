@@ -1,16 +1,17 @@
 class User < ActiveRecord::Base
+  has_many :professionals, through: :events
   has_many :events
+
+  has_one :professional
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
-
   validates_presence_of :name
-  validates_uniqueness_of :phone_number
 
-    def self.find_for_facebook_oauth(auth)
-
+  def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid

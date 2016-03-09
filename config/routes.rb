@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :barmen
   root :to => "cocktails#index"
 
   resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
@@ -14,7 +13,7 @@ Rails.application.routes.draw do
     resources :events
   end
 
-  resources :barmen do
+  resources :professional do
     resources :events
   end
 

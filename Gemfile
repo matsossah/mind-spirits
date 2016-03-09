@@ -29,6 +29,7 @@ gem 'authority'
 gem 'rolify'
 gem 'omniauth-facebook'
 gem 'omniauth'
+gem 'enumerize'
 
 group :development, :test do
   gem 'byebug'
