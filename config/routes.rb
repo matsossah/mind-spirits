@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :barmen
-  devise_for :users
   root :to => "cocktails#index"
 
   resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
     resources :doses, only: [:new, :create]
+  end
+
+  Rails.application.routes.draw do
+    devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   end
 
   resources :users do
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
   resources :barmen do
     resources :events
   end
+
 
   resources :doses, only: [:destroy]
   resources :events, only: [:destroy]

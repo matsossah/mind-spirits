@@ -9,6 +9,7 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
             <%= f.input :name, label: false, placeholder:'Name'%>
             <%= f.input :email,label: false, placeholder:'Email', required: true, autofocus: true %>
             <%= f.input :password, label: false, placeholder: 'Password', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
