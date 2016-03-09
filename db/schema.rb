@@ -11,32 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308122153) do
+ActiveRecord::Schema.define(version: 20160309135411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "barmen", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "name"
-    t.string   "address"
-    t.string   "phone_number"
-    t.string   "description"
-  end
-
-  add_index "barmen", ["email"], name: "index_barmen_on_email", unique: true, using: :btree
-  add_index "barmen", ["reset_password_token"], name: "index_barmen_on_reset_password_token", unique: true, using: :btree
 
   create_table "cocktails", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160308122153) do
     t.datetime "updated_at",   null: false
     t.string   "image"
     t.text     "recipe_steps"
+    t.string   "alcohol"
   end
 
   create_table "doses", force: :cascade do |t|
@@ -62,18 +41,28 @@ ActiveRecord::Schema.define(version: 20160308122153) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "user_id"
-    t.integer  "barman_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "professional_id"
   end
 
-  add_index "events", ["barman_id"], name: "index_events_on_barman_id", using: :btree
+  add_index "events", ["professional_id"], name: "index_events_on_professional_id", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "professionals", force: :cascade do |t|
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "description"
+    t.string   "phone_number"
+    t.string   "address"
+    t.integer  "max_travel_range"
+    t.string   "professional_role"
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,6 +81,13 @@ ActiveRecord::Schema.define(version: 20160308122153) do
     t.string   "address"
     t.string   "phone_number"
     t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "picture"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "token"
+    t.datetime "token_expiry"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -99,6 +95,6 @@ ActiveRecord::Schema.define(version: 20160308122153) do
 
   add_foreign_key "doses", "cocktails"
   add_foreign_key "doses", "ingredients"
-  add_foreign_key "events", "barmen"
+  add_foreign_key "events", "professionals"
   add_foreign_key "events", "users"
 end
