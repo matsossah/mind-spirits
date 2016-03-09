@@ -1,41 +1,27 @@
-<div class="user">
+<div class="show-user">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div id="wrapper">
-          <div id="container">
-            <div class="info">
-              <div class="name">
-                <%= @user.name%>
-              </div>
-              <div class="location">
-                <i class="fa fa-map-marker"></i><%= @user.address%></a>
-              </div>
+      <div class="col-xs-12 col-sm-3">
+        <div class="profil">
+          <%= image_tag "banner.jpeg", class:"profile-img"%>
+          <div class="profile-text">
+            <h1 class="profile-name"><%= @user.name%></h1>
+            <div>
+              <ul>
+                <li class="profile-title"><i class="fa fa-envelope-o"></i> <%= @user.email%></li>
+                <li class="profile-title"><i class="fa fa-phone"></i><%= @user.phone_number%></li>
+                <li class="profile-title"><i class="fa fa-map-marker"></i><%= @user.address%></li>
+              </ul>
             </div>
-            <div class="menu">
-                <ul>
-                  <li><a href="#">&#128222;</a></li>
-                  <li><a href="http://twitter.com/ctrunsthis" target="_blank">&#59168;</a></li>
-                  <li><a href="mailto:cole@coletownsend.com" target="_blank">&#9993;</a></li>
-                  <li><a href="http://twitter.com/ctrunsthis">&#127748;</a></li>
-                  <li class="add"><a href="#">&#59136;</a></li>
-                </ul>
-            </div>
-            <div class="profile">
-
-            </div>
+            <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
           </div>
         </div>
-
-
+      </div>
+      <div class="col-xs-12 col-sm-9">
+        <div class="user-content">
 
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="right"></div>
       </div>
     </div>
   </div>
-
-
 </div>
