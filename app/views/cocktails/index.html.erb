@@ -9,3 +9,44 @@
 </div>
 
 
+<div class="row cocktails">
+  <div class="container">
+    <p style="font-family:'Alex Brush',cursive;font-size: 30px; text-align: center">Our Selection</p>
+    <div id="alcohol" class="col-xs-12">
+      <ul>
+        <li><i class="fa fa-star"></i> Gin</li>
+        <li><i class="fa fa-star"></i> Rhum</li>
+        <li><i class="fa fa-star"></i> Whiskey</li>
+        <li><i class="fa fa-star"></i> Vodka</li>
+        <li><i class="fa fa-star"></i> Tequila</li>
+      </ul>
+    </div>
+    <div class="wrapper-grey wrapper">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4" id="card">
+          <div id="f1_container">
+            <div id="f1_card" class="shadow">
+              <div class="front face" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>);">
+                <div class="card-category">
+                  <h2><%= cocktail.name %></h2>
+                </div>
+              </div>
+              <div class="back face center" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>);">
+                <div class="card-description">
+                <%= link_to cocktail_path(cocktail) do %>
+                  <h3><em>Recipe</em>
+                <% end %>
+                  </h3>
+                  <% cocktail.doses.each do |dose| %>
+                    <p>- <%= dose.quantity %> <%= dose.ingredient.name %>
+                    </p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
