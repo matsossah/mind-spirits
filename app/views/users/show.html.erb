@@ -1,9 +1,11 @@
+
 <div class="show-user">
+  <%= render 'shared/navbar' %>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-3">
         <div class="profil">
-          <%= image_tag "banner.jpeg", class:"profile-img"%>
+          <%= image_tag current_user.picture, class:"profile-img"%>
           <div class="profile-text">
             <h1 class="profile-name"><%= @user.name%></h1>
             <div>
@@ -14,6 +16,12 @@
               </ul>
             </div>
             <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
+            <div class="new-event">
+              <%= link_to "Create an event", new_user_event_path(current_user), id:"event"%>
+            </div>
+          </div>
+          <div class="back">
+            <%= link_to "HOME" , root_path %>
           </div>
         </div>
       </div>
