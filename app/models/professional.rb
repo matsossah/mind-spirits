@@ -4,6 +4,7 @@ class Professional < ActiveRecord::Base
   belongs_to :user
 
   has_many :events
+  has_many :users, through: :events
 
   enumerize :professional_role, in: [:barman, :brasseur, :sommelier, :cellar_man], multiple: true
 
