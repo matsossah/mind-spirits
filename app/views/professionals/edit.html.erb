@@ -4,10 +4,12 @@
     <div class="col-xs-12 col-sm-6  col-sm-offset-3">
       <div class="login">
         <h2>Edit your profile</h2>
+
         <%= simple_form_for([current_user, @professional]) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
+            <%= f.input :description,label: false, placeholder:'Experienced Barman'%>
             <%= f.input :phone_number,label: false, placeholder:'Phone number'%>
             <%= f.input :business_address,label: false, placeholder:'Business address'%>
           </div>
