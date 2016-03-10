@@ -9,16 +9,22 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :description,label: false, placeholder:'Experienced Barman'%>
-            <%= f.input :phone_number,label: false, placeholder:'Phone number'%>
-            <%= f.input :business_address,label: false, placeholder:'Business address'%>
+            <%= f.input :professional_role, collection: Professional.professional_role.options %>
+            <%= f.input :description, label: false %>
+            <%= f.input :max_travel_range, label: false %>
+            <%= f.input :phone_number, label: false %>
+            <%= f.input :business_address, input_html: { id: "user_input_autocomplete_address"}, label: false %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Edit", id:'log' %>
+            <%= f.button :submit, "Edit" %>
+            <%= link_to "cancel", user_professional_path(current_user, @professional) %>
           </div>
         <% end %>
+        <hr>
       </div>
     </div>
   </div>
 </div>
+
+:max_travel_range, :professional_role, :phone_number, :business_address, :description

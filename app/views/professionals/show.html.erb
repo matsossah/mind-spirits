@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col-xs-12 col-sm-3">
         <div class="profil">
-          <%= image_tag "banner.jpeg", class:"profile-img"%>
+          <%= image_tag current_user.picture, class:"profile-img"%>
           <div class="profile-text">
             <h1 class="profile-name"><%= @professional.user.name%></h1>
-            <p class="profile-name"><%= @professional.description%></p>
+            <p><%= @professional.description%></p>
             <div>
               <ul>
                 <li class="profile-title"><i class="fa fa-envelope-o"></i> <%= @professional.user.email%></li>
-                <li class="profile-title"><i class="fa fa-phone"></i><%= @professional.user.phone_number%></li>
+                <li class="profile-title"><i class="fa fa-phone"></i><%= @professional.phone_number%></li>
                 <li class="profile-title"><i class="fa fa-map-marker"></i><%= @professional.business_address %></li>
               </ul>
             </div>

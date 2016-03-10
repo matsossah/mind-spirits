@@ -13,7 +13,6 @@ class ProfessionalsController < ApplicationController
   end
 
   def create
-    # raise
     @professional = Professional.create(professional_params)
     @professional.user_id = current_user.id
     if @professional.save
@@ -28,8 +27,8 @@ class ProfessionalsController < ApplicationController
   end
 
   def update
-    @professional = current_user.professional.update(professional_params)
-    if @professional.valid?
+    @professional = current_user.professional
+    if @professional.update(professional_params)
       redirect_to user_professional_path(current_user, @professional)
     else
       render :edit
