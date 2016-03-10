@@ -4,7 +4,11 @@
       <div class="col-xs-12 col-sm-3">
         <h4>REGISTER AS A PROFESSIONAL</h4>
         <ul>
-          <li><%= link_to "Register", new_user_professional_path(current_user) %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Register", new_user_professional_path(current_user) %></li>
+          <% else %>
+            <%= link_to "Login first", new_user_session_path, class: "btn navbar-wagon-item navbar-wagon-button" %>
+          <% end %>
         </ul>
       </div>
        <div class="col-xs-12 col-sm-3">

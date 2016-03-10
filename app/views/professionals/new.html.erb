@@ -9,15 +9,16 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :professional_role, :as => :check_boxes %>
+            <%= f.input :professional_role, collection: Professional.professional_role.options %>
             <%= f.input :description, label: false, placeholder:'Good listener, 5 years of experience...etc' %>
             <%= f.input :max_travel_range, label: false, placeholder:'Maximum distance to an event (in km)' %>
             <%= f.input :phone_number, label: false, placeholder:'0123456789' %>
-            <%= f.input :business_address, label: false, placeholder:'your business address' %>
+            <%= f.input :business_address, input_html: { id: "user_input_autocomplete_address"}, placeholder: "Your business address", label: false %>
           </div>
 
           <div class="form-actions">
             <%= f.button :submit, "Register" %>
+            <%= link_to "cancel", cocktails_path %>
           </div>
         <% end %>
         <hr>
