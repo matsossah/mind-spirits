@@ -21,7 +21,8 @@
   <%= render 'shared/footer' %>
 
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application'%>
+  <%= yield(:after_js) %>
    <!-- Include Google Maps JS API -->
 
 
