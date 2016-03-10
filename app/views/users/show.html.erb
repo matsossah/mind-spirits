@@ -16,8 +16,9 @@
               </ul>
             </div>
             <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
+            <hr>
             <% if @user.professional %>
-              <%= link_to "My professional profile", user_professional_path(@user, @user.professional) %>
+              <%= link_to "My professional profile", user_professional_path(@user, @user.professional), class:"btn btn-default" %>
             <% end %>
           </div>
         </div>
