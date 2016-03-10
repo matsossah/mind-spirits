@@ -18,7 +18,7 @@ gem 'puma',           group: :production
 gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
-gem 'turbolinks'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'simple_form_fancy_uploads'
 gem 'devise'
@@ -31,6 +31,11 @@ gem 'rolify'
 gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'enumerize'
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'byebug'

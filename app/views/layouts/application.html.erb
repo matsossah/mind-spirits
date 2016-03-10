@@ -21,12 +21,12 @@
   <%= render 'shared/footer' %>
 
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application'%>
+  <%= yield(:after_js) %>
    <!-- Include Google Maps JS API -->
 
 
   <!-- Custom JS code to bind to Autocomplete API -->
-  <script type="text/javascript" src="autocomplete.js"></script>
 </body>
 </html>
 

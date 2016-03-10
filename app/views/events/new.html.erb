@@ -2,18 +2,18 @@
   <%= render "shared/navbar" %>
   <div class="container">
     <div class="col-xs-12 col-sm-6  col-sm-offset-3">
-      <form>
-        <label>Address</label>
-        <input id="user_input_autocomplete_address" placeholder="Votre adresse...">
-        <label>street_number</label>
-        <input id="street_number" name="street_number" disabled>
-        <label>route</label>
-        <input id="route" name="route" disabled>
-        <label>locality</label>
-        <input id="locality" name="locality" disabled>
-        <label>country</label>
-        <input id="country" name="country" disabled>
-      </form>
+      <div class="login">
+        <form id="mod">
+          <input id="user_input_autocomplete_address" placeholder="Your business address">
+          <input id="street_number" name="street_number" type="hidden">
+          <input id="route" name="route" type="hidden">
+          <input id="locality" name="locality" type="hidden">
+          <input id="country" name="country" type="hidden">
+          <input type='text' class="form-control" id='datetimepicker1' placeholder="Start time" />
+          <input type='text' class="form-control" id='datetimepicker2' placeholder="End time" />
+        </form>
+      </div>
     </div>
   </div>
 </div>
+

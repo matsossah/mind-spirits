@@ -3,10 +3,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
+
 //= require_tree .
 //= require moment
 //= require bootstrap-datetimepicker
+//= require underscore
+//= require gmaps/google
 
 $(function() {
     $('.add_new_dose').click(function() {
@@ -43,3 +45,8 @@ function onPlaceChanged() {
 google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
+
+
+
+
+
