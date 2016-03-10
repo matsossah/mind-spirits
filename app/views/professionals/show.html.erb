@@ -1,0 +1,28 @@
+<div class="show-user">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <div class="profil">
+          <%= image_tag "banner.jpeg", class:"profile-img"%>
+          <div class="profile-text">
+            <h1 class="profile-name"><%= @professional.user.name%></h1>
+            <div>
+              <ul>
+                <li class="profile-title"><i class="fa fa-envelope-o"></i> <%= @professional.user.email%></li>
+                <li class="profile-title"><i class="fa fa-phone"></i><%= @professional.user.phone_number%></li>
+                <li class="profile-title"><i class="fa fa-map-marker"></i><%= @professional.business_address %></li>
+              </ul>
+            </div>
+            <%= link_to "Edit my professional profile", edit_user_professional_path(current_user, @professional), id:"edit"%>
+            <%= link_to "My user Profile", user_path(current_user) %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-9">
+        <div class="user-content">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

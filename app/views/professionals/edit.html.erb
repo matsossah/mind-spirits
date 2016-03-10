@@ -1,0 +1,22 @@
+<div class="banner">
+  <%= render "shared/navbar" %>
+  <div class="container">
+    <div class="col-xs-12 col-sm-6  col-sm-offset-3">
+      <div class="login">
+        <h2>Edit your profile</h2>
+        <%= simple_form_for([current_user, @professional]) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :phone_number,label: false, placeholder:'Phone number'%>
+            <%= f.input :business_address,label: false, placeholder:'Business address'%>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Edit", id:'log' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

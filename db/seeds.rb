@@ -2,8 +2,8 @@ Dose.delete_all
 Ingredient.delete_all
 Cocktail.delete_all
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
+lemon = Ingredient.create(name: "lemon")
+ice = Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
 Ingredient.create(name: "sugar")
 Ingredient.create(name: "coffee")

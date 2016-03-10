@@ -1,5 +1,7 @@
 class Professional < ActiveRecord::Base
   extend Enumerize
+  geocoded_by :business_address
+  after_validation :geocode, if: :business_address_changed?
 
   belongs_to :user
 
@@ -8,6 +10,5 @@ class Professional < ActiveRecord::Base
 
   enumerize :professional_role, in: [:barman, :brasseur, :sommelier, :cellar_man], multiple: true
 
-  validates_presence_of :name
   validates_uniqueness_of :phone_number
 end

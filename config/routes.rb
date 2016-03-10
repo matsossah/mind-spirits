@@ -11,11 +11,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :events
+    resources :professionals
   end
 
-  resources :professional do
-    resources :events
-  end
 
 
   resources :doses, only: [:destroy]
