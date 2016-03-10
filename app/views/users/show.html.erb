@@ -24,25 +24,7 @@
       </div>
       <div class="col-xs-12 col-sm-9">
         <div class="user-content">
-          <ul class="tabs">
-            <li>
-              <input type="radio" name="tabs" id="tab1" checked />
-              <label for="tab1">Last Events</label>
-              <div id="tab-content1" class="tab-content">
-                <p>No events.</p>
-              </div>
-            </li>
-
-            <li>
-              <input type="radio" name="tabs" id="tab2" />
-              <label for="tab2">Create an event</label>
-              <div id="tab-content2" class="tab-content">
-                <div class="login">
-                  <%= render "events/new", user: current_user, event: @event%>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <%= link_to 'Create an event', new_user_event_path(current_user) %>
         </div>
       </div>
     </div>

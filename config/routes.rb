@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :events, only: :create
+    resources :events
     resources :professionals
   end
 
