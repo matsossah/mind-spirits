@@ -13,11 +13,13 @@ class EventsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
     @event = Event.new(event_params)
+    @event.user = @user
     if @event.save
       redirect_to event_path(@event)
     else
-      render :new
+      render 'users/show'
     end
   end
 

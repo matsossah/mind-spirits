@@ -38,10 +38,7 @@
               <label for="tab2">Create an event</label>
               <div id="tab-content2" class="tab-content">
                 <div class="login">
-                  <form>
-                    <input id="user_input_autocomplete_address" placeholder="Votre adresse...">
-
-                  </form>
+                  <%= render "events/new", user: current_user, event: @event%>
                 </div>
               </div>
             </li>
