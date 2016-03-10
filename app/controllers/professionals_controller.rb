@@ -22,13 +22,13 @@ class ProfessionalsController < ApplicationController
   end
 
   def edit
-    @professional = Professional.new
+    @professional = current_user.professional
   end
 
   def update
-    @professional = Professional.new(professional_params)
-    if @professional.save
-      redirect_to professional_path(@professional)
+    @professional = current_user.professional.update(professional_params)
+    if @professional.valid?
+      redirect_to user_professional_path(current_user, @professional)
     else
       render :edit
     end

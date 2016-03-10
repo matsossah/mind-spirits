@@ -6,6 +6,7 @@
           <%= image_tag "banner.jpeg", class:"profile-img"%>
           <div class="profile-text">
             <h1 class="profile-name"><%= @professional.user.name%></h1>
+            <p class="profile-name"><%= @professional.description%></p>
             <div>
               <ul>
                 <li class="profile-title"><i class="fa fa-envelope-o"></i> <%= @professional.user.email%></li>
