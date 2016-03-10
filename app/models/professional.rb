@@ -8,7 +8,7 @@ class Professional < ActiveRecord::Base
   has_many :events
   has_many :users, through: :events
 
-  enumerize :professional_role, in: [:barman, :brasseur, :sommelier, :cellar_man], multiple: true
+  enumerize :professional_role, in: [:barman, :brasseur, :sommelier, :cellar_man]
 
-  validates_uniqueness_of :phone_number
+  validates_presence_of :business_address, :description, :phone_number, :professional_role
 end

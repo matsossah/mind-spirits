@@ -13,9 +13,11 @@ class ProfessionalsController < ApplicationController
   end
 
   def create
-    @professional = Professional.new(professional_params)
+    # raise
+    @professional = Professional.create(professional_params)
+    @professional.user_id = current_user.id
     if @professional.save
-      redirect_to cocktails_path
+      redirect_to user_professional_path(current_user, @professional)
     else
       render :new
     end
@@ -37,6 +39,6 @@ class ProfessionalsController < ApplicationController
 private
 
   def professional_params
-    params.require(:professional).permit(:name, :phone_number, :address, :description)
+    params.require(:professional).permit(:max_travel_range, :professional_role, :phone_number, :business_address, :description)
   end
 end
