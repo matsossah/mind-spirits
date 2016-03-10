@@ -9,20 +9,35 @@
   ul {
     list-style: none;
   }
-}
-
-.profil {
-  background-color: lightgrey;
-  height: 100vh;
-  h1 {
-    margin: 0;
+  h6 {
+    color:white;
+  }
+  hr {
+    border-top: 1px solid rgba(255,255,255,0.3);
   }
 }
 
-// .user-content {
-//   background-color: green;
-//   height:100vh;
-// }
+.profil {
+  margin-top: 70px;
+  margin-left: 30px;
+  h1 {
+    margin: 0;
+  }
+  #log {
+    font-size: 10px;
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+  #log:hover {
+    background: transparent;
+    border: 1px solid #469AE0;
+    color: #469AE0;
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+}
 
 .profile-img {
   display: block;
@@ -30,31 +45,33 @@
   width: 7em;
   margin-right: auto;
   margin-left: auto;
-  border: .5em solid rgba(50,50,50,0);
+  border: 3px solid rgba(50,50,50,1);
   border-radius: 100%;
   box-shadow:  0 1px 0 0 rgba(0,0,0,.1);
 }
 
 .profile-text {
+  text-align: justify;
   margin-top: -3.5em;
   padding: 5em 1.5em 1.5em 1.5em;
-  background: white;
-  border-radius-right: 3px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1)
+  background: rgba(50,50,50,0.8);
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.4)
 }
 
 .profile-name{
+  color: white;
   margin-right: -1em;
   margin-bottom: .75em;
   margin-left: -1em;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
   padding-bottom: .75em;
   font-size: 1.5em;
   text-transform: uppercase;
 }
 
 .profile-title {
-  color: #ccc;
+  color: #fff;
 }
 
 .black{
@@ -63,9 +80,9 @@
 
 #edit {
 
-  color: rgb(80,80,80);
+  color: #469AE0;
   font-size: 11px;
-  border-top: 0.2px solid rgb(80,80,80);
+  border-top: 0.2px solid #469AE0;
   text-decoration: none;
 }
 
@@ -83,100 +100,7 @@
   border: 1px solid rgb(50,50,50);
   border-radius: 25px;
 }
-.user-content {
 
-  body {
-  padding: 20px;
-  text-align: left;
-  font-family: Lato;
-  color: #fff;
-}
-h1 {
-  font-weight: normal;
-  font-size: 40px;
-  font-weight: normal;
-  text-transform: uppercase;
-  float: left;
-  margin: 20px 0 100px 10px;
-  span {
-    font-size: 13px;
-    display: block;
-    padding-left: 4px;
-  }
-}
-.tabs {
-  width: 650px;
-  float: none;
-  list-style: none;
-  position: relative;
-  margin: 80px 0 0 10px;
-  text-align: left;
-  li {
-    float: left;
-    display: block;
-  }
-  input[type="radio"] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  label {
-    background-color: white;
-    margin-left: 10px;
-    display: block;
-    padding: 14px 21px;
-    border-radius: 5px 5px 0 0;
-    font-size: 20px;
-    font-weight: normal;
-    text-transform: uppercase;
-    cursor: pointer;
-    position: relative;
-    top: 4px;
-    @include transition(all 0.2s ease-in-out);
-
-  }
-  .tab-content{
-    height: 80vh;
-    background-color: rgba(50,50,50,1);
-    box-shadow: 2px 2px 1px lightgrey;
-    z-index: 2;
-    display: none;
-    overflow: hidden;
-    width: 100%;
-    font-size: 17px;
-    line-height: 25px;
-    padding: 25px;
-    position: absolute;
-    top: 53px;
-    left: 0;
-    .bootstrap-datetimepicker-widget {
-      background-color: rgb(50,50,50);
-    }
-  }
-  //The Magic
-  [id^="tab"]:checked + label {
-    color: white;
-    top: 0;
-    padding-top: 17px;
-    background-color: rgba(50,50,50,1);
-  }
-  [id^="tab"]:checked ~ [id^="tab-content"] {
-    display: block;
-    color:white;
-  }
-}
-p.link {
-  clear: both;
-  margin: 380px 0 0 15px;
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    padding: 5px 10px;
-    margin: 0 5px;
-
-    @include transition(all 0.2s ease-in);
-  }
- }
+.login_btn {
+  text-align: center;
 }

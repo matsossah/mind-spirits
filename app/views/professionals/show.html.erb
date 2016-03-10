@@ -1,4 +1,6 @@
+<div class="banner">
 <div class="show-user">
+  <%= render 'shared/navbar' %>
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-3">
@@ -6,16 +8,28 @@
           <%= image_tag current_user.picture, class:"profile-img"%>
           <div class="profile-text">
             <h1 class="profile-name"><%= @professional.user.name%></h1>
-            <p><%= @professional.description%></p>
+            <h6>Professional account</h6>
             <div>
               <ul>
-                <li class="profile-title"><i class="fa fa-envelope-o"></i> <%= @professional.user.email%></li>
-                <li class="profile-title"><i class="fa fa-phone"></i><%= @professional.phone_number%></li>
-                <li class="profile-title"><i class="fa fa-map-marker"></i><%= @professional.business_address %></li>
+                <li class="profile-title" >
+                    <i class="fa fa-chevron-circle-right"></i> <%= @professional.description%>
+                </li>
+                <li class="profile-title">
+                  <i class="fa fa-envelope-o"></i>  <%= @professional.user.email%>
+                </li>
+                <li class="profile-title">
+                  <i class="fa fa-phone"></i>  <%= @professional.phone_number%>
+                </li>
+                <li class="profile-title">
+                  <i class="fa fa-map-marker"></i>  <%= @professional.business_address %>
+                </li>
               </ul>
             </div>
             <%= link_to "Edit my professional profile", edit_user_professional_path(current_user, @professional), id:"edit"%>
-            <%= link_to "My user Profile", user_path(current_user) %>
+            <hr>
+            <div class="login_btn">
+              <%= link_to "go to User profile", user_path(current_user), id:"log" %>
+            </div>
           </div>
         </div>
       </div>
@@ -25,5 +39,6 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 

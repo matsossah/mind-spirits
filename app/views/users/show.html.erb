@@ -1,4 +1,4 @@
-
+<div class="banner">
 <div class="show-user">
   <%= render 'shared/navbar' %>
   <div class="container-fluid">
@@ -8,18 +8,22 @@
           <%= image_tag current_user.picture, class:"profile-img"%>
           <div class="profile-text">
             <h1 class="profile-name"><%= @user.name%></h1>
+            <h6>User account</h6>
             <div>
               <ul>
-                <li class="profile-title"><i class="fa fa-envelope-o"></i> <%= @user.email%></li>
-                <li class="profile-title"><i class="fa fa-phone"></i><%= @user.phone_number%></li>
-                <li class="profile-title"><i class="fa fa-map-marker"></i><%= @user.address%></li>
+                <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
+                <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
+                <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
               </ul>
             </div>
+
             <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
             <hr>
-            <% if @user.professional %>
-              <%= link_to "My professional profile", user_professional_path(@user, @user.professional), class:"btn btn-default" %>
-            <% end %>
+            <div class="login_btn">
+              <% if @user.professional %>
+                <%= link_to " go to PRO", user_professional_path(@user, @user.professional), id:"log" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -30,4 +34,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
