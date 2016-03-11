@@ -1,19 +1,47 @@
-<div class="banner">
+<div class="banner" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path("banner.jpeg") %>)no-repeat center center; background-size: cover">
   <%= render "shared/navbar" %>
   <div class="container">
     <div class="col-xs-12 col-sm-6  col-sm-offset-3">
       <div class="login">
-        <form id="mod">
-          <input id="user_input_autocomplete_address" placeholder="Your business address">
-          <input id="street_number" name="street_number" type="hidden">
-          <input id="route" name="route" type="hidden">
-          <input id="locality" name="locality" type="hidden">
-          <input id="country" name="country" type="hidden">
-          <input type='text' class="form-control" id='datetimepicker1' placeholder="Start time" />
-          <input type='text' class="form-control" id='datetimepicker2' placeholder="End time" />
-        </form>
+      <h2>Create an event</h2>
+        <div class="row">
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" name="start_time" placeholder="Start time" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker2'>
+                <input type='text' class="form-control" name="end_time" placeholder="End time" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+          <div class="form-inputs">
+            <div>
+              <input type='text' class="form-control" id="user_input_autocomplete_address" name="business_address" placeholder="Event address" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <input type="submit" value="Create" class="btn btn-primary">
+            <%= link_to "cancel", user_path(current_user) %>
+          </div>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker1').datetimepicker();
+              });
+          </script>
+          <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker2').datetimepicker();
+              });
+          </script>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
