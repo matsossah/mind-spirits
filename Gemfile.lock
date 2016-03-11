@@ -387,6 +387,7 @@ DEPENDENCIES
   enumerize
   figaro
   fog
+  fog-aws
   font-awesome-sass
   geocoder
   gmaps4rails

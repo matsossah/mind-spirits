@@ -1,43 +1,17 @@
-<div class="banner-thin" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path(@cocktail.image) %>);">
-  <h1><%= @cocktail.name %></h1>
-  <p><%= @cocktail.recipe_steps %></p>
-</div>
-
-<div class="wrapper-light wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(@cocktail.image.url) %>);">
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-3 recipe">
-        <h3><em>Recipe</em></h3>
-        <% @cocktail.doses.each do |dose| %>
-          <p>
-            <%= link_to dose_path(dose), method: :delete do %>
-              <i class="fa fa-trash white_trash"></i>
-            <% end %>
-            - <%= dose.quantity %> <%= dose.ingredient.name %>
-          </p>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <div class="container dose-form">
-          <p>Add an Ingredient</p>
-          <%= simple_form_for([@cocktail, @new_dose]) do |f| %>
-            <%= f.error_notification %>
-
-            <%= f.association :ingredient, label: false %>
-            <%= f.input :quantity, label: false, :placeholder => "Quantity?" %>
-            <%= f.button :submit, 'Add!', :class => 'add_new_dose' %>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-1">
-        <%= link_to cocktail_path, method: :delete, data: {confirm: "Delete this cocktail?"} do %>
-          <i class="fa fa-trash big-grey"></i>
-        <% end %>
-      </div>
+<div class="banner show-banner" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url(<%= image_path(@cocktail.image) %>) no-repeat center center; background-size: cover">
+  <%= render 'shared/navbar'%>
+  <div class="content-show_cocktail">
+    <h1><em><%= @cocktail.name %></em></h1>
+    <div class="home_form marged-top">
+      <p class="marged-bottom"><%= @cocktail.recipe_steps %></p>
+      <% @cocktail.doses.each do |dose| %>
+        <ul>
+          <li><p><i class="fa fa-circle-o"> <%= dose.ingredient.name %>: <%= dose.quantity %></i><p></li>
+        </ul>
+      <% end %>
     </div>
   </div>
+  <div class="square-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(@cocktail.image) %>)no-repeat center center; background-size: cover">
+  </div>
 </div>
+
