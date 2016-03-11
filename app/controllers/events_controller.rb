@@ -13,12 +13,14 @@ class EventsController < ApplicationController
   end
 
   def create
-
     @event = Event.new(event_params)
     @event.user = @user
-    if @event.save
+    service = ReservationService.new(event_params)
+    begin
+      service.reserve!
+      flash[:notice] = "You are booked!"
       redirect_to event_path(@event)
-    else
+    rescue RoomNotAvailableException => ex
       render 'users/show'
     end
   end
