@@ -5,31 +5,38 @@
       <div class="login">
       <h2>Create an event</h2>
         <div class="row">
-          <div class="form-group">
-            <div class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" name="start_time" placeholder="Start time" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+          <form action="<%= user_events_path(current_user) %>" method="POST">
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker1'>
+                  <input type='text' class="form-control" name="start_time" placeholder="Start time" />
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class='input-group date' id='datetimepicker2'>
-                <input type='text' class="form-control" name="end_time" placeholder="End time" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker2'>
+                  <input type='text' class="form-control" name="end_time" placeholder="End time" />
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
             </div>
-          </div>
-          <div class="form-inputs">
-            <div>
-              <input type='text' class="form-control" id="user_input_autocomplete_address" name="business_address" placeholder="Event address" />
+            <div class="form-group">
+              <div class='input-group'>
+                <input class="form-control" name="professional_id" placeholder="Pick a barman" />
+              </div>
             </div>
-          </div>
-          <div class="form-actions">
-            <input type="submit" value="Create" class="btn btn-primary">
-            <%= link_to "cancel", user_path(current_user) %>
-          </div>
+            <div class="form-inputs">
+              <div>
+                <input type='text' class="form-control" id="user_input_autocomplete_address" name="address" placeholder="Event address" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <input type="submit" value="Create" class="btn btn-primary">
+              <%= link_to "cancel", user_path(current_user) %>
+            </div>
+          </form>
           <script type="text/javascript">
               $(function () {
                   $('#datetimepicker1').datetimepicker();

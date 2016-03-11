@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  require 'date'
 
   def index
     @events = Event.all
@@ -13,15 +14,19 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.user = @user
-    service = ReservationService.new(event_params)
+    start_time = DateTime.strptime(params['start_time'], "%m/%d/%Y %H:%M")
+    end_time = DateTime.strptime(params['end_time'], "%m/%d/%Y %H:%M")
+    address = params['address']
+    professional = Professional.find(params['professional_id'])
+
+    service = ReservationService.new(professional, current_user, start_time, end_time, address)
     begin
       service.reserve!
       flash[:notice] = "You are booked!"
-      redirect_to event_path(@event)
-    rescue RoomNotAvailableException => ex
-      render 'users/show'
+      redirect_to user_path(current_user)
+    rescue ProfessionalNotAvailableException => ex
+      flash[:notice] = "Sorry, the booking failed"
+      redirect_to user_path(current_user)
     end
   end
 
@@ -48,6 +53,6 @@ class EventsController < ApplicationController
 private
 
   def event_params
-    params.require(:event).permit(:user_id, :barman_id, :address, :start_time, :end_time)
+    params.require(:event).permit(:user_id, :professional_id, :address, :start_time, :end_time)
   end
 end
