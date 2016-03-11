@@ -1,4 +1,4 @@
-<div class="banner" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path("banner.jpeg") %>);">
+<div class="banner" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path("banner.jpeg") %>)no-repeat center center; background-size: cover">
   <%= render 'shared/navbar'%>
   <div class="content-banner">
     <h1>Find a barman for your reception</h1>
@@ -11,15 +11,6 @@
 <div class="row cocktails">
   <div class="container">
     <p style="font-family:'Alex Brush',cursive;font-size: 30px; text-align: center">Our Selection</p>
-    <div id="alcohol" class="col-xs-12">
-      <ul>
-        <li>Gin</li>
-        <li>Rhum</li>
-        <li>Whiskey</li>
-        <li>Vodka</li>
-        <li>Tequila</li>
-      </ul>
-    </div>
     <div class="wrapper-grey wrapper">
       <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4" id="card">

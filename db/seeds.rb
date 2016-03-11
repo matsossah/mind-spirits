@@ -31,6 +31,8 @@ kahlua = Ingredient.create(name: "Kahlúa")
 #   cocktail.save!
 # end
 
+
+
 cocktail1 = Cocktail.new(
   name: "Mojito",
   image: "mojito.jpg",
@@ -74,6 +76,14 @@ cocktail6 = Cocktail.new(
   recipe_steps: "Fill a rocks glass with ice cubes. Add Kahlúa and Absolut Vodka, finish up with a cream layer."
 )
 cocktail6.save!
+
+cocktail7 = Cocktail.new(
+  name: "banner",
+  image: "banner.jpeg",
+  recipe_steps: "Place ice in beverage shaker then add in the rum, 8 broken up mint sprigs, lime juice and sugar. Shake well and serve over ice in a high ball glass. Top off each glass with a splash of club soda.
+  Garnish each with a slice of lime and a sprig of mint."
+)
+cocktail1.save!
 
 Dose.create(
   cocktail: cocktail1,
