@@ -85,140 +85,140 @@ cocktail7 = Cocktail.new(
 )
 cocktail1.save!
 
-Dose.create(
+Dose.create!(
   cocktail: cocktail1,
   ingredient_id: lime.id,
   quantity: '3 pieces'
 )
 
-Dose.create(
+Dose.create!(
   cocktail: cocktail1,
   ingredient_id: rhum.id,
   quantity: '6 cl'
 )
 
-Dose.create(
+Dose.create!(
   cocktail: cocktail1,
   ingredient_id: mint_leaves.id,
   quantity: '7'
 )
 
-Dose.create(
-  cocktail_id: cocktail1,
+Dose.create!(
+  cocktail: cocktail1,
   ingredient_id: sparkling_water.id,
   quantity: '12 cl'
 )
-Dose.create(
-  cocktail_id: cocktail1,
+Dose.create!(
+  cocktail: cocktail1,
   ingredient_id: cane_sugar.id,
   quantity: '2 pieces'
 )
 
-Dose.create(
-  cocktail_id: cocktail2,
+Dose.create!(
+  cocktail: cocktail2,
   ingredient_id: gin.id,
   quantity: '6 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail2,
+Dose.create!(
+  cocktail: cocktail2,
   ingredient_id: lemon.id,
   quantity: '6 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail2,
+Dose.create!(
+  cocktail: cocktail2,
   ingredient_id: cane_sugar.id,
   quantity: '2 pieces'
 )
 
-Dose.create(
-  cocktail_id: cocktail2,
+Dose.create!(
+  cocktail: cocktail2,
   ingredient_id: sparkling_water.id,
   quantity: '12 cl'
 )
-Dose.create(
-  cocktail_id: cocktail3,
+Dose.create!(
+  cocktail: cocktail3,
   ingredient_id: vodka.id,
   quantity: '4 cl'
 )
-Dose.create(
-  cocktail_id: cocktail3,
+Dose.create!(
+  cocktail: cocktail3,
   ingredient_id: curacao.id,
   quantity: '3 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail3,
+Dose.create!(
+  cocktail: cocktail3,
   ingredient_id: lemon.id,
   quantity: '2 pieces'
 )
 
-Dose.create(
-  cocktail_id: cocktail4,
+Dose.create!(
+  cocktail: cocktail4,
   ingredient_id: rhum.id,
   quantity: '10 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail4,
+Dose.create!(
+  cocktail: cocktail4,
   ingredient_id: cane_sugar.id,
   quantity: '5 pieces'
 )
 
-Dose.create(
-  cocktail_id: cocktail4,
+Dose.create!(
+  cocktail: cocktail4,
   ingredient_id: orange_juice.id,
   quantity: '10 cl'
 )
-Dose.create(
-  cocktail_id: cocktail4,
+Dose.create!(
+  cocktail: cocktail4,
   ingredient_id: pineapple.id,
   quantity: '10 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail4,
+Dose.create!(
+  cocktail: cocktail4,
   ingredient_id: grapefruit.id,
   quantity: '10 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail4,
+Dose.create!(
+  cocktail: cocktail4,
   ingredient_id: tea.id,
   quantity: '1 cl'
 )
-Dose.create(
-  cocktail_id: cocktail5,
-  ingredient_id: tequila,
+Dose.create!(
+  cocktail: cocktail5,
+  ingredient_id: tequila.id,
   quantity: '10 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail5,
+Dose.create!(
+  cocktail: cocktail5,
   ingredient_id: orange_juice.id,
   quantity: '12 cl'
 )
 
-Dose.create(
-  cocktail_id: cocktail5,
+Dose.create!(
+  cocktail: cocktail5,
   ingredient_id: grenadine.id,
   quantity: '2 cl'
 )
 
-Dose.create(
+Dose.create!(
   cocktail: cocktail6,
   ingredient_id: ice.id,
   quantity: '7 cl'
 )
 
-Dose.create(
+Dose.create!(
   cocktail: cocktail6,
   ingredient_id: kahlua.id,
   quantity: '7 cl'
 )
 
-Dose.create(
+Dose.create!(
   cocktail: cocktail6,
   ingredient_id: vodka.id,
   quantity: '7 cl'
