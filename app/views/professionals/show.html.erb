@@ -58,13 +58,13 @@
       </div>
       <div class="col-xs-12 col-sm-3">
         <h3>Reviews</h3>
-        <% if current_user.professional.reviews.empty? %>
+        <% if @professional.reviews.empty? %>
           <h5>You don't have any reviews yet</h5>
         <% else %>
-          <% current_user.professional.reviews.each do |review| %>
+          <% @professional.reviews.each do |review| %>
             <ul>
-              <li><% review.rating %></li>
-              <li><% review.content %></li>
+              <li><%= review.rating %></li>
+              <li><%= review.content %></li>
             </ul>
           <% end %>
         <% end %>
