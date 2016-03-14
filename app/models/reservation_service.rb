@@ -23,7 +23,7 @@ class ReservationService
 
   def professional_available?
     pro_event = Event.where(professional: @professional)
-    match = pro_event.select {|event| event.start_time < @start_time && @start_time < event.end_time}
+    match = pro_event.select {|event| (event.start_time < @start_time && @start_time < event.end_time) || (event.start_time < @end_time && @end_time < event.end_time) }
     return true if match.empty?
     false
   end
