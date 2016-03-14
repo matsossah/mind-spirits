@@ -41,10 +41,14 @@
                      <li><%= event.address %></li>
                    </ul>
                 </div>
-                <div class="reviews-form">
-                  <%= render 'reviews/form', event: event %>
-                </div>
-                </ul>
+                <% if event.review_id.nil? %>
+                  <div class="reviews-form">
+                    <%= render 'reviews/form', event: event %>
+                  </div>
+                <% else %>
+                  <%= Review.find(event.review_id).rating %>
+                  <%= Review.find(event.review_id).content %>
+                <% end %>
               <% end %>
             <%= link_to 'Create an event', new_user_event_path(current_user) %>
             <% end %>

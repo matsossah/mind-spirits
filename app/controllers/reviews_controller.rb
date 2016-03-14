@@ -19,6 +19,10 @@ class ReviewsController < ApplicationController
 
     @review = reviewable.reviews.build(review_params)
     @review.reviewer = reviewer
+    @review.event_id = event.id
+    @review.save
+    event.review_id = @review.id
+    event.save
 
     if @review.save
       if current_user == event.professional

@@ -46,6 +46,8 @@
                      <li><%= event.start_time.to_formatted_s(:long_ordinal) %></li>
                      <li><%= event.address %></li>
                    </ul>
+                    <% event.review.rating %>
+                    <% event.review.content %>
                 </div>
                 <div class="reviews-form">
                   <%= render 'reviews/form', event: event %>
