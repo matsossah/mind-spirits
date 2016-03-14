@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311151456) do
+ActiveRecord::Schema.define(version: 20160314151058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,19 @@ ActiveRecord::Schema.define(version: 20160311151456) do
     t.integer  "user_id"
     t.string   "business_address"
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "content"
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "reviewer_id"
+    t.string   "reviewer_type"
+  end
+
+  add_index "reviews", ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

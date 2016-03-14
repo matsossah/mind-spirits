@@ -1,38 +1,70 @@
 <div class="banner">
-<div class="show-user">
-  <%= render 'shared/navbar' %>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 col-sm-3">
-        <div class="profil">
-          <%= image_tag current_user.picture, class:"profile-img"%>
-          <div class="profile-text">
-            <h1 class="profile-name"><%= @user.name%></h1>
-            <h6>User account</h6>
-            <div>
-              <ul>
-                <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
-                <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
-                <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
-              </ul>
-            </div>
-
-            <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
-            <hr>
-            <div class="login_btn">
-              <% if @user.professional %>
-                <%= link_to " go to PRO", user_professional_path(@user, @user.professional), id:"log" %>
-              <% end %>
+  <div class="show-user">
+    <%= render 'shared/navbar' %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <div class="profil">
+            <%= image_tag current_user.picture, class:"profile-img"%>
+            <div class="profile-text">
+              <h1 class="profile-name"><%= @user.name%></h1>
+              <h6>User account</h6>
+              <div>
+                <ul>
+                  <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
+                  <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
+                  <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
+                </ul>
+              </div>
+              <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
+              <hr>
+              <div class="login_btn">
+                <% if @user.professional %>
+                  <%= link_to " go to PRO", user_professional_path(@user, @user.professional), id:"log" %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-9">
-        <div class="user-content">
-          <%= link_to 'Create an event', new_user_event_path(current_user) %>
+        <div class="col-xs-12 col-sm-6">
+          <div class="user-content">
+          <h3>Events</h3>
+            <% if current_user.events.empty? %>
+              <h5>You don't have any events yet</h5>
+              <%= link_to 'Create an event', new_user_event_path(current_user) %>
+            <% else %>
+              <% current_user.events.each do |event| %>
+                 <div>
+                   <ul>
+                     <li><%= Professional.find(event.professional_id).user.name %></li>
+                     <li><%= event.start_time %></li>
+                     <li><%= event.end_time %></li>
+                     <li><%= event.address %></li>
+                   </ul>
+                </div>
+                <div class="reviews-form">
+                  <%= render 'reviews/form', event: event %>
+                </div>
+                </ul>
+              <% end %>
+            <%= link_to 'Create an event', new_user_event_path(current_user) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3">
+        <h3>Reviews</h3>
+        <% if current_user.reviews.empty? %>
+          <h5>You don't have any reviews yet</h5>
+        <% else %>
+          <% current_user.reviews.each do |review| %>
+            <ul>
+              <li><% review.rating %></li>
+              <li><% review.content %></li>
+            </ul>
+          <% end %>
+        <% end %>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

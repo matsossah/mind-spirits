@@ -10,7 +10,9 @@ class ProfessionalsController < ApplicationController
   end
 
   def show
-    @professional = Professional.find(params[:id])
+    user = User.find(params[:user_id])
+    @professional = user.professional
+    @review = Review.new
   end
 
   def new
