@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
   root :to => "cocktails#index"
 
   resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     resources :events
     resources :professionals
   end
-
-
 
   resources :doses, only: [:destroy]
   resources :events, only: [:destroy]

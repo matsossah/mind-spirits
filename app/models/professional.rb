@@ -7,6 +7,7 @@ class Professional < ActiveRecord::Base
 
   has_many :events
   has_many :users, through: :events
+  has_many :reviews, as: :reviewable
 
   enumerize :professional_role, in: [:barman, :brasseur, :sommelier, :cellar_man]
 
