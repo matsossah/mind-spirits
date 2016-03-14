@@ -43,8 +43,7 @@
                  <div>
                    <ul>
                      <li><%= User.find(event.user_id).name %></li>
-                     <li><%= event.start_time %></li>
-                     <li><%= event.end_time %></li>
+                     <li><%= event.start_time.to_formatted_s(:long_ordinal) %></li>
                      <li><%= event.address %></li>
                    </ul>
                 </div>
