@@ -36,6 +36,7 @@
               <% current_user.events.each do |event| %>
                  <div>
                    <ul>
+                    <%= Professional.find(event.professional_id).professional_role %>
                      <li><%= Professional.find(event.professional_id).user.name %></li>
                      <li><%= event.start_time.to_formatted_s(:long_ordinal) %></li>
                      <li><%= event.address %></li>
@@ -50,6 +51,7 @@
                   <%= Review.find(event.review_id).content %>
                 <% end %>
               <% end %>
+              <hr>
             <%= link_to 'Create an event', new_user_event_path(current_user) %>
             <% end %>
           </div>
