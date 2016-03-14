@@ -1,38 +1,55 @@
-<div class="banner">
-<div class="show-user">
-  <%= render 'shared/navbar' %>
-  <div class="container-fluid">
+<%= render 'shared/navbar' %>
+<div class="profile">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-3">
-        <div class="profil">
-          <%= image_tag current_user.picture, class:"profile-img"%>
+        <div class="profile-content">
+          <%= image_tag current_user.picture, class:"avatar"%>
           <div class="profile-text">
-            <h1 class="profile-name"><%= @user.name%></h1>
-            <h6>User account</h6>
+            <h2 class="text-center"><%= @user.name%></h2>
+            <h6 class="text-center">User account</h6>
+            <hr>
             <div>
-              <ul>
+              <ul class="list-unstyled">
                 <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
                 <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
                 <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
               </ul>
             </div>
 
-            <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
+            <small><%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%></small>
             <hr>
             <div class="login_btn">
               <% if @user.professional %>
-                <%= link_to " go to PRO", user_professional_path(@user, @user.professional), id:"log" %>
+                <%= link_to " go to PRO", user_professional_path(@user, @user.professional), class:"login_btn" %>
               <% end %>
             </div>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-sm-9">
-        <div class="user-content">
-          <%= link_to 'Create an event', new_user_event_path(current_user) %>
-        </div>
+        <section>
+          <div class="notifications">
+            <div class="create-event profile-content user-content">
+              <div class="row">
+                <div class="col-xs-12 col-sm-9">
+                  <h5>CREER UN EVENEMENT</h5>
+                  <p class="lead"> Organiser une soirée cocktail, une dégustation vin ou un dîner dans les règles de l'art.</p>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                  <%= link_to "Créer un évènement", new_user_event_path(current_user), class:"btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+            <div class="reviews profile-content user-content">
+              <h5>MESSAGES:</h5>
+            </div>
+            <div class="last-event profile-content user-content">
+              <h5>DERNIER EVENEMENT</h5>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
-</div>
 </div>
