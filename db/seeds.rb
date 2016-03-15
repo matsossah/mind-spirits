@@ -24,14 +24,6 @@ rhum = Ingredient.create(name: "Rhum")
 gin = Ingredient.create(name: "Gin")
 kahlua = Ingredient.create(name: "Kahlúa")
 
-# def upload_image(cocktail, image_string)
-#   pi = ImageUploader.create!(:image => image)
-#   pi.image.store!(File.open(File.join(Rails.root, image_string)))
-#   cocktail.image = pi
-#   cocktail.save!
-# end
-
-
 
 cocktail1 = Cocktail.new(
   name: "Mojito",
@@ -225,21 +217,18 @@ Dose.create!(
 )
 
 User.create(
-  first_name: "Greg",
-  last_name: "Sion" ,
-  password: "123456",
-  email: "greg@famillesion.fr"
+  name: "Greg Sion",
+  password: "12345678",
+  email: "greg@mindspirit.fr"
 )
 User.create(
-  first_name: "Guillaume",
-  last_name: "Caulier",
-  password:'123456',
-  email: "guillaume@famillesion.fr"
+  name: "Guillaume Caulier",
+  password:'12345678',
+  email: "guillaume@mindspirit.fr"
 )
 User.create(
-  first_name: "Matéo",
-  last_name: "Sossah",
-  password:"123456",
-  email: "mateo@famillesion.fr"
+  name: "Matéo Sossah",
+  password:"12345678",
+  email: "mateo@mindspirit.fr"
 )
 

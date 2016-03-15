@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  after_create :send_welcome_email
 
   def index
     @users = User.all
@@ -39,5 +40,9 @@ private
 
   def user_params
     params.require(:user).permit(:name, :phone_number, :address)
+  end
+
+  def send_welcome_email
+    UserMailer.welcome_user(self).deliver_now
   end
 end

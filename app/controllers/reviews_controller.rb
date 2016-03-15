@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
       end
     else
       render user_path(@user)
-    end
+    end ReviewMailer.new_professional_review(user).deliver_now
   end
 
   def edit
