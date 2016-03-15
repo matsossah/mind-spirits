@@ -3,6 +3,7 @@ class Cocktail < ActiveRecord::Base
 
   has_many :ingredients, through: :doses
   has_many :doses, dependent: :destroy
+  has_many :reviews, as: :reviewable
 
   validates_presence_of :name, :image, :recipe_steps
 end

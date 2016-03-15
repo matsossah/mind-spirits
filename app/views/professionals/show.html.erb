@@ -7,7 +7,7 @@
         <div class="profil">
           <%= image_tag current_user.picture, class:"profile-img"%>
           <div class="profile-text">
-            <h1 class="profile-name"><%= @professional.user.name%></h1>
+            <h1 class="profile-name"><%= current_user.name%></h1>
             <h6>Professional account</h6>
             <div>
               <ul>
@@ -15,7 +15,7 @@
                     <i class="fa fa-chevron-circle-right"></i> <%= @professional.description%>
                 </li>
                 <li class="profile-title">
-                  <i class="fa fa-envelope-o"></i>  <%= @professional.user.email%>
+                  <i class="fa fa-envelope-o"></i>  <%= current_user.email%>
                 </li>
                 <li class="profile-title">
                   <i class="fa fa-phone"></i>  <%= @professional.phone_number%>
@@ -33,11 +33,45 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-9">
+      <div class="col-xs-12 col-sm-6">
         <div class="user-content">
+        <h3>Events</h3>
+          <% if @professional.events.empty? %>
+            <h5>You don't have any events yet</h5>
+          <% else %>
+            <% @professional.events.each do |event| %>
+                 <div>
+                   <ul>
+                     <li><%= User.find(event.user_id).name %></li>
+                     <li><%= event.start_time.to_formatted_s(:long_ordinal) %></li>
+                     <li><%= event.address %></li>
+                   </ul>
+                    <% event.review.rating %>
+                    <% event.review.content %>
+                </div>
+                <div class="reviews-form">
+                  <%= render 'reviews/form', event: event %>
+                </div>
+                </ul>
+            <% end %>
+          <% end %>
         </div>
       </div>
+      <div class="col-xs-12 col-sm-3">
+        <h3>Reviews</h3>
+        <% if @professional.reviews.empty? %>
+          <h5>You don't have any reviews yet</h5>
+        <% else %>
+          <% @professional.reviews.each do |review| %>
+            <ul>
+              <li><%= review.rating %></li>
+              <li><%= review.content %></li>
+            </ul>
+          <% end %>
+        <% end %>
+        </div>
     </div>
+
   </div>
 </div>
 </div>
