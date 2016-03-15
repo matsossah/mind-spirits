@@ -9,20 +9,28 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    reviewer = current_user
     event = Event.find(params[:event_id])
-    if current_user == event.professional
+    if current_user == User.find(event.professional.user_id)
+      reviewer = current_user.professional
       reviewable = event.user
+      @review = reviewable.reviews.build(review_params)
+      @review.reviewer = reviewer
+      @review.event_id = event.id
+      @review.save
+      event.professional_review_id = @review.id
+      event.save
+      ReviewMailer.new_professional_review(reviewable).deliver_now
     else
+      reviewer = current_user
       reviewable = event.professional
+      @review = reviewable.reviews.build(review_params)
+      @review.reviewer = reviewer
+      @review.event_id = event.id
+      @review.save
+      event.user_review_id = @review.id
+      event.save
+      ReviewMailer.new_user_review(reviewable).deliver_now
     end
-
-    @review = reviewable.reviews.build(review_params)
-    @review.reviewer = reviewer
-    @review.event_id = event.id
-    @review.save
-    event.review_id = @review.id
-    event.save
 
     if @review.save
       if current_user == event.professional

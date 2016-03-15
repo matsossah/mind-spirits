@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314212134) do
+ActiveRecord::Schema.define(version: 20160315110602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,15 +40,16 @@ ActiveRecord::Schema.define(version: 20160314212134) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "professional_id"
-    t.integer  "review_id"
+    t.integer  "user_review_id"
+    t.integer  "professional_review_id"
   end
 
   add_index "events", ["professional_id"], name: "index_events_on_professional_id", using: :btree
-  add_index "events", ["review_id"], name: "index_events_on_review_id", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+  add_index "events", ["user_review_id"], name: "index_events_on_user_review_id", using: :btree
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
@@ -115,7 +116,7 @@ ActiveRecord::Schema.define(version: 20160314212134) do
   add_foreign_key "doses", "cocktails"
   add_foreign_key "doses", "ingredients"
   add_foreign_key "events", "professionals"
-  add_foreign_key "events", "reviews"
+  add_foreign_key "events", "reviews", column: "user_review_id"
   add_foreign_key "events", "users"
   add_foreign_key "reviews", "events"
 end
