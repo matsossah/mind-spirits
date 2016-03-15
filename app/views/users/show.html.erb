@@ -1,73 +1,97 @@
 <div class="banner">
   <div class="show-user">
-    <%= render 'shared/navbar' %>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12 col-sm-3">
-          <div class="profil">
-            <%= image_tag current_user.picture, class:"profile-img"%>
-            <div class="profile-text">
-              <h1 class="profile-name"><%= @user.name%></h1>
-              <h6>User account</h6>
-              <div>
-                <ul>
-                  <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
-                  <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
-                  <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
-                </ul>
-              </div>
-              <%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%>
-              <hr>
-              <div class="login_btn">
-                <% if @user.professional %>
-                  <%= link_to " go to PRO", user_professional_path(@user, @user.professional), id:"log" %>
-                <% end %>
+  <%= render 'shared/navbar' %>
+    <div class="profile">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-3">
+            <div class="profile-content">
+              <%= image_tag current_user.picture, class:"avatar"%>
+              <div class="profile-text">
+                <h2 class="text-center"><%= @user.name%></h2>
+                <h6 class="text-center">User account</h6>
+                <hr>
+                <div>
+                  <ul class="list-unstyled">
+                    <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
+                    <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
+                    <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
+                  </ul>
+                </div>
+
+                <small><%= link_to "Edit profile", edit_user_path(current_user), id:"edit"%></small>
+                <hr>
+                <div class="login_btn">
+                  <% if @user.professional %>
+                    <%= link_to " go to PRO", user_professional_path(@user, @user.professional), class:"login_btn" %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          <div class="user-content">
-          <h3>Events</h3>
-            <% if current_user.events.empty? %>
-              <h5>You don't have any events yet</h5>
-              <%= link_to 'Create an event', new_user_event_path(current_user) %>
-            <% else %>
-              <% current_user.events.each do |event| %>
-                 <div>
-                   <ul>
-                    <%= Professional.find(event.professional_id).professional_role %>
-                     <li><%= Professional.find(event.professional_id).user.name %></li>
-                     <li><%= event.start_time.to_formatted_s(:long_ordinal) %></li>
-                     <li><%= event.address %></li>
-                   </ul>
-                </div>
-                <% if event.review_id.nil? %>
-                  <div class="reviews-form">
-                    <%= render 'reviews/form', event: event %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="user-content">
+            <h3>Events</h3>
+              <% if current_user.events.empty? %>
+                <h5>You don't have any events yet</h5>
+                <hr>
+                <%= link_to 'Create an event', new_user_event_path(current_user) %>
+              <% else %>
+                <% current_user.events.each do |event| %>
+                  <div>
+                    <ul>
+                      <%= Professional.find(event.professional_id).professional_role %>
+                      <li><%= Professional.find(event.professional_id).user.name %></li>
+                      <li><%= event.start_time.to_formatted_s(:long_ordinal) %></li>
+                      <li><%= event.address %></li>
+                    </ul>
                   </div>
-                <% else %>
-                  <%= Review.find(event.review_id).rating %>
-                  <%= Review.find(event.review_id).content %>
+                  <% if event.review_id.nil? %>
+                    <div class="reviews-form">
+                      <%= render 'reviews/form', event: event %>
+                    </div>
+                  <% else %>
+                    <%= Review.find(event.review_id).rating %>
+                    <%= Review.find(event.review_id).content %>
+                  <% end %>
                 <% end %>
               <% end %>
-              <hr>
-            <%= link_to 'Create an event', new_user_event_path(current_user) %>
-            <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-3">
-        <h3>Reviews</h3>
-        <% if current_user.reviews.empty? %>
-          <h5>You don't have any reviews yet</h5>
-        <% else %>
-          <% current_user.reviews.each do |review| %>
-            <ul>
-              <li><% review.rating %></li>
-              <li><% review.content %></li>
-            </ul>
-          <% end %>
-        <% end %>
+          <div class="col-xs-12 col-sm-9">
+            <div class="notifications">
+              <div class="create-event profile-content user-content">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-9">
+                    <h5>CREER UN EVENEMENT</h5>
+                    <p class="lead"> Organiser une soirée cocktail, une dégustation vin ou un dîner dans les règles de l'art.</p>
+                  </div>
+                  <div class="col-xs-12 col-sm-3">
+                    <%= link_to "Créer un évènement", new_user_event_path(current_user), class:"btn btn-primary" %>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews profile-content user-content">
+                <h5>MESSAGES:</h5>
+                <div class="col-xs-12 col-sm-3">
+                  <h3>Reviews</h3>
+                  <% if current_user.reviews.empty? %>
+                    <h5>You don't have any reviews yet</h5>
+                  <% else %>
+                    <% current_user.reviews.each do |review| %>
+                      <ul>
+                        <li><% review.rating %></li>
+                        <li><% review.content %></li>
+                      </ul>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="last-event profile-content user-content">
+                <h5>DERNIER EVENEMENT</h5>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

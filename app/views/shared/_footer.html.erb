@@ -1,45 +1,47 @@
-<div class="wrapper-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-3">
-        <h4>REGISTER AS A PROFESSIONAL</h4>
-        <ul>
-          <% if user_signed_in? %>
-            <li><%= link_to "Register", new_user_professional_path(current_user) %></li>
-          <% else %>
-            <%= link_to "Login first", new_user_session_path, class: "btn navbar-wagon-item navbar-wagon-button" %>
-          <% end %>
-        </ul>
+<footer>
+  <div class="wrapper-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <h4>REGISTER AS A PROFESSIONAL</h4>
+          <ul>
+            <% if user_signed_in? %>
+              <li><%= link_to "Register", new_user_professional_path(current_user) %></li>
+            <% else %>
+              <%= link_to "Login first", new_user_session_path, class: "btn navbar-wagon-item navbar-wagon-button" %>
+            <% end %>
+          </ul>
+        </div>
+         <div class="col-xs-12 col-sm-3">
+          <h4>INFO</h4>
+          <ul>
+            <li>FAQ</li>
+            <li>PRICING</li>
+            <li>TERMS OF USE</li>
+            <li>PRIVACY</li>
+          </ul>
+        </div>
+         <div class="col-xs-12 col-sm-3">
+          <h4>CONTACT</h4>
+          <ul>
+            <li>PARTNERSHIPS</li>
+            <li>MEDIA ENQUIRIES</li>
+            <li>SUPPORT@­MINDSPIRIT.COM</li>
+            <li>+1 (941) 888-4447</li>
+          </ul>
+        </div>
+         <div class="col-xs-12 col-sm-3">
+          <h4>ADDRESS</h4>
+          <ul>
+            <li>MIND SPIRIT INC.</li>
+            <li>500 3RD ST.</li>
+            <li>SAN FRANCISCO, CA 94107</li>
+          </ul>
+        </div>
       </div>
-       <div class="col-xs-12 col-sm-3">
-        <h4>INFO</h4>
-        <ul>
-          <li>FAQ</li>
-          <li>PRICING</li>
-          <li>TERMS OF USE</li>
-          <li>PRIVACY</li>
-        </ul>
+      <div class="col-xs-12">
+        <h5 style="text-align: center;">© 2016 MIND SPIRIT INC.</h5>
       </div>
-       <div class="col-xs-12 col-sm-3">
-        <h4>CONTACT</h4>
-        <ul>
-          <li>PARTNERSHIPS</li>
-          <li>MEDIA ENQUIRIES</li>
-          <li>SUPPORT@­MINDSPIRIT.COM</li>
-          <li>+1 (941) 888-4447</li>
-        </ul>
-      </div>
-       <div class="col-xs-12 col-sm-3">
-        <h4>ADDRESS</h4>
-        <ul>
-          <li>MIND SPIRIT INC.</li>
-          <li>500 3RD ST.</li>
-          <li>SAN FRANCISCO, CA 94107</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-xs-12">
-      <h5 style="text-align: center;">© 2016 MIND SPIRIT INC.</h5>
     </div>
   </div>
-</div>
+</footer>

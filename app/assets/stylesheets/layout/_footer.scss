@@ -1,9 +1,14 @@
 .wrapper-footer {
   background-color: rgb(50,50,50);
   color: white;
-  padding: 30px;
+
+  width:100%;
+
+  position:absolute;
+  bottom:0;
   ul li {
     list-style-type : none;
   }
   size: 11px;
 }
+
