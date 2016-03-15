@@ -501,74 +501,83 @@ p10 = Professional.create!(
 
 e1 = Event.create!(
   user: u1,
-  address:"98 Rue de Douai, Lille, France",
-  start_time: DateTime.strptime("03/22/2016 12:00 AM", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("04/22/2016 12:00 AM", "%m/%d/%Y %H:%M"),
+  address:"67 Rue de Paris, Lille, France",
+  start_time: DateTime.strptime("03/22/2016 07:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("03/23/2016 03:00 AM", "%m/%d/%Y %H:%M"),
   professional: p10
   )
 
-# e2 = Event.create!(
-#   user_id: u2,
-#   start_time: DateTime.new(2016,4,10,12,30),
-#   end_time: DateTime.new(2016,4,10,20,0),
-#   professional: p9
-#   )
+e2 = Event.create!(
+  user: u2,
+  address: "12 Avenue de Bretagne, Lille, France",
+  start_time: DateTime.strptime("04/10/2016 12:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("04/12/2016 07:00 PM", "%m/%d/%Y %H:%M"),
+  professional: p9
+  )
 
-# e3 = Event.create!(
-#   user_id: u3,
-#   start_time: ,
-#   end_time: ,
-#   professional:p8
-#   )
+e3 = Event.create!(
+  user: u3,
+  address: "12 Boulevard Jean-Baptiste Lebas, Lille, France",
+  start_time: DateTime.strptime("01/05/2016 01:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("01/05/2016 04:00 PM", "%m/%d/%Y %H:%M"),
+  professional:p8
+  )
 
-# e4 = Event.create!(
-#   user_id: u4,
-#   start_time: ,
-#   end_time: ,
-#   professional: p7
-#   )
+e4 = Event.create!(
+  user: u4,
+  address: "15 Rue de la Digue, Lille, France",
+  start_time: DateTime.strptime("08/05/2016 01:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("08/05/2016 04:00 PM", "%m/%d/%Y %H:%M"),
+  professional: p7
+  )
 
-# e5 = Event.create!(
-#   user_id: u5,
-#   start_time: ,
-#   end_time: ,
-#   professional: p5
-#   )
+e5 = Event.create!(
+  user: u5,
+  address: "50 Rue de Béthune, Lille, France",
+  start_time: DateTime.strptime("03/31/2016 09:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("03/31/2016 11:00 PM", "%m/%d/%Y %H:%M"),
+  professional: p5
+  )
 
-# e6 = Event.create!(
-#   user_id: u6,
-#   start_time: ,
-#   end_time: ,
-#   professional: p6
-#   )
+e6 = Event.create!(
+  user: u6,
+  address: "110 Rue Jeanne d Arc, Lille, France",
+  start_time: DateTime.strptime("04/07/2016 09:00 AM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("04/12/2016 11:00 AM", "%m/%d/%Y %H:%M"),
+  professional: p6
+  )
 
-# e7 = Event.create!(
-#   user_id: u7,
-#   start_time: ,
-#   end_time: ,
-#   professional: p4
-#   )
+e7 = Event.create!(
+  user: u7,
+  address: "12 Rue de Rouen, Lille, France",
+  start_time: DateTime.strptime("06/15/2016 10:00 AM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("06/15/2016 02:00 PM", "%m/%d/%Y %H:%M"),
+  professional: p4
+  )
 
-# e8 = Event.create!(
-#   user_id: u8,
-#   start_time: ,
-#   end_time: ,
-#   professional: p3
-#   )
+e8 = Event.create!(
+  user: u8,
+  address: "45 Rue de Gand, Lille, France",
+  start_time: DateTime.strptime("05/20/2016 09:00 AM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("05/20/2016 16:00 PM", "%m/%d/%Y %H:%M"),
+  professional: p3
+  )
 
-# e9 = Event.create!(
-#   user_id: u9,
-#   start_time: ,
-#   end_time: ,
-#   professional: p2
-#   )
+e9 = Event.create!(
+  user: u9,
+  address: "12 Rue du Pont du Lion d Or, Lille, France",
+  start_time: DateTime.strptime("06/24/2016 04:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("06/24/2016 06:00 PM", "%m/%d/%Y %H:%M"),
+  professional: p2
+  )
 
-# e10 = Event.create!(
-#   user_id: u10,
-#   start_time: ,
-#   end_time: ,
-#   professional: p1
-#   )
+e10 = Event.create!(
+  user: u10,
+  address:"12 Rue de la Bascule, Lille, France",
+  start_time: DateTime.strptime("06/11/2016 02:00 AM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("06/11/2016 07:00 PM", "%m/%d/%Y %H:%M"),
+  professional: p1
+  )
 #
 #   Review.Create!(
 #   rating:
