@@ -33,6 +33,7 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'enumerize'
 gem "gmaps4rails"
+gem "letter_opener", group: :development
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
