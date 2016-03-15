@@ -12,8 +12,12 @@
     </div>
   </div>
   <div class="square-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(@cocktail.image) %>)no-repeat center center; background-size: cover">
-    <div>
-      <%= link_to "Find a Barman", new_user_event_path(current_user), class:"find" %>
+    <div style="text-align:center;" >
+    <% if user_signed_in? %>
+      <%= link_to "Find a Barman", new_user_event_path(current_user), class: "btn navbar-wagon-item navbar-wagon-button find" %>
+    <% else %>
+      <%= link_to "Login to book a barman", new_user_session_path, class: "btn navbar-wagon-item navbar-wagon-button find text-center" %>
+    <% end %>
     </div>
   </div>
 </div>
