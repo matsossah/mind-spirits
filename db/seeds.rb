@@ -32,14 +32,6 @@ chambord = Ingredient.create(name:"chambord")
 airelle_juice = Ingredient.create(name: "Airelle juice")
 
 
-# def upload_image(cocktail, image_string)
-#   pi = ImageUploader.create!(:image => image)
-#   pi.image.store!(File.open(File.join(Rails.root, image_string)))
-#   cocktail.image = pi
-#   cocktail.save!
-# end
-
-
 
 cocktail1 = Cocktail.new(
   name: "Mojito",
