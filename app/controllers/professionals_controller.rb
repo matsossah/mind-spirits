@@ -1,5 +1,4 @@
 class ProfessionalsController < ApplicationController
-  after_create :send_welcome_email
 
   def index
     @professionals = Professional.all
@@ -47,9 +46,5 @@ private
 
   def professional_params
     params.require(:professional).permit(:max_travel_range, :professional_role, :phone_number, :business_address, :description)
-  end
-
-  def send_welcome_email
-    UserMailer.welcome_pro(self).deliver_now
   end
 end

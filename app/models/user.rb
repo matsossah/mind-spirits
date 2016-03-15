@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  after_create :send_welcome_email
+
   has_many :professionals, through: :events
   has_many :events
 
@@ -27,4 +29,13 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome_user(self).deliver_now
+  end
 end
+
+
+
