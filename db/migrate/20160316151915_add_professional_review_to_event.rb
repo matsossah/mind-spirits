@@ -1,5 +1,5 @@
 class AddProfessionalReviewToEvent < ActiveRecord::Migration
   def change
-    add_column :events, :professional_review_id, :integer
+    add_reference :events, :professional_review, references: :reviews
   end
 end

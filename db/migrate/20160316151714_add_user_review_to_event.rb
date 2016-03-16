@@ -1,5 +1,5 @@
 class AddUserReviewToEvent < ActiveRecord::Migration
   def change
-    rename_column :events, :review_id, :user_review_id
+    add_reference :events, :user_review, references: :reviews
   end
 end
