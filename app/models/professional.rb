@@ -1,5 +1,5 @@
 class Professional < ActiveRecord::Base
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   extend Enumerize
   geocoded_by :business_address
