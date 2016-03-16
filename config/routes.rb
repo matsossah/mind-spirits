@@ -1,12 +1,10 @@
  Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root :to => "cocktails#index"
 
   resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
     resources :doses, only: [:new, :create]
-  end
-
-  Rails.application.routes.draw do
-    devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   end
 
   resources :users do
