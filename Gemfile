@@ -34,6 +34,7 @@ gem 'omniauth'
 gem 'enumerize'
 gem "gmaps4rails"
 gem "letter_opener", group: :development
+gem "rails_admin"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
