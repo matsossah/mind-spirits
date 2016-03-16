@@ -23,8 +23,8 @@ class EventsController < ApplicationController
     begin
       event = service.reserve!
       flash[:notice] = "You are booked!"
-      EventMailer.new_event_user(event).deliver_now
-      EventMailer.new_event_pro(event).deliver_now
+      # EventMailer.new_event_user(event).deliver_now
+      # EventMailer.new_event_pro(event).deliver_now
       redirect_to user_path(current_user)
     rescue ProfessionalNotAvailableException => ex
       flash[:notice] = "Sorry, the booking failed"

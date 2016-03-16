@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
       @review.save
       event.professional_review_id = @review.id
       event.save
-      ReviewMailer.new_professional_review(reviewable).deliver_now
+      # ReviewMailer.new_professional_review(reviewable).deliver_now
     else
       reviewer = current_user
       reviewable = event.professional
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
       @review.save
       event.user_review_id = @review.id
       event.save
-      ReviewMailer.new_user_review(reviewable).deliver_now
+      # ReviewMailer.new_user_review(reviewable).deliver_now
     end
 
     if @review.save

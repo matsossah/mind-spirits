@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   has_many :professionals, through: :events
   has_many :events

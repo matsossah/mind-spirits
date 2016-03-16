@@ -80,7 +80,14 @@
 }
 
 /* Navbar dropdown menu */
-.navbar-wagon-dropdown-menu {
+.non-admin {
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+  height: 150px;
+}
+
+.admin {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
