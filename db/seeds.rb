@@ -433,7 +433,8 @@ u2 = User.create!(
 u3 = User.create!(
   name: "Matéo Sossah",
   password:"12345678",
-  email: "mateo@mindspirits.fr"
+  email: "mateo.sossah@gmail.com",
+  admin: true
 )
 
 u4 = User.create!(
