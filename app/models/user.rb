@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   # after_create :send_welcome_email
+  after_commit :find_user_full_name
 
   has_many :professionals, through: :events
   has_many :events
@@ -34,6 +35,10 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     UserMailer.welcome_user(self).deliver_now
+  end
+
+  def find_user_full_name
+    FindUserFullNameJob.perform_later(self.id)
   end
 end
 

@@ -5,9 +5,9 @@
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root :to => "cocktails#index"
 
-  authenticate :user, lambda { |u| u.admin } do
+  #authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
-  end
+  #end
 
   resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
     resources :doses, only: [:new, :create]
