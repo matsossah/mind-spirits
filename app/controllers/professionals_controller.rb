@@ -12,6 +12,7 @@ class ProfessionalsController < ApplicationController
   def show
     user = User.find(params[:user_id])
     @professional = user.professional
+    @professional_coordinates = { lat: @professional.latitude, lng: @professional.longitude }
     @review = Review.new
   end
 
