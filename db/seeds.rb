@@ -422,25 +422,28 @@ Dose.create!(
 u1 = User.new(
   name: "Greg Sion",
   password: "12345678",
-  email: "gregsion@mindspirits.fr"
+  email: "gregsion@mindspirits.fr",
+  admin: true
 )
 u1.save!
 u2 = User.create!(
   name: "Guillaume Caulier",
   password:'12345678',
-  email: "guillaume@mindspirits.fr"
+  email: "guillaume@mindspirits.fr",
+  admin: true
 )
 u3 = User.create!(
   name: "Matéo Sossah",
   password:"12345678",
-  email: "mateo.sossah@gmail.com",
+  email: "mateo@mindspirits.com",
   admin: true
 )
 
 u4 = User.create!(
   name: "Juliette Picard",
   password:"12345678",
-  email: "juliette@mindspirits.fr"
+  email: "juliette@mindspirits.fr",
+  admin: true
 )
 
 u5 = User.create!(
