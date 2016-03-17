@@ -1,22 +1,35 @@
-// app/assets/javascripts/application.js
-
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery-ui.min
 //= require bootstrap-sprockets
+//= require bootstrap.min
 
-//= require_tree .
-//= require moment
-//= require bootstrap-datetimepicker
-//= require underscore
-//= require gmaps/google
+//= require plugin/jquery.easing
+//= require plugin/jquery.fitvids
+//= require plugin/jquery.viewportchecker
+//= require plugin/jquery.stellar.min
+//= require plugin/wow.min
+//= require plugin/jquery.colorbox-min
+//= require plugin/owl.carousel.min
+//= require plugin/isotope.pkgd.min
+//= require plugin/masonry.pkgd.min
+//= require plugin/imagesloaded.pkgd.min
+//= require plugin/jPushMenu
+//= require plugin/jquery.fs.tipper.min
+//= require plugin/mediaelement-and-player.min
+//= require plugin/background-check.min
+//= require theme
+//= require navigation
+//= require jquery.youtubebackground
 
-$(function() {
-    $('.add_new_dose').click(function() {
-    location.reload();
+
+$(document).ready(function(){
+  $('#video').YTPlayer({
+    fitToBackground: true,
+    videoId: 'W9W-JjxcIJU'
   });
-});
-
-
+})
 
 function initializeAutocomplete(id) {
   var element = document.getElementById(id);
