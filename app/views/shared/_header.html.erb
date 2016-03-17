@@ -17,26 +17,26 @@
             <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
       <% if current_user.admin %>
-        <div >
+        <div>
           <div>
             <%= image_tag current_user.picture %>
-            <ul class="nav-sub-dropdown">
-              <li class="nav-has-sub">
+            <ul>
+              <li>
                 <%= link_to user_path(current_user) do %>
                   <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
                 <% end %>
               </li>
-              <li class="nav-has-sub">
+              <li>
                 <%= link_to cocktails_path do %>
                   <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
                 <% end %>
               </li>
-              <li class="nav-has-sub">
+              <li>
                 <%= link_to rails_admin_path do %>
                   <i class="fa fa-cogs"></i>  <%= t ".profile", default: "Admin" %>
                 <% end %>
               </li>
-              <li class="nav-has-sub">
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
                 <% end %>
@@ -48,18 +48,18 @@
         <div>
           <div>
             <%= image_tag current_user.picture %>
-            <ul class="nav-sub-dropdown">
-              <li class="nav-has-sub">
+            <ul>
+              <li >
                 <%= link_to user_path(current_user) do %>
                   <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
                 <% end %>
               </li>
-              <li class="nav-has-sub">
+              <li>
                 <%= link_to cocktails_path do %>
                   <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
                 <% end %>
               </li>
-              <li class="nav-has-sub">
+              <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
                 <% end %>
