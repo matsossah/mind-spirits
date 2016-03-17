@@ -19,6 +19,11 @@ gem 'puma',           group: :production
 gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'clearbit'
+
+gem 'sidekiq'
+gem 'sinatra'  # Dependency of sidekiq
+gem 'sidekiq-failures'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'simple_form_fancy_uploads'

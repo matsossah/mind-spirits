@@ -18,6 +18,14 @@
   left: 10px;
   font-size: 20px;
 }
+
+.cocktail-card {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 .card-description {
   position: absolute;
   bottom: 10px;
