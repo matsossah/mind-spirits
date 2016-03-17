@@ -71,6 +71,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    clearbit (0.2.2)
+      nestful (~> 1.1.0)
     cloudinary (1.1.2)
       aws_cf_signer
       rest-client
@@ -83,6 +85,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
+    connection_pool (2.2.0)
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -260,6 +263,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nested_form (0.3.2)
+    nestful (1.1.1)
     netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -284,6 +288,8 @@ GEM
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5.2)
@@ -335,6 +341,7 @@ GEM
       builder
       nokogiri (>= 1.4.1)
       trollop
+    redis (3.2.2)
     remotipart (1.2.1)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
@@ -368,6 +375,12 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sidekiq (4.1.1)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      redis (~> 3.2, >= 3.2.1)
+    sidekiq-failures (0.4.5)
+      sidekiq (>= 2.16.0)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -375,6 +388,10 @@ GEM
       carrierwave
       rails (>= 4.0.0)
       simple_form (~> 3.1)
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -415,6 +432,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.17.37)
   byebug
   carrierwave
+  clearbit
   cloudinary
   coffee-rails (~> 4.1.0)
   devise
@@ -440,9 +458,12 @@ DEPENDENCIES
   rolify
   rspec-rails
   sass-rails (~> 5.0)
+  sidekiq
+  sidekiq-failures
   simple_form
   simple_form_fancy_uploads
   simple_form_jasny_fileupload!
+  sinatra
   slim
   spring
   uglifier (>= 1.3.0)
