@@ -1,0 +1,45 @@
+es:
+  index:
+    FindBarman: "Encontrar un camarero para mi recepción"
+
+  new:
+    AddCocktail: "Añadir su cóctel"
+    Name: "Nombre del cóctel"
+    Description: "Poner el vodka en una coctelera, añadir la menta ... etc."
+
+
+  devise:
+    registrations:
+      new:
+        SignUp: Regístrarse
+        Name: Nombre
+        Email: Email
+        Password: Contraseña
+        PasswordConfirmation: Confirmar la contraseña
+        SignUpButton: Regístrarse
+
+  events:
+    new:
+      CreateEvent: Crear un evento
+      StartTime: Inicio
+      EndTime: Final
+      PickBarman: Elegir un camarero
+
+  users:
+    edit:
+      EditProfile: Editar su perfil
+      YourName: Nombre
+      YourPhone: Su numero de teléfono
+      YourAddress: Su dirección
+      Edit: Editar
+
+  activerecord:
+    models:
+      cocktail: "Cóctel"
+    attributes:
+      cocktail:
+        name: "Nombre"
+      user:
+        name: Nombre
+        phone_number: teléfono
+        address: dirección

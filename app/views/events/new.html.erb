@@ -3,12 +3,12 @@
   <div class="container">
     <div class="col-xs-12 col-sm-6  col-sm-offset-3">
       <div class="login">
-      <h2>Create an event</h2>
+      <h2><%= t '.CreateEvent'%></h2>
         <div class="row">
           <form action="<%= user_events_path(current_user) %>" method="POST">
             <div class="form-group">
               <div class='input-group date' id='datetimepicker1'>
-                  <input type='text' class="form-control" name="start_time" placeholder="Start time" />
+                  <input type='text' class="form-control" name="start_time" placeholder=<%="#{t 'events.new.StartTime'}"%>>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
               <div class='input-group date' id='datetimepicker2'>
-                  <input type='text' class="form-control" name="end_time" placeholder="End time" />
+                  <input type='text' class="form-control" name="end_time" placeholder=<%="#{t 'events.new.EndTime'}"%>>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
               <div class='input-group'>
-                <input class="form-control" name="professional_id" placeholder="Pick a barman" />
+                <input class="form-control" name="professional_id" placeholder=<%="#{t 'events.new.PickBarman'}"%>>
               </div>
             </div>
             <div class="form-inputs">

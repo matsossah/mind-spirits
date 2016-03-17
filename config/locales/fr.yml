@@ -1,2 +1,46 @@
 fr:
-  hello: "Bonjour à tous"
+  index:
+    FindBarman: "Trouver un barman pour ma réception"
+
+  new:
+    AddCocktail: "Ajouter votre coktail"
+    Name: "Nom du cocktail"
+    Description: "Mettez la vodka dans un shaker , ajoutez la menthe ... etc"
+
+  devise:
+    registrations:
+      new:
+        SignUp: S'inscrire
+        Name: Prénom
+        Email: Email
+        Password: Mot de passe
+        PasswordConfirmation: Confirmer le mot de passe
+        SignUpButton: S'inscrire
+
+
+  events:
+    new:
+      CreateEvent: Créer un évènement
+      StartTime: Début
+      EndTime: Fin
+      PickBarman: Choisir un barman
+
+  users:
+    edit:
+      EditProfile: Editer le profil
+      YourName: Prénom
+      YourPhone: Votre numéro de téléphone
+      YourAddress: Votre Adresse
+      Edit: Editer
+
+  activerecord:
+    models:
+      Cocktail: "Cocktail"
+    attributes:
+      Cocktail:
+        name: "Nom"
+      user:
+        name: Prénom
+        phone_number: Téléphone
+        address: Adresse
+

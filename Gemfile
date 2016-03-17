@@ -17,6 +17,7 @@ gem 'mini_magick'
 gem 'pg', '~> 0.15'
 gem 'puma',           group: :production
 gem 'rails_12factor', group: :production
+gem "rails-i18n"
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'clearbit'
