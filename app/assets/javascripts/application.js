@@ -71,13 +71,13 @@ function distance(lat1, lon1, lat2, lon2) {
   return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
 
-function define_markers(professionals) //sends back an array of hashes [{:lat=>50.635793, :lng=>3.045787}]
-  markers = Gmaps4rails.build_markers(professionals) do |professional, marker|
-    marker.lat professional.latitude
-    marker.lng professional.longitude
-  end
+// function define_markers(professionals) //sends back an array of hashes [{:lat=>50.635793, :lng=>3.045787}]
+//   markers = Gmaps4rails.build_markers(professionals) do |professional, marker|
+//     marker.lat professional.latitude
+//     marker.lng professional.longitude
+//   end
 
-}
+// }
 
 $('#user_input_autocomplete_address').on('blur', function() {
   setTimeout(function() {
