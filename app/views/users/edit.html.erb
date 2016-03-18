@@ -3,18 +3,18 @@
   <div class="container">
     <div class="col-xs-12 col-sm-6  col-sm-offset-3">
       <div class="login">
-        <h2>Edit your profile</h2>
+        <h2><%= t '.EditProfile'%> </h2>
         <%= simple_form_for(@user) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :name, label: false, placeholder:'Your name'%>
-            <%= f.input :phone_number,label: false, placeholder:'Your phone number'%>
-            <%= f.input :address, input_html: { id: "user_input_autocomplete_address"}, label: false, placeholder:'Your address' %>
+            <%= f.input :name, placeholder:"#{t 'users.edit.YourName'}"%>
+            <%= f.input :phone_number, placeholder:"#{t 'users.edit.YourPhone'}"%>
+            <%= f.input :address, input_html: { id: "user_input_autocomplete_address"}, placeholder:"#{t 'users.edit.YourAddress'}" %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Edit", id:'log' %>
+            <%= f.button :submit,"#{t 'users.edit.Edit'}", id:'log' %>
           </div>
         <% end %>
       </div>

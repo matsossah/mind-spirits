@@ -1,4 +1,8 @@
  Rails.application.routes.draw do
+  scope '(:locale)', locale: /fr|es/ do
+    resources :cocktails
+  end
+
   require "sidekiq/web"
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
