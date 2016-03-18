@@ -4,7 +4,8 @@
 //= require jquery-ui.min
 //= require bootstrap-sprockets
 //= require bootstrap.min
-
+//= require moment
+//= require bootstrap-datetimepicker
 //= require plugin/jquery.easing
 //= require plugin/jquery.fitvids
 //= require plugin/jquery.viewportchecker
@@ -100,8 +101,20 @@ $('#user_input_autocomplete_address').on('blur', function() {
     //    });
     //}
     //
-    alert('toto');
+    // console.log('address taken');
+    // alert('toto');
   }, 500);
 });
 
-
+// $('.professional-chosen').click(function() {
+//   console.log('click listened');
+//     // var professional = $(this).attr('data-professional');
+//     // $('#my-barman').val(professional);
+// });
+//
+function fillForm(element) {
+  var professional_id = $(element).attr('data-id');
+  $('#my-barman').val(professional_id);
+  var professional_name = $(element).attr('data-name');
+  $('#my-name').val(professional_name);
+}

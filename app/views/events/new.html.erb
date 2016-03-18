@@ -22,9 +22,18 @@
                   </span>
               </div>
             </div>
+            <div class="form-inputs">
+              <div>
+                <input type='text' class="form-control" id="user_input_autocomplete_address" class="event-address" name="address" placeholder="Event address" />
+              </div>
+            </div>
+            <div class="form-group barman">
+              <input id="my-name" class="form-control" name="professional_name" placeholder="Pick a barman from the map" />
+            </div>
+            <div class="form-group barman">
             <div class="form-group">
               <div class='input-group'>
-                <input class="form-control" name="professional_id" placeholder="Pick a barman" />
+                <input id="my-barman" class="form-control" name="professional_id" type='hidden' />
               </div>
             </div>
             <div class="form-inputs">
@@ -38,17 +47,20 @@
             </div>
           </form>
           <script type="text/javascript">
-              $(function () {
+              $( document ).ready(function() {
                   $('#datetimepicker1').datetimepicker();
               });
           </script>
           <script type="text/javascript">
-              $(function () {
+              $( document ).ready(function() {
                   $('#datetimepicker2').datetimepicker();
               });
           </script>
         </div>
       </div>
+    </div>
+    <div class="col-xs-12 col-sm-5  col-sm-offset-1">
+      <%= render 'professionals/index' %>
     </div>
   </div>
 </div>
