@@ -75,14 +75,6 @@
       </div>
     </div>
   </div>
-  <% content_for(:after_js) do %>
-    <%= javascript_tag do %>
-      $(document).ready(function() {
-        var coord = <%= raw @professional_coordinates.to_json %>;
-        alert('Pro coordinates are ' + coord.lat + ', ' + coord.lng);
-      });
-    <% end %>
-  <% end %>
 </div>
 
 

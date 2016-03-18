@@ -2,8 +2,8 @@ class Professional < ActiveRecord::Base
   # after_create :send_welcome_email
 
   extend Enumerize
-  # geocoded_by :business_address
-  # after_validation :geocode, if: :business_address_changed?
+  geocoded_by :business_address
+  after_validation :geocode, if: :business_address_changed?
 
   belongs_to :user
 
