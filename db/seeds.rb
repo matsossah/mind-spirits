@@ -423,63 +423,73 @@ u1 = User.new(
   name: "Greg Sion",
   password: "12345678",
   email: "gregsion@mindspirits.fr",
-  admin: true
+  admin: true,
+  rating: 3
 )
 u1.save!
 u2 = User.create!(
   name: "Guillaume Caulier",
   password:'12345678',
   email: "guillaume@mindspirits.fr",
-  admin: true
+  admin: true,
+  rating: 4
 )
 u3 = User.create!(
   name: "Matéo Sossah",
   password:"12345678",
   email: "mateo@mindspirits.com",
-  admin: true
+  admin: true,
+  rating: 2
 )
 
 u4 = User.create!(
   name: "Juliette Picard",
   password:"12345678",
   email: "juliette@mindspirits.fr",
-  admin: true
+  admin: true,
+  rating: 3
 )
 
 u5 = User.create!(
   name: "Bob Dupont",
   password:"12345678",
-  email: "bob@mindspirits.fr"
+  email: "bob@mindspirits.fr",
+  rating: 5
 )
 
 u6 = User.create!(
   name: "Jules Grammont",
   password:"12345678",
-  email: "jules@mindspirits.fr"
+  email: "jules@mindspirits.fr",
+  rating: 1
 )
 
 u7 = User.create!(
   name: "Catherine Dumont",
   password:"12345678",
-  email: "catherine@mindspirits.fr"
+  email: "catherine@mindspirits.fr",
+  rating: 4
 )
 
 u8 = User.create!(
   name: "Romain Cuvelier",
   password:"12345678",
-  email: "romain@mindspirits.fr"
+  email: "romain@mindspirits.fr",
+  rating: 3.5
 )
 
 u9 = User.create!(
   name: "Sylvie Bernard",
   password:"12345678",
-  email: "sylvie@mindspirits.fr"
+  email: "sylvie@mindspirits.fr",
+  rating: 4.8
 )
 
 u10 = User.create!(
   name: "Marie Joly",
   password:"12345678",
-  email: "marie@mindspirits.fr"
+  email: "marie@mindspirits.fr",
+  rating: 5
 )
 
 p1 = Professional.create!(
@@ -490,18 +500,20 @@ p1 = Professional.create!(
   professional_role: "barman",
   business_address: "12 Rue Solférino, Lille, France",
   latitude: 50.635793,
-  longitude: 3.045787
+  longitude: 3.045787,
+  rating: 3.8
   )
 
 p2 = Professional.create!(
   user: u2,
-  description: "totod work in the best bar in New York during 20 years.",
+  description: " work in the best bar in New York during 20 years.",
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
   business_address: "165 Rue nationale, Lille, France",
   latitude: 50.632665,
-  longitude: 3.052761
+  longitude: 3.052761,
+  rating: 4.5
   )
 
 p3 = Professional.create!(
@@ -512,7 +524,8 @@ p3 = Professional.create!(
   professional_role: "barman",
   business_address: "23 Rue Léonard Danel, Lille, France",
   latitude: 50.639856,
-  longitude: 3.056562
+  longitude: 3.056562,
+  rating: 4
   )
 
 p4 = Professional.create!(
@@ -523,7 +536,8 @@ p4 = Professional.create!(
   professional_role: "barman",
   business_address: "66 Rue Masséna, Lille, France",
   latitude: 50.631066,
-  longitude: 3.054724
+  longitude: 3.054724,
+  rating: 3.7
   )
 
 p5 = Professional.create!(
@@ -534,7 +548,8 @@ p5 = Professional.create!(
   professional_role: "barman",
   business_address: "45 Rue de Paris, Lille, France",
   latitude: 50.635333,
-  longitude: 3.067002
+  longitude: 3.067002,
+  rating: 3.1
   )
 
 p6 = Professional.create!(
@@ -545,7 +560,8 @@ p6 = Professional.create!(
   professional_role: "barman",
   business_address: "26 Rue de la Clef, Lille, France",
   latitude: 50.635333,
-  longitude: 3.067002
+  longitude: 3.067002,
+  rating: 4
   )
 
 p7 = Professional.create!(
@@ -556,7 +572,8 @@ p7 = Professional.create!(
   professional_role: "barman",
   business_address: "125 Rue des Postes, Lille, France",
   latitude: 50.623730,
-  longitude: 3.054609
+  longitude: 3.054609,
+  rating: 4.5
   )
 
 p8 = Professional.create!(
@@ -567,7 +584,8 @@ p8 = Professional.create!(
   professional_role: "barman",
   business_address: "12 Rue de Gand, Lille, France",
   latitude: 50.643186,
-  longitude: 3.067307
+  longitude: 3.067307,
+  rating: 5
   )
 
 p9 = Professional.create!(
@@ -578,7 +596,8 @@ p9 = Professional.create!(
   professional_role: "barman",
   business_address: "78 Boulevard Louis XIV, Lille, France",
   latitude: 50.643186,
-  longitude: 3.067307
+  longitude: 3.067307,
+  rating: 3
   )
 
 p10 = Professional.create!(
@@ -589,7 +608,8 @@ p10 = Professional.create!(
   professional_role: "barman",
   business_address:"98 Rue de Douai, Lille, France",
   latitude: 50.621917,
-  longitude: 3.072078
+  longitude: 3.072078,
+  rating: 5
   )
 
 e1 = Event.create!(
