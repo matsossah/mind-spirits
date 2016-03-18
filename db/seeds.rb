@@ -488,7 +488,9 @@ p1 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "12 Rue Solférino, Lille, France"
+  business_address: "12 Rue Solférino, Lille, France",
+  latitude: 50.635793,
+  longitude: 3.045787
   )
 
 p2 = Professional.create!(
@@ -497,7 +499,9 @@ p2 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "165 Rue nationale, Lille, France"
+  business_address: "165 Rue nationale, Lille, France",
+  latitude: 50.632665,
+  longitude: 3.052761
   )
 
 p3 = Professional.create!(
@@ -506,7 +510,9 @@ p3 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "23 Rue Léonard Danel, Lille, France"
+  business_address: "23 Rue Léonard Danel, Lille, France",
+  latitude: 50.639856,
+  longitude: 3.056562
   )
 
 p4 = Professional.create!(
@@ -515,7 +521,9 @@ p4 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "66 Rue Masséna, Lille, France"
+  business_address: "66 Rue Masséna, Lille, France",
+  latitude: 50.631066,
+  longitude: 3.054724
   )
 
 p5 = Professional.create!(
@@ -524,7 +532,9 @@ p5 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "45 Rue de Paris, Lille, France"
+  business_address: "45 Rue de Paris, Lille, France",
+  latitude: 50.635333,
+  longitude: 3.067002
   )
 
 p6 = Professional.create!(
@@ -533,7 +543,9 @@ p6 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "26 Rue de la Clef, Lille, France"
+  business_address: "26 Rue de la Clef, Lille, France",
+  latitude: 50.635333,
+  longitude: 3.067002
   )
 
 p7 = Professional.create!(
@@ -542,7 +554,9 @@ p7 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "125 Rue des Postes, Lille, France"
+  business_address: "125 Rue des Postes, Lille, France",
+  latitude: 50.623730,
+  longitude: 3.054609
   )
 
 p8 = Professional.create!(
@@ -551,7 +565,9 @@ p8 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "12 Rue de Gand, Lille, France"
+  business_address: "12 Rue de Gand, Lille, France",
+  latitude: 50.643186,
+  longitude: 3.067307
   )
 
 p9 = Professional.create!(
@@ -560,7 +576,9 @@ p9 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "78 Boulevard Louis XIV, Lille, France"
+  business_address: "78 Boulevard Louis XIV, Lille, France",
+  latitude: 50.643186,
+  longitude: 3.067307
   )
 
 p10 = Professional.create!(
@@ -569,7 +587,9 @@ p10 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address:"98 Rue de Douai, Lille, France"
+  business_address:"98 Rue de Douai, Lille, France",
+  latitude: 50.621917,
+  longitude: 3.072078
   )
 
 e1 = Event.create!(
@@ -577,7 +597,9 @@ e1 = Event.create!(
   address:"67 Rue de Paris, Lille, France",
   start_time: DateTime.strptime("03/22/2016 07:00 PM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("03/23/2016 03:00 AM", "%m/%d/%Y %H:%M"),
-  professional: p5
+  professional: p5,
+  latitude: 50.634869,
+  longitude: 3.067928
   )
 
 e2 = Event.create!(
@@ -585,7 +607,9 @@ e2 = Event.create!(
   address: "12 Avenue de Bretagne, Lille, France",
   start_time: DateTime.strptime("04/10/2016 12:00 PM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("04/12/2016 07:00 PM", "%m/%d/%Y %H:%M"),
-  professional: p4
+  professional: p4,
+  latitude: 50.635913,
+  longitude: 3.025909
   )
 
 e3 = Event.create!(
@@ -593,7 +617,9 @@ e3 = Event.create!(
   address: "12 Boulevard Jean-Baptiste Lebas, Lille, France",
   start_time: DateTime.strptime("01/05/2016 01:00 PM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("01/05/2016 04:00 PM", "%m/%d/%Y %H:%M"),
-  professional:p3
+  professional:p3,
+  latitude: 50.627448,
+  longitude: 3.067863
   )
 
 e4 = Event.create!(
@@ -601,7 +627,9 @@ e4 = Event.create!(
   address: "15 Rue de la Digue, Lille, France",
   start_time: DateTime.strptime("08/05/2016 01:00 PM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("08/05/2016 04:00 PM", "%m/%d/%Y %H:%M"),
-  professional: p2
+  professional: p2,
+  latitude: 50.634453,
+  longitude: 3.047406
   )
 
 e5 = Event.create!(
@@ -609,7 +637,9 @@ e5 = Event.create!(
   address: "50 Rue de Béthune, Lille, France",
   start_time: DateTime.strptime("03/31/2016 09:00 PM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("03/31/2016 11:00 PM", "%m/%d/%Y %H:%M"),
-  professional: p1
+  professional: p1,
+  latitude: 50.633759,
+  longitude: 3.063058
   )
 
 e6 = Event.create!(
@@ -617,7 +647,9 @@ e6 = Event.create!(
   address: "110 Rue Jeanne d Arc, Lille, France",
   start_time: DateTime.strptime("04/07/2016 09:00 AM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("04/12/2016 11:00 AM", "%m/%d/%Y %H:%M"),
-  professional: p10
+  professional: p10,
+  latitude: 50.622844,
+  longitude: 3.064232
   )
 
 e7 = Event.create!(
@@ -625,7 +657,9 @@ e7 = Event.create!(
   address: "12 Rue de Rouen, Lille, France",
   start_time: DateTime.strptime("06/15/2016 10:00 AM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("06/15/2016 02:00 PM", "%m/%d/%Y %H:%M"),
-  professional: p8
+  professional: p8,
+  latitude: 50.619098,
+  longitude: 3.075011
   )
 
 e8 = Event.create!(
@@ -633,7 +667,9 @@ e8 = Event.create!(
   address: "45 Rue de Gand, Lille, France",
   start_time: DateTime.strptime("05/20/2016 09:00 AM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("05/20/2016 16:00 PM", "%m/%d/%Y %H:%M"),
-  professional: p9
+  professional: p9,
+  latitude: 50.642704,
+  longitude: 3.066452
   )
 
 e9 = Event.create!(
@@ -641,7 +677,9 @@ e9 = Event.create!(
   address: "12 Rue du Pont du Lion d Or, Lille, France",
   start_time: DateTime.strptime("06/24/2016 04:00 PM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("06/24/2016 06:00 PM", "%m/%d/%Y %H:%M"),
-  professional: p7
+  professional: p7,
+  latitude: 50.639496,
+  longitude: 3.091187
   )
 
 e10 = Event.create!(
@@ -649,7 +687,9 @@ e10 = Event.create!(
   address:"12 Rue de la Bascule, Lille, France",
   start_time: DateTime.strptime("06/11/2016 02:00 AM", "%m/%d/%Y %H:%M"),
   end_time: DateTime.strptime("06/11/2016 07:00 PM", "%m/%d/%Y %H:%M"),
-  professional: p6
+  professional: p6,
+  latitude: 50.623663,
+  longitude: 3.069175
   )
 
 r1 = Review.create!(

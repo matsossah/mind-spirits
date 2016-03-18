@@ -2,16 +2,12 @@ class ProfessionalsController < ApplicationController
 
   def index
     @professionals = Professional.all
-
-    @markers = Gmaps4rails.build_markers(@professionals) do |professional, marker|
-      marker.lat flat.latitude
-      marker.lng flat.longitude
-    end
   end
 
   def show
     user = User.find(params[:user_id])
     @professional = user.professional
+    @professional_coordinates = { lat: @professional.latitude, lng: @professional.longitude }
     @review = Review.new
   end
 
