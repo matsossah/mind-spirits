@@ -76,24 +76,35 @@
             <div class="container-fluid ">
                 <div class="row">
                     <div class="container-grid nf-col-4">
-                        <% @cocktails.each do |cocktail| %>
-                        <div class="nf-item coffee">
+                      <% @cocktails.each do |cocktail| %>
+                      <div class="nf-item">
                             <div class="item-box">
-                                <a class="cbox-gallary1" href="img/portfolio/8.jpg" title="Donec sodales sagittis">
-                                  <%= image_tag cocktail.image, class:"cbox-gallary1", title: cocktail.name %>
+                                <a href= <%= cocktail_path(cocktail.id) %> title= <% cocktail.name %>>
+                                    <%= image_tag cocktail.image , class:"item-container", alt:"2" %>
                                     <div class="item-mask">
                                         <div class="item-caption">
-                                            <h5 class="white"><%= cocktail.name%></h5>
-
+                                            <h5 class="white"><%= cocktail.name %></h5>
+                                            <p class="white">Show details</p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
-                        <% end %>
+                      <% end %>
+
                     </div>
                 </div>
             </div>
             <!-- End Work Gallary -->
         </section>
         <!-- End Work Section -->
+
+
+
+
+
+
+
+
+
+
