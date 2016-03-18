@@ -1,99 +1,44 @@
-<%= render 'shared/header' %>
-
-<div id="video" style="height: 100vh; width: 100%; position: relative;">
-  <div class="full-cap-wraper">
-    <div class="content-caption light-color">
-      <div class="container">
-        <h1>Find a barman</h1>
-        <h2 class="h2">For your event</h2>
-        <br>
-        <div><a class="btn btn-md btn-white-line xs-hidden">Read More</a><span class="btn-space-10 xs-hidden"></span><a class="btn btn-md btn-white">Learn More</a>
-        </div>
-      </div>
+<div class="banner banner-home" style="">
+  <%= render 'shared/navbar'%>
+  <div class="content-banner">
+    <h1 class="text-center">Find a barman for your reception</h1>
+    <div class="recipe-arrow">
+      <h3>Browse our cocktails</h3>
+      <i class="fa fa-arrow-down"></i>
     </div>
   </div>
 </div>
-<!-- End Intro Video Section -->
 
-<div class="clearfix"></div>
-
-
-<section id="service" class="ptb ptb-sm-80">
-  <div class="wow fadeInLeft container text-center">
-      <h3>Our Services</h3>
-      <div class="spacer-60"></div>
-      <div class="row">
-          <div class="col-md-4 col-sm-6 mb-45">
-              <div class="page-icon-top"><i class="fa fa-calendar-check-o"></i></div>
-              <h5>Web Design</h5>
-              <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem.</p>
-          </div>
-          <div class="col-md-4 col-sm-6 mb-45">
-              <div class="page-icon-top"><i class="fa fa-user"></i></div>
-              <h5>Development</h5>
-              <p>Donec sodales sagittis magna. hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus, augue velit cursus nunc.</p>
-          </div>
-          <div class="col-md-4 col-sm-6 mb-45">
-              <div class="page-icon-top"><i class="fa fa-glass"></i></div>
-              <h5>Branding</h5>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- Counter Section -->
-<section id="counter" class="overlay-dark80 light-color ptb-80" style="background-image: url('img/full/23.jpg');" data-stellar-background-ratio="0.5">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-3 mb-sm-30">
-                <h1 class="counter" data-count="2310">0</h1>
-                <h6>Cocktails</h6>
-            </div>
-            <div class="col-md-3 mb-sm-30">
-                <h1 class="counter" data-count="5054">0</h1>
-                <h6>Barmans</h6>
-            </div>
-            <div class="col-md-3 mb-sm-30">
-                <h1 class="counter" data-count="6">0</h1>
-                <h6>Countries</h6>
-            </div>
-            <div class="col-md-3 mb-sm-30">
-                <h1 class="counter" data-count="3390">0</h1>
-                <h6>Events</h6>
-            </div>
-        </div>
-    </div>
-</section>
-        <!-- End Counter Section -->
-      <!-- Work Section -->
-        <section id="work" class="wow fadeInUp pt pt-sm-80 text-center">
-            <div class="container">
-                <h3>Great Work</h3>
-                <div class="spacer-30"></div>
-            </div>
-            <!-- Work Gallary -->
-            <div class="container-fluid ">
-                <div class="row">
-                    <div class="container-grid nf-col-4">
-                        <% @cocktails.each do |cocktail| %>
-                        <div class="nf-item coffee">
-                            <div class="item-box">
-                                <a class="cbox-gallary1" href="img/portfolio/8.jpg" title="Donec sodales sagittis">
-                                  <%= image_tag cocktail.image, class:"cbox-gallary1", title: cocktail.name %>
-                                    <div class="item-mask">
-                                        <div class="item-caption">
-                                            <h5 class="white"><%= cocktail.name%></h5>
-
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <% end %>
-                    </div>
+<div class="row cocktails">
+  <div class="container">
+    <p style="font-family:'Alex Brush',cursive;font-size: 30px; text-align: center">Our Selection</p>
+    <div class="wrapper-grey wrapper">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4" id="card">
+          <div id="f1_container">
+            <div id="f1_card" class="shadow">
+              <div class="front face cocktail-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>) no-repeat center center; background-size: cover">
+                <div class="card-category">
+                  <h2><%= cocktail.name %></h2>
                 </div>
+              </div>
+              <div class="back face center" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(cocktail.image) %>) no-repeat center center; background-size: cover">
+                <div class="card-description">
+                  <%= link_to cocktail_path(cocktail) do %>
+                    <h3><em>Recipe</em>
+                  <% end %>
+                  </h3>
+                  <% cocktail.doses.each do |dose| %>
+                    <ul>
+                      <li><%= dose.ingredient.name %>: <%= dose.quantity %></li>
+                    </ul>
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <!-- End Work Gallary -->
-        </section>
-        <!-- End Work Section -->
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

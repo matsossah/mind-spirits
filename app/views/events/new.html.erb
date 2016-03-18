@@ -1,8 +1,8 @@
 <div class="banner" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path("banner.jpeg") %>)no-repeat center center; background-size: cover">
   <%= render "shared/navbar" %>
   <div class="container">
-    <div class="col-xs-12 col-sm-4  col-sm-offset-2">
-      <div class="login event-create">
+    <div class="col-xs-12 col-sm-6  col-sm-offset-3">
+      <div class="login">
       <h2>Create an event</h2>
         <div class="row">
           <form action="<%= user_events_path(current_user) %>" method="POST">
@@ -18,7 +18,7 @@
               <div class='input-group date' id='datetimepicker2'>
                   <input type='text' class="form-control" name="end_time" placeholder="End time" />
                   <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
+                      <span class="glyphicon glyphicon-calendar"></span>
                   </span>
               </div>
             </div>
@@ -31,8 +31,14 @@
               <input id="my-name" class="form-control" name="professional_name" placeholder="Pick a barman from the map" />
             </div>
             <div class="form-group barman">
+            <div class="form-group">
               <div class='input-group'>
                 <input id="my-barman" class="form-control" name="professional_id" type='hidden' />
+              </div>
+            </div>
+            <div class="form-inputs">
+              <div>
+                <input type='text' class="form-control" id="user_input_autocomplete_address" name="address" placeholder="Event address" />
               </div>
             </div>
             <div class="form-actions">
