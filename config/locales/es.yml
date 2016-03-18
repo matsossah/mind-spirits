@@ -11,12 +11,25 @@ es:
   devise:
     registrations:
       new:
-        SignUp: Regístrarse
+        SignUp: Regístrarte
         Name: Nombre
         Email: Email
         Password: Contraseña
         PasswordConfirmation: Confirmar la contraseña
-        SignUpButton: Regístrarse
+        SignUpButton: Regístrarte
+    shared:
+      _links:
+        LogIn: Iniciar sesión
+        SignUpWith: "Registrarse con "
+        ForgotPassword: "¿Olvidaste tu contraseña?"
+        SignUp: Regístrarte
+        ConfirmInstruction: "No has recibido instrucciones para confirmar ?"
+        UnlocksInstruction: "Como desconectarse"
+    sessions:
+      new:
+        LogIn: Iniciar sesión
+        Password: Contraseña
+
 
   events:
     new:

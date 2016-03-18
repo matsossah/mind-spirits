@@ -16,6 +16,19 @@ en:
         Password: Password
         PasswordConfirmation: Password confirmation
         SignUpButton: Sign Up
+    shared:
+      _links:
+        LogIn: Log In
+        SignUpWith: "Sign Up with "
+        ForgotPassword: "Forgot your password?"
+        SignUp: Sign Up
+        ConfirmInstruction: "Didn't receive confirmation instructions?"
+        UnlocksInstruction: "Didn't receive unlock instructions?"
+    sessions:
+      new:
+        LogIn: Log In
+        Password: Password
+
 
 
 
