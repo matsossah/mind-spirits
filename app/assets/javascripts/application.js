@@ -76,6 +76,7 @@ function define_markers(professionals) //sends back an array of hashes [{:lat=>5
     marker.lat professional.latitude
     marker.lng professional.longitude
   end
+
 }
 
 $('#user_input_autocomplete_address').on('blur', function() {
