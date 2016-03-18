@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery-1.11.2.min
 //= require jquery-ui.min
 //= require bootstrap-sprockets
 //= require bootstrap.min
@@ -19,11 +20,14 @@
 //= require plugin/jquery.fs.tipper.min
 //= require plugin/mediaelement-and-player.min
 //= require plugin/background-check.min
+//= require plugin/jquery.validate.min
 //= require theme
 //= require navigation
 //= require jquery.youtubebackground
 //= require underscore
 //= require gmaps/google
+//= require contact-form
+
 
 
 $(document).ready(function(){
