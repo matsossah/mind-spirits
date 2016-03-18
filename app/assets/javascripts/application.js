@@ -76,6 +76,18 @@ function distance(lat1, lon1, lat2, lon2) {
   return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
 
+function geocodeAddress(address, callback) {
+  var geocoder = new google.maps.Geocoder();
+
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      var latitude = results[0].geometry.location.lat();
+      var longitude = results[0].geometry.location.lng();
+      callback({'lat': latitude, 'lng': longitude});
+    }
+  });
+}
+
 // function define_markers(professionals) //sends back an array of hashes [{:lat=>50.635793, :lng=>3.045787}]
 //   markers = Gmaps4rails.build_markers(professionals) do |professional, marker|
 //     marker.lat professional.latitude
@@ -84,8 +96,12 @@ function distance(lat1, lon1, lat2, lon2) {
 
 // }
 
-$('#user_input_autocomplete_address').on('blur', function() {
-  setTimeout(function() {
+$('#user_input_autocomplete_address').on('blur', function(event) {
+    geocodeAddress($(event.target).val(), function(coordinates) {
+      console.log(coordinates);
+    });
+
+
     //var pros_in_range = [];
     //Professional.all.forEach(function(pro) {
     //  result = "input from blur geocoded"
@@ -107,15 +123,8 @@ $('#user_input_autocomplete_address').on('blur', function() {
     //
     // console.log('address taken');
     // alert('toto');
-  }, 500);
 });
 
-// $('.professional-chosen').click(function() {
-//   console.log('click listened');
-//     // var professional = $(this).attr('data-professional');
-//     // $('#my-barman').val(professional);
-// });
-//
 function fillForm(element) {
   var professional_id = $(element).attr('data-id');
   $('#my-barman').val(professional_id);
