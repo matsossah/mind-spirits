@@ -8,6 +8,17 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @offset = 0
+    case @cocktail.doses.count
+    when 3
+      @offset = 3
+    when 4
+      @offset = 2
+    when 5
+      @offset = 1
+    else
+      @offset = 0
+    end
     @new_dose = Dose.new
   end
 
