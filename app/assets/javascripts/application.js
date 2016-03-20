@@ -99,12 +99,15 @@ function geocodeAddress(address, callback) {
 
 $('#user_input_autocomplete_address').on('blur', function(event) {
     geocodeAddress($(event.target).val(), function(coordinates) {
-    //var pros_in_range = [];
-    //Professional.all.forEach(function(pro) {
-    //  if (distance(coordinates['lat'], coordinates['lng'], pro['lat'], pro['lng'])) < professional.max_travel_range) {
-    //    pros_in_range.push(pro);
-    //  }
-    //}
+    var pros_in_range = [];
+    var professionals = $(".all_pros").attr('data-pro');
+        console.log(professionals);
+    professionals.forEach(function(pro) {
+     if (distance(coordinates['lat'], coordinates['lng'], pro['lat'], pro['lng']) < pro.max_travel_range) {
+       pros_in_range.push(pro);
+     }
+     console.log(pros_in_range)
+    });
     //
     //var valid_pros = define_markers(pros_in_range);
     //
