@@ -23,7 +23,7 @@
                 </div>
               </div>
               <div class="form-inputs">
-              <a data-pro="<%= @professionals %>" type="hidden" class="all_pros"%></a>
+              <a id="all_pros" data-pro="<%= @professionals.to_json %>" type="hidden"%></a>
                 <div>
                   <input type='text' class="form-control" id="user_input_autocomplete_address" class="event-address" name="address" placeholder="Event address" />
                 </div>
