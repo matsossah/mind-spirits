@@ -131,7 +131,6 @@ $('#user_input_autocomplete_address').on('blur', function(event) {
               var pro_name = valid_pros[i].name;
               var pro_desc = valid_pros[i].description;
               var rating = valid_pros[i].rating;
-              // var address = markers[i].getAttribute("address");
               var html = "<p>" + pro_name + "</p>"+ rating+"<p>" + pro_desc + "</p>"+"<p><a data-id="+valid_pros[i].id+" data-name="+valid_pros[i].name+" class='btn btn-primary professional-chosen' onclick='fillForm(this);'>Choose me</a></p>";
 
               infowindow.setContent(html);
