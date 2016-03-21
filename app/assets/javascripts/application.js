@@ -126,9 +126,11 @@ $('#user_input_autocomplete_address').on('blur', function(event) {
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
               console.log(valid_pros);
-              var pro_name = valid_pros[i].user.name;
+              var pro_name = valid_pros[i].name;
+              var rating = valid_pros[i].rating;
               // var address = markers[i].getAttribute("address");
-              var html = "<p>" + pro_name + "<p/>";
+              var html = "<p>" + pro_name + "</p>"+ rating+"<p><a data-id="+valid_pros[i].id+" data-name="+valid_pros[i].name+" class='btn btn-primary professional-chosen' onclick='fillForm(this);'>Choose me</a></p>";
+
               infowindow.setContent(html);
               infowindow.open(map, marker, html);
             }
