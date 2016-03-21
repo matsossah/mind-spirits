@@ -116,26 +116,30 @@ $('#user_input_autocomplete_address').on('blur', function(event) {
         var infowindow = new google.maps.InfoWindow();
 
         var marker, i;
+        var bounds = new google.maps.LatLngBounds();
 
         for (i = 0; i < valid_pros.length; i++) {
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(valid_pros[i].latitude, valid_pros[i].longitude),
             map: map
           });
+          bounds.extend(marker.position);
 
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
               console.log(valid_pros);
               var pro_name = valid_pros[i].name;
+              var pro_desc = valid_pros[i].description;
               var rating = valid_pros[i].rating;
               // var address = markers[i].getAttribute("address");
-              var html = "<p>" + pro_name + "</p>"+ rating+"<p><a data-id="+valid_pros[i].id+" data-name="+valid_pros[i].name+" class='btn btn-primary professional-chosen' onclick='fillForm(this);'>Choose me</a></p>";
+              var html = "<p>" + pro_name + "</p>"+ rating+"<p>" + pro_desc + "</p>"+"<p><a data-id="+valid_pros[i].id+" data-name="+valid_pros[i].name+" class='btn btn-primary professional-chosen' onclick='fillForm(this);'>Choose me</a></p>";
 
               infowindow.setContent(html);
               infowindow.open(map, marker, html);
             }
           })(marker, i));
         }
+        map.fitBounds(bounds);
       });
     });
   }, 500);
