@@ -99,20 +99,19 @@ function geocodeAddress(address, callback) {
 
 $('#user_input_autocomplete_address').on('blur', function(event) {
   setTimeout(function(){
-    console.log('1');
     geocodeAddress($(event.target).val(), function(coordinates) {
-    console.log('2');
-    var pros_in_range = [];
-    var professionals = ($("#all_pros").attr("data-pro"));
-
+      var pros_in_range = [];
+          console.log(coordinates);
+      var professionals = ($("#all_pros").attr("data-pro"));
+      console.log(professionals);
+      pros_in_range.push('toto');
       $.each(JSON.parse(professionals), function(index, pro) {
         if (distance(coordinates['lat'], coordinates['lng'], pro.latitude, pro.longitude) < pro.max_travel_range) {
           pros_in_range.push(pro);
         }
       });
-      console.log(pros_in_range);
+    console.log(pros_in_range);
     });
-    console.log('3');
   }, 500);
 });
 
