@@ -78,15 +78,6 @@ function geocodeAddress(address, callback) {
   });
 }
 
-// function define_markers(professionals) //sends back an array of hashes [{:lat=>50.635793, :lng=>3.045787}]
-    // markers = Gmaps4rails.build_markers(professionals) do |professional, marker|
-    //   marker.lat professional.latitude
-    //   marker.lng professional.longitude
-    //   marker.infowindow render_to_string(:partial => "/professionals/map_box", locals: {professional: professional})
-    // end
-
-// }
-
 function getAllPros(pros, coordinates, callback) {
   var pros_in_range = [];
   $.each(JSON.parse(pros), function(index, pro) {
@@ -97,7 +88,6 @@ function getAllPros(pros, coordinates, callback) {
             (1 - c((coordinates['lng'] - pro.longitude) * p))/2;
 
     var distance = 12742 * Math.asin(Math.sqrt(a));
-    console.log(distance);
     if (distance < pro.max_travel_range) {
       pros_in_range.push(pro);
     }
@@ -110,11 +100,33 @@ $('#user_input_autocomplete_address').on('blur', function(event) {
     geocodeAddress($(event.target).val(), function(coordinates) {
       var professionals = ($("#all_pros").attr("data-pro"));
       getAllPros(professionals, coordinates, function(valid_pros) {
-        console.log(valid_pros);
+        pros_to_json = [];
+        valid_pros.forEach( function (arrayItem) {
+          pros_to_json.push({
+              "lat" : arrayItem.latitude,
+              "lng"  : arrayItem.longitude
+          });
+        });
+        handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function(){
+          markers = handler.addMarkers(pros_to_json);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+
+        for (i = 0; i < pros_to_json.length; i++) {
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(valid_pros[i].business_address);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+        }
       });
     });
   }, 500);
 });
+
 
     //
     //var valid_pros = define_markers(pros_in_range);
