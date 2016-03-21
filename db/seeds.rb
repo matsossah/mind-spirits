@@ -591,24 +591,24 @@ p8 = Professional.create!(
 p9 = Professional.create!(
   user: u9,
   description: "New barman",
-  phone_number:"0612345678",
+  phone_number:"+49612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "78 Boulevard Louis XIV, Lille, France",
-  latitude: 50.643186,
-  longitude: 3.067307,
+  business_address: "Malmöer Str. 27, 10439 Berlin, Germany",
+  latitude: 52.55039,
+  longitude: 13.403659999999945,
   rating: 3
   )
 
 p10 = Professional.create!(
   user: u10,
-  description:" 20 years expérience all over the world",
+  description:" 20 years experience all over the world",
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address:"98 Rue de Douai, Lille, France",
-  latitude: 50.621917,
-  longitude: 3.072078,
+  business_address:"Via Vincenzo Monti, 12, 20123 Milano, Italy",
+  latitude: 45.4670906,
+  longitude: 9.17447459999994,
   rating: 5
   )
 
