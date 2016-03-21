@@ -1,29 +1,25 @@
 // Graphical variables
 @import "config/variables";
 @import "config/bootstrap_variables";
-
 // // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
 // // Your CSS
 @import "components/bg";
-
-
 // theme
 @import "style";
 @import "jquery-ui";
 @import "ionicons";
-@import "navigation.css";
-@import "plugin/flexslider.css";
-@import "plugin/owl.carousel.css";
-@import "plugin/mediaelementplayer.css";
-@import "plugin/colorbox.css";
-@import "plugin/jquery.fs.tipper.css";
-@import "plugin/jPushMenu.css";
-@import "plugin/animate.css";
-@import "plugin/YTPlayer.css";
+@import "navigation";
+@import "plugin/flexslider";
+@import "plugin/owl.carousel";
+@import "plugin/mediaelementplayer";
+@import "plugin/colorbox";
+@import "plugin/jquery.fs.tipper";
+@import "plugin/jPushMenu";
+@import "plugin/animate";
+@import "plugin/YTPlayer";
 @import "http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900";
