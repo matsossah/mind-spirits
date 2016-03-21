@@ -66,16 +66,6 @@ google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
 
-function distance(lat1, lng1, lat2, lng2) {
-  var p = 0.017453292519943295;    // Math.PI / 180
-  var c = Math.cos;
-  var a = 0.5 - c((lat2 - lat1) * p)/2 +
-          c(lat1 * p) * c(lat2 * p) *
-          (1 - c((lng2 - lng1) * p))/2;
-
-  12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
-}
-
 function geocodeAddress(address, callback) {
   var geocoder = new google.maps.Geocoder();
 
@@ -97,20 +87,31 @@ function geocodeAddress(address, callback) {
 
 // }
 
+function getAllPros(pros, coordinates, callback) {
+  var pros_in_range = [];
+  $.each(JSON.parse(pros), function(index, pro) {
+    var p = 0.017453292519943295;    // Math.PI / 180
+    var c = Math.cos;
+    var a = 0.5 - c((coordinates['lat'] - pro.latitude) * p)/2 +
+            c(pro.latitude * p) * c(coordinates['lat'] * p) *
+            (1 - c((coordinates['lng'] - pro.longitude) * p))/2;
+
+    var distance = 12742 * Math.asin(Math.sqrt(a));
+    console.log(distance);
+    if (distance < pro.max_travel_range) {
+      pros_in_range.push(pro);
+    }
+  });
+  callback(pros_in_range);
+}
+
 $('#user_input_autocomplete_address').on('blur', function(event) {
   setTimeout(function(){
     geocodeAddress($(event.target).val(), function(coordinates) {
-      var pros_in_range = [];
-          console.log(coordinates);
       var professionals = ($("#all_pros").attr("data-pro"));
-      console.log(professionals);
-      pros_in_range.push('toto');
-      $.each(JSON.parse(professionals), function(index, pro) {
-        if (distance(coordinates['lat'], coordinates['lng'], pro.latitude, pro.longitude) < pro.max_travel_range) {
-          pros_in_range.push(pro);
-        }
+      getAllPros(professionals, coordinates, function(valid_pros) {
+        console.log(valid_pros);
       });
-    console.log(pros_in_range);
     });
   }, 500);
 });
