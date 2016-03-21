@@ -4,9 +4,7 @@
 
         <!-- logo -->
         <div class="logo">
-            <a href="home.html" style="font-family:'Alex Brush',cursive;font-size: 20px;">
-              Mind Spirit
-            </a>
+            <%= link_to "Mind Spirit", root_path, style:"font-family:'Alex Brush',cursive;font-size: 20px;" %>
         </div>
         <!--End logo-->
 
@@ -19,7 +17,6 @@
       <% if current_user.admin %>
         <div>
           <div>
-            <%= image_tag current_user.picture %>
             <ul>
               <li>
                 <%= link_to user_path(current_user) do %>
@@ -47,7 +44,6 @@
       <% else %>
         <div>
           <div>
-            <%= image_tag current_user.picture %>
             <ul>
               <li >
                 <%= link_to user_path(current_user) do %>

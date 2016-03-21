@@ -31,7 +31,7 @@
         <div class="item">
           <div class="team-item nf-col-padding">
             <div class="team-item-img">
-              <%= image_tag "leo.jpg" %>
+              <%= image_tag current_user.picture, alt:"user picture" %>
               <div class="team-item-detail">
                 <div class="team-item-detail-inner light-color">
                   <h5><%= current_user.name %></h5>
@@ -76,8 +76,8 @@
               <%= link_to "Edit your profile", edit_user_path(current_user), class:"btn btn-xd btn-color-line"%>
             </div>
             <div class="col-md-4">
-              <div class="page-icon-top"><i class="ion ion-ios-gear-outline"></i></div>
-                <%= link_to "Register as professional", edit_user_path(current_user), class:"btn btn-xd btn-color-line"%>
+              <div class="page-icon-top"><i class="fa fa-product-hunt"></i></div>
+                <%= link_to "Register as professional", user_professional_path(@user, @user.professional), class:"btn btn-xd btn-color-line"%>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@
                     <p> No reviews...</p>
                     <% else %>
                     <p>"<%= current_user.reviews.last.content %>"</p>
-                    <h6 class="quote-author">Jeff <span style="font-weight: 400;">( Appel Studio )</span></h6>
+                    <h6 class="quote-author"> <%=  current_user.reviews.last.reviewer.user.name %> <span style="font-weight: 400;">(<%= current_user.reviews.last.reviewer.professional_role %>)</span></h6>
                     <% end %>
                 </div>
             </div>
@@ -200,9 +200,7 @@
                       </blockquote>
                       </div>
                       <% if event.user_review_id.nil? %>
-                        <div class="reviews-form">
-                          <%= render 'reviews/form', event: event %>
-                        </div>
+
                       <% else %>
                         <small>
                           Review:

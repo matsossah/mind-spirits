@@ -3,6 +3,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @review = Review.new
+
   end
 
   def show
