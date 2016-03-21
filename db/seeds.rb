@@ -494,6 +494,7 @@ u10 = User.create!(
 
 p1 = Professional.create!(
   user: u1,
+  name: u1.name,
   description: "5 years expériences in a bar in London. My favorite cocktail is Mojito",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -506,6 +507,7 @@ p1 = Professional.create!(
 
 p2 = Professional.create!(
   user: u2,
+  name: u2.name,
   description: " work in the best bar in New York during 20 years.",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -518,6 +520,7 @@ p2 = Professional.create!(
 
 p3 = Professional.create!(
   user: u3,
+  name: u3.name,
   description: "I worked with the most famous barman in the world. I will be glad to work for you",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -530,6 +533,7 @@ p3 = Professional.create!(
 
 p4 = Professional.create!(
   user: u4,
+  name: u4.name,
   description: "I'm new in the barman profession, i just have finish my studies.",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -542,6 +546,7 @@ p4 = Professional.create!(
 
 p5 = Professional.create!(
   user: u5,
+  name: u5.name,
   description: "My specialities : Mojito and Margarita cocktail : the best cocktail you never drink !!",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -554,6 +559,7 @@ p5 = Professional.create!(
 
 p6 = Professional.create!(
   user: u6,
+  name: u6.name,
   description: " 8 years expériences in Paris",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -566,6 +572,7 @@ p6 = Professional.create!(
 
 p7 = Professional.create!(
   user: u7,
+  name: u7.name,
   description:" 3 years expérience in the South of France",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -578,6 +585,7 @@ p7 = Professional.create!(
 
 p8 = Professional.create!(
   user: u8,
+  name: u8.name,
   description: "10 years experience working in nightclub",
   phone_number:"0612345678",
   max_travel_range: 50,
@@ -590,6 +598,7 @@ p8 = Professional.create!(
 
 p9 = Professional.create!(
   user: u9,
+  name: u9.name,
   description: "New barman",
   phone_number:"+49612345678",
   max_travel_range: 50,
@@ -602,6 +611,7 @@ p9 = Professional.create!(
 
 p10 = Professional.create!(
   user: u10,
+  name: u10.name,
   description:" 20 years experience all over the world",
   phone_number:"0612345678",
   max_travel_range: 50,
