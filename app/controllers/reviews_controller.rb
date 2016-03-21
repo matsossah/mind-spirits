@@ -9,31 +9,29 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    event = Event.find(params[:event_id])
-    if current_user == User.find(event.professional.user_id)
+    @event = Event.find(params[:event_id])
+    if current_user == User.find(@event.professional.user_id)
       reviewer = current_user.professional
-      reviewable = event.user
+      reviewable = @event.user
       @review = reviewable.reviews.build(review_params)
       @review.reviewer = reviewer
-      @review.event_id = event.id
       @review.save
-      event.professional_review_id = @review.id
-      event.save
+      @event.professional_review_id = @review
+      @event.save
       # ReviewMailer.new_professional_review(reviewable).deliver_now
     else
       reviewer = current_user
-      reviewable = event.professional
+      reviewable = @event.professional
       @review = reviewable.reviews.build(review_params)
       @review.reviewer = reviewer
-      @review.event_id = event.id
       @review.save
-      event.user_review_id = @review.id
-      event.save
+      @event.user_review_id = @review.id
+      @event.save
       # ReviewMailer.new_user_review(reviewable).deliver_now
     end
 
     if @review.save
-      if current_user == event.professional
+      if current_user == @event.professional
         redirect_to user_professional_path(current_user)
       else
         redirect_to user_path(current_user)

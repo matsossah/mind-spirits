@@ -1,0 +1,54 @@
+<section class="inner-intro bg-img2 overlay-light parallax parallax-background2">
+    <div class="container">
+        <div class="row title">
+            <h2 class="h2">Your events</h2>
+            <div class="page-breadcrumb">
+                <a>Home</a>/<span>Profile</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Accordian Section -->
+<section class="ptb ptb-sm-80">
+    <div class="container">
+        <div class="row text-center">
+            <h3><%= current_user.name %>'s events</h3>
+        </div>
+        <div class="spacer-60"></div>
+        <div class="row">
+            <!-- Accordian1 -->
+            <div class="col-md-8 col-md-offset-2 mt-30">
+                <div class="accordion">
+               <% current_user.events.each do |event| %>
+                    <div class="accordion-section">
+                        <h6 class="accordion-title"><%= Professional.find(event.professional_id).user.name.capitalize %> - <%= event.start_time.to_date.to_formatted_s(:long_ordinal)%></h6>
+                        <div class="accordion-content">
+                          <p><%= event.address %></p>
+                          <% if event.user_review_id %>
+                              Review:
+                              <%= Review.find(event.user_review_id).rating %>/5
+                              <%= Review.find(event.user_review_id).content %>
+                              by <%= Review.find(event.user_review_id).reviewer.name.capitalize %>
+                          <% else %>
+                            <%= render "reviews/form", event: event %>
+                          <% end %>
+                          <hr>
+                          <% if event.professional_review_id %>
+                              Review:
+                              <%= Review.find(event.professional_review_id).rating %>/5
+                              <%= Review.find(event.professional_review_id).content %>
+                              by <%= Review.find(event.professional_review_id).reviewer.name.capitalize %>
+                          <% end %>
+
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+
+            <!-- Accordian2 -->
+        </div>
+    </div>
+
+</section>
+<!-- End Accordian Section -->
