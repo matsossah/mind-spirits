@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
       @review = reviewable.reviews.build(review_params)
       @review.reviewer = reviewer
       @review.save
-      @event.professional_review_id = @review
+      @event.professional_review_id = @review.id
       @event.save
       # ReviewMailer.new_professional_review(reviewable).deliver_now
     else

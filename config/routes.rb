@@ -25,7 +25,9 @@
     resources :reviews, only: [:index]
 
     resource :professional, only: [:show, :new, :create, :edit, :update] do
-      resources :reviews, only: [:index]
+      resources :events, only: [:index, :show], controller: 'professionals/events' do
+        resources :reviews, only: [:index]
+      end
     end
   end
 
