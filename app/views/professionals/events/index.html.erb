@@ -1,0 +1,114 @@
+<section class="inner-intro bg-imgevents overlay-dark light-color parallax parallax-background2">
+    <div class="container">
+        <div class="row title">
+            <h2 class="h2">Your events</h2>
+            <div class="page-breadcrumb">
+                <a id="upcoming-events" style="color:#e6ae49"><%= "Upcoming" %></a>/<a id="past-events"><%= "Past" %></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Accordian Section -->
+<section class="ptb ptb-sm-80 upcoming-events">
+  <div class="container">
+    <div class="row text-center">
+      <h3>Your upcoming events</h3>
+    </div>
+    <div class="spacer-60"></div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 mt-30">
+        <div class="accordion">
+          <% current_user.professional.events.each do |event| %>
+            <% if event.end_time > DateTime.now %>
+              <div class="accordion-section">
+                <h6 class="accordion-title"><%= User.find(event.user_id).name.capitalize %> - <%= event.start_time.to_date.to_formatted_s(:long_ordinal)%></h6>
+                <div class="accordion-content">
+                  <p><%= event.address %></p>
+                  <% if event.is_confirmed %>
+                    <p class=' btn btn-xd btn-color-line'>
+                      <i class="fa fa-check"></i> Event confirmed
+                    </p>
+                  <% else %>
+                    <p id="confirm-event" class=' btn btn-xd btn-color-line'>
+                      <i class="fa fa-times"></i> Confirm this event
+                    </p>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ptb ptb-sm-80 past-events" style="display: none;">
+  <div class="container">
+    <div class="row text-center">
+      <h3>Your past events</h3>
+    </div>
+    <div class="spacer-60"></div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 mt-30">
+        <div class="accordion">
+        <% current_user.professional.events.each do |event| %>
+          <% if event.end_time < DateTime.now %>
+            <div class="accordion-section">
+            <h6 class="accordion-title"><%= User.find(event.user_id).name.capitalize %> - <%= event.start_time.to_date.to_formatted_s(:long_ordinal)%></h6>
+            <div class="accordion-content">
+            <p><%= event.address %></p>
+            <% if event.user_review_id %>
+                Review by <%= Review.find(event.user_review_id).reviewer.name.capitalize %>:
+                <%= Review.find(event.user_review_id).rating %>/5
+                <%= Review.find(event.user_review_id).content %>
+            <% else %>
+              <p><em>
+                Your Client hasn't left a review yet
+              </em></p>
+            <% end %>
+            <br/><br/>
+            <% if event.professional_review_id %>
+                Your review:
+                <%= Review.find(event.professional_review_id).rating %>/5
+                <%= Review.find(event.professional_review_id).content %>
+                by <%= Review.find(event.professional_review_id).reviewer.name.capitalize %>
+            <% else %>
+              <a reference='<%= event.id %>' class='review-button btn btn-xd btn-color-line'>
+                Leave a review
+              </a>
+              <div reference='<%= event.id %>'class='review-form' style="display: none;">
+                <%= render "reviews/proform", event: event %>
+              </div>
+            </div>
+            <% end %>
+            </div>
+          </div>
+        <% end %>
+        <script type="text/javascript">
+          $(".review-button[reference='<%= event.id %>']").click(function(){
+            $(this).hide();
+            $(".review-form[reference='<%= event.id %>']").show();
+          });
+        </script>
+        <script type="text/javascript">
+          $("#upcoming-events").click(function(){
+            $(this).css('color', '#e6ae49');
+            $("#past-events").css('color', 'black');
+            $(".upcoming-events").show();
+            $(".past-events").hide();
+          });
+        </script>
+        <script type="text/javascript">
+          $("#past-events").click(function(){
+            $(this).css('color', '#e6ae49');
+            $("#upcoming-events").css('color', 'black');
+            $(".past-events").show();
+            $(".upcoming-events").hide();
+          });
+        </script>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Accordian Section -->

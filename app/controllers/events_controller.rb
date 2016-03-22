@@ -3,6 +3,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @review = Review.new
+
   end
 
   def show
@@ -25,16 +27,21 @@ class EventsController < ApplicationController
     address = params['address']
     professional = Professional.find(params['professional_id'])
 
-    service = ReservationService.new(professional, current_user, start_time, end_time, address)
-    begin
-      event = service.reserve!
-      flash[:notice] = "You are booked!"
-      # EventMailer.new_event_user(event).deliver_now
-      # EventMailer.new_event_pro(event).deliver_now
-      redirect_to user_path(current_user)
-    rescue ProfessionalNotAvailableException => ex
-      flash[:notice] = "Sorry, the booking failed"
-      redirect_to user_path(current_user)
+    if end_time < start_time
+      flash[:notice] = "This event can't be created: The end time should be prior to the start time"
+      redirect_to new_user_event_path(current_user)
+    else
+      service = ReservationService.new(professional, current_user, start_time, end_time, address)
+      begin
+        event = service.reserve!
+        flash[:notice] = "You are was successfully created! We will notify you once the Barman confirms"
+        # EventMailer.new_event_user(event).deliver_now
+        # EventMailer.new_event_pro(event).deliver_now
+        redirect_to user_path(current_user)
+      rescue ProfessionalNotAvailableException => ex
+        flash[:notice] = "Sorry, the booking failed.  Please retry"
+        redirect_to user_path(current_user)
+      end
     end
   end
 

@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery-1.11.2.min
 //= require jquery-ui.min
 //= require bootstrap-sprockets
 //= require bootstrap.min
@@ -20,11 +21,14 @@
 //= require plugin/jquery.fs.tipper.min
 //= require plugin/mediaelement-and-player.min
 //= require plugin/background-check.min
+//= require plugin/jquery.validate.min
 //= require theme
 //= require navigation
 //= require jquery.youtubebackground
 //= require underscore
 //= require gmaps/google
+//= require contact-form
+
 
 
 $(document).ready(function(){
@@ -62,59 +66,89 @@ google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
 
-function distance(lat1, lon1, lat2, lon2) {
-  var p = 0.017453292519943295;    // Math.PI / 180
-  var c = Math.cos;
-  var a = 0.5 - c((lat2 - lat1) * p)/2 +
-          c(lat1 * p) * c(lat2 * p) *
-          (1 - c((lon2 - lon1) * p))/2;
+function geocodeAddress(address, callback) {
+  var geocoder = new google.maps.Geocoder();
 
-  return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      var latitude = results[0].geometry.location.lat();
+      var longitude = results[0].geometry.location.lng();
+      callback({'lat': latitude, 'lng': longitude});
+    }
+  });
 }
 
-// function define_markers(professionals) //sends back an array of hashes [{:lat=>50.635793, :lng=>3.045787}]
-//   markers = Gmaps4rails.build_markers(professionals) do |professional, marker|
-//     marker.lat professional.latitude
-//     marker.lng professional.longitude
-//   end
+function getAllPros(pros, coordinates, callback) {
+  var pros_in_range = [];
+  $.each(JSON.parse(pros), function(index, pro) {
+    var p = 0.017453292519943295;    // Math.PI / 180
+    var c = Math.cos;
+    var a = 0.5 - c((coordinates['lat'] - pro.latitude) * p)/2 +
+            c(pro.latitude * p) * c(coordinates['lat'] * p) *
+            (1 - c((coordinates['lng'] - pro.longitude) * p))/2;
 
-// }
+    var distance = 12742 * Math.asin(Math.sqrt(a));
+    if (distance < pro.max_travel_range) {
+      pros_in_range.push(pro);
+    }
+  });
+  callback(pros_in_range);
+}
 
-$('#user_input_autocomplete_address').on('blur', function() {
-  setTimeout(function() {
-    //var pros_in_range = [];
-    //Professional.all.forEach(function(pro) {
-    //  result = "input from blur geocoded"
-    //  if (distance(result.lat, result.long, professional.lat, professional.long) < professional.max_travel_range) {
-    //    pros_in_range.push(pro);
-    //  }
-    //}
-    //
-    //var valid_pros = define_markers(pros_in_range);
-    //
-    //valid_pros.forEach(function(pro) {
-    //    handler = Gmaps.build('Google');
-    //    handler.buildMap({ internal: { id: 'map' } }, function(){
-    //      markers = handler.addMarkers(<%= raw @valid_pros.to_json %>);
-    //      handler.bounds.extendWith(markers);
-    //      handler.fitMapToBounds();
-    //    });
-    //}
-    //
-    // console.log('address taken');
-    // alert('toto');
+$('#user_input_autocomplete_address').on('blur', function(event) {
+  setTimeout(function(){
+    geocodeAddress($(event.target).val(), function(coordinates) {
+      var professionals = ($("#all_pros").attr("data-pro"));
+      getAllPros(professionals, coordinates, function(valid_pros) {
+        pros_to_json = [];
+        valid_pros.forEach( function (arrayItem) {
+          pros_to_json.push({
+              "lat" : arrayItem.latitude,
+              "lng"  : arrayItem.longitude
+          });
+        });
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: new google.maps.LatLng({'lat': coordinates.lat, 'lng': coordinates.lng}),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+        var bounds = new google.maps.LatLngBounds();
+
+        for (i = 0; i < valid_pros.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(valid_pros[i].latitude, valid_pros[i].longitude),
+            map: map
+          });
+          bounds.extend(marker.position);
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              console.log(valid_pros);
+              var pro_name = valid_pros[i].name;
+              var pro_desc = valid_pros[i].description;
+              var rating = valid_pros[i].rating;
+              var html = "<p>" + pro_name + "</p>"+ rating+"<p>" + pro_desc + "</p>"+"<p><a data-id="+valid_pros[i].id+" data-name="+valid_pros[i].name+" class='btn btn-primary professional-chosen' onclick='fillForm(this);'>Choose me</a></p>";
+
+              infowindow.setContent(html);
+              infowindow.open(map, marker, html);
+            }
+          })(marker, i));
+        }
+        map.fitBounds(bounds);
+      });
+    });
   }, 500);
 });
 
-// $('.professional-chosen').click(function() {
-//   console.log('click listened');
-//     // var professional = $(this).attr('data-professional');
-//     // $('#my-barman').val(professional);
-// });
-//
 function fillForm(element) {
   var professional_id = $(element).attr('data-id');
   $('#my-barman').val(professional_id);
   var professional_name = $(element).attr('data-name');
   $('#my-name').val(professional_name);
 }
+
+

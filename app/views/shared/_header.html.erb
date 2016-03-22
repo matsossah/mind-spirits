@@ -4,84 +4,81 @@
 
         <!-- logo -->
         <div class="logo">
-            <a href="home.html" style="font-family:'Alex Brush',cursive;font-size: 20px;">
-              Mind Spirit
-            </a>
+          <%= link_to "Mind Spirit", root_path, style:"font-family:'Alex Brush',cursive;font-size: 20px;" %>
         </div>
         <!--End logo-->
 
-
-
         <!-- Navigation Menu -->
         <nav class='navigation'>
-            <% if user_signed_in? %>
-      <!-- Profile picture and dropdown -->
-      <% if current_user.admin %>
-        <div>
-          <div>
-            <%= image_tag current_user.picture %>
+        <% if user_signed_in? %>
+          <% if current_user.admin %>
             <ul>
-              <li>
-                <%= link_to user_path(current_user) do %>
-                  <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to cocktails_path do %>
-                  <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to rails_admin_path do %>
-                  <i class="fa fa-cogs"></i>  <%= t ".profile", default: "Admin" %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
-                <% end %>
-              </li>
+                <li>
+                    <a href=""><%= current_user.name %></a>
+                    <!-- Nav Dropdown -->
+                    <ul class="nav-dropdown">
+                        <li>
+                          <%= link_to user_path(current_user) do %>
+                            <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to root_path do %>
+                            <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to rails_admin_path do %>
+                            <i class="fa fa-cogs"></i>  <%= t ".profile", default: "Admin" %>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to destroy_user_session_path, method: :delete do %>
+                            <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+                          <% end %>
+                        </li>
+                    </ul>
+                    <!-- End Nav Dropdown -->
+                </li>
             </ul>
-          </div>
-        </div>
-      <% else %>
-        <div>
-          <div>
-            <%= image_tag current_user.picture %>
+          <% else %>
             <ul>
-              <li >
-                <%= link_to user_path(current_user) do %>
-                  <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to cocktails_path do %>
-                  <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
-                <% end %>
-              </li>
+                <li>
+                    <a href=""><%= current_user.name %></a>
+                    <!-- Nav Dropdown -->
+                    <ul class="nav-dropdown">
+                        <li >
+                          <%= link_to user_path(current_user) do %>
+                            <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to root_path do %>
+                            <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to destroy_user_session_path, method: :delete do %>
+                            <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+                          <% end %>
+                        </li>
+                    </ul>
+                    <!-- End Nav Dropdown -->
+                </li>
             </ul>
-          </div>
-        </div>
-      <% end %>
-
-    <% else %>
-
-      <!-- Login text link -->
-    <ul>
-      <li>
-        <%= link_to "LOGIN", new_user_session_path %>
-      </li>
-      <li>
-        <%= link_to "SIGN UP", new_user_registration_path %>
-      </li>
-    <% end %>
+          <% end %>
+        <% else %>
+          <ul>
+            <li>
+              <%= link_to "LOGIN", new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to "SIGN UP", new_user_registration_path %>
+            </li>
+          </ul>
+        <% end %>
         </nav>
         <!--End Navigation Menu -->
-
     </div>
 </header>
+<!-- END HEADER -->

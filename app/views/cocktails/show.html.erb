@@ -1,24 +1,91 @@
-<div class="banner show-banner" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url(<%= image_path(@cocktail.image) %>) no-repeat center center; background-size: cover">
-  <%= render 'shared/navbar'%>
-  <div class="content-show_cocktail">
-    <h1><em><%= @cocktail.name %></em></h1>
-    <div class="home_form marged-top">
-      <p class="marged-bottom"><%= @cocktail.recipe_steps %></p>
-      <% @cocktail.doses.each do |dose| %>
-        <ul>
-          <li><p><i class="fa fa-circle-o"> <%= dose.ingredient.name %>: <%= dose.quantity %></i><p></li>
-        </ul>
-      <% end %>
+<!-- Intro Section -->
+<section class="full-screen-intro">
+
+    <!-- Bg Image -->
+    <div class="media-wapper bg-img cont-h-100per" style="background-image: url(<%= image_path(@cocktail.image) %>);">
     </div>
-  </div>
-  <div class="square-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path(@cocktail.image) %>)no-repeat center center; background-size: cover">
-    <div style="text-align:center;" >
-    <% if user_signed_in? %>
-      <%= link_to "Find a Barman", new_user_event_path(current_user), class: "btn navbar-wagon-item navbar-wagon-button find" %>
-    <% else %>
-      <%= link_to "Login to book a barman", new_user_session_path, class: "btn navbar-wagon-item navbar-wagon-button find text-center" %>
-    <% end %>
+    <!-- End Bg Image -->
+
+    <!-- Content -->
+    <div class="full-cap-wraper overlay-dark80 light-color">
+        <div class="content-caption light-color parallax parallax-opacity">
+            <div class="container">
+                <h1 class=""><%= @cocktail.name %></h1>
+                <div class="row">
+                    <h5 class="col-md-6 col-md-offset-3">Presented by Mind Spirit</h5>
+                </div>
+                <br>
+                <div>
+                  <% if user_signed_in? %>
+                    <%= link_to "Find a Barman", new_user_event_path(current_user), class: "btn btn-md btn-white" %>
+                  <% else %>
+                    <%= link_to "Login to book a barman", new_user_session_path, class: "btn btn-md btn-white" %>
+                  <% end %>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    <!-- End Content -->
+
+    <!-- Intro Scroll Down -->
+    <div class="intro-scroll-down">
+        <a class="scroll-down" href="#about">
+            <span class="mouse">
+                <span class="mouse-dot"></span>
+            </span>
+        </a>
+    </div>
+    <!-- End Intro Scroll Down -->
+</section>
+<div class="clearfix"></div>
+<!-- End Intro Section -->
+
+<hr/>
+
+<!-- Process -->
+<section id="process" class="ptb ptb-sm-80">
+    <div class="wow fadeInLeft container text-center">
+      <h3>Ingredients</h3>
+      <div class="spacer-60"></div>
+      <div class="row">
+        <% @cocktail.doses.each do |dose| %>
+          <% if @cocktail.doses.first == dose %>
+            <div class="col-md-2 col-md-offset-<%= @offset %> col-sm-4 col-xs-6">
+              <div class="tipped" data-title="Step1 - Skype Interview" data-tipper-options='{"direction":"top"}'>
+                  <div class="page-icon-top"><i class="ion ion-ios-people-outline"></i></div>
+                  <h6><%= dose.ingredient.name %>: <%= dose.quantity %></h6>
+              </div>
+            </div>
+          <% else %>
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="tipped" data-title="Step1 - Skype Interview" data-tipper-options='{"direction":"top"}'>
+                    <div class="page-icon-top"><i class="ion ion-ios-people-outline"></i></div>
+                    <h6><%= dose.ingredient.name %>: <%= dose.quantity %></h6>
+                </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+</section>
+<!-- End Process -->
+
+<hr />
+
+<section id="about" class="wow fadeIn ptb ptb-sm-80">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2">
+                <h3 class="h4">Recipe</h3>
+                <div class="spacer-15"></div>
+                <p class="lead"><%= @cocktail.recipe_steps %></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="scroll-top">
+    <i class="fa fa-angle-double-up"></i>
+</a>
+
 

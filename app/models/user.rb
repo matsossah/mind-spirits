@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # after_create :send_welcome_email
-  after_commit :find_user_full_name
+  # after_commit :find_user_full_name
 
   has_many :professionals, through: :events
   has_many :events
