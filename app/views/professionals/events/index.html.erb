@@ -18,10 +18,10 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 mt-30">
         <div class="accordion">
-          <% current_user.events.each do |event| %>
+          <% current_user.professional.events.each do |event| %>
             <% if event.end_time > DateTime.now %>
               <div class="accordion-section">
-                <h6 class="accordion-title"><%= Professional.find(event.professional_id).user.name.capitalize %> - <%= event.start_time.to_date.to_formatted_s(:long_ordinal)%></h6>
+                <h6 class="accordion-title"><%= User.find(event.user_id).name.capitalize %> - <%= event.start_time.to_date.to_formatted_s(:long_ordinal)%></h6>
                 <div class="accordion-content">
                   <p><%= event.address %></p>
                   <% if event.is_confirmed %>
@@ -29,8 +29,8 @@
                       <i class="fa fa-check"></i> Event confirmed
                     </p>
                   <% else %>
-                    <p class=' btn btn-xd btn-color-line'>
-                      <i class="fa fa-times"></i> Confirmation pending
+                    <p id="confirm-event" class=' btn btn-xd btn-color-line'>
+                      <i class="fa fa-times"></i> Confirm this event
                     </p>
                   <% end %>
                 </div>
@@ -51,33 +51,33 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 mt-30">
         <div class="accordion">
-        <% current_user.events.each do |event| %>
+        <% current_user.professional.events.each do |event| %>
           <% if event.end_time < DateTime.now %>
             <div class="accordion-section">
-            <h6 class="accordion-title"><%= Professional.find(event.professional_id).user.name.capitalize %> - <%= event.start_time.to_date.to_formatted_s(:long_ordinal)%></h6>
+            <h6 class="accordion-title"><%= User.find(event.user_id).name.capitalize %> - <%= event.start_time.to_date.to_formatted_s(:long_ordinal)%></h6>
             <div class="accordion-content">
             <p><%= event.address %></p>
-            <% if event.professional_review_id %>
-                Review by <%= Review.find(event.professional_review_id).reviewer.name.capitalize %>:
-                <%= Review.find(event.professional_review_id).rating %>/5
-                <%= Review.find(event.professional_review_id).content %>
+            <% if event.user_review_id %>
+                Review by <%= Review.find(event.user_review_id).reviewer.name.capitalize %>:
+                <%= Review.find(event.user_review_id).rating %>/5
+                <%= Review.find(event.user_review_id).content %>
             <% else %>
               <p><em>
-                Your Barman hasn't left a review yet
+                Your Client hasn't left a review yet
               </em></p>
             <% end %>
             <br/><br/>
-            <% if event.user_review_id %>
+            <% if event.professional_review_id %>
                 Your review:
-                <%= Review.find(event.user_review_id).rating %>/5
-                <%= Review.find(event.user_review_id).content %>
-                by <%= Review.find(event.user_review_id).reviewer.name.capitalize %>
+                <%= Review.find(event.professional_review_id).rating %>/5
+                <%= Review.find(event.professional_review_id).content %>
+                by <%= Review.find(event.professional_review_id).reviewer.name.capitalize %>
             <% else %>
               <a reference='<%= event.id %>' class='review-button btn btn-xd btn-color-line'>
                 Leave a review
               </a>
               <div reference='<%= event.id %>'class='review-form' style="display: none;">
-                <%= render "reviews/form", event: event %>
+                <%= render "reviews/proform", event: event %>
               </div>
             </div>
             <% end %>
