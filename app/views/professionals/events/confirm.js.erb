@@ -1,0 +1,9 @@
+<% if @event.errors.any? %>
+  // Render new review form with errors
+  $('#confirm-event').html("<%= j render 'professionals/events/index', professional: current_user %>");
+<% else %>
+  // Create a paragraph for the new review. But hide it.
+  // var new_review = $("<%= j render 'reviews/show', review: @review %>").hide();
+  $('#confirm-event').html("<p class=' btn btn-xd btn-color-line'><i class='fa fa-check'></i> Event confirmed</p>");
+  // Show the new review with an animation!
+<% end %>
