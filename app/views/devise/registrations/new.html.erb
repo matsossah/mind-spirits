@@ -1,28 +1,42 @@
-<div class="banner">
-  <%= render "shared/navbar" %>
-  <div class="container">
-    <div class="col-xs-12 col-sm-6  col-sm-offset-3">
-      <div class="login">
-        <h2><%= t '.SignUp'%></h2>
-
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :name, label: false, placeholder:"#{t 'devise.registrations.new.Name'}"%>
-            <%= f.input :email,label: false, placeholder:"#{t 'devise.registrations.new.Email'}", required: true, autofocus: true %>
-            <%= f.input :password, label: false, placeholder:"#{t 'devise.registrations.new.Password'}", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-            <%= f.input :password_confirmation, label: false, placeholder:"#{t 'devise.registrations.new.PasswordConfirmation'}", required: true %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "#{t 'devise.registrations.new.SignUpButton'}", id:'log' %>
-          </div>
-        <% end %>
-        <hr>
-        <%= render "devise/shared/links" %>
-      </div>
+<!-- Intro Section -->
+<section class="inner-intro inner-intro-small bg-imglogin overlay-dark light-color parallax parallax-background2">
+    <div class="container">
+        <div class="row title">
+            <h2 class="h2">Sign up</h2>
+        </div>
     </div>
-  </div>
-</div>
+</section>
+<div class="clearfix"></div>
+<!-- End Intro Section -->
+
+
+<!-- Login Section -->
+<section id="Pricing" class="ptb ptb-sm-80">
+    <div class="container">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="border-box">
+                <h4>Create an account</h4>
+
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+                    <div class="form-field-wrapper">
+                      <%= f.input :name, label: false, placeholder:"#{t 'devise.registrations.new.Name'}"%>
+                      <%= f.input :email,label: false, placeholder:"#{t 'devise.registrations.new.Email'}", required: true, autofocus: true %>
+                      <%= f.input :password, label: false, placeholder:"#{t 'devise.registrations.new.Password'}", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                      <%= f.input :password_confirmation, label: false, placeholder:"#{t 'devise.registrations.new.PasswordConfirmation'}", required: true %>
+                    </div>
+                     <%= f.button :submit, "#{t 'devise.registrations.new.SignUpButton'}", class:"btn btn-xs btn-color-line" %>
+                <% end %>
+                <hr>
+                <%= render "devise/shared/links" %>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Login Section -->
+
+
+
+
+
 
