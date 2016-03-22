@@ -26,6 +26,7 @@
 
     resource :professional, only: [:show, :new, :create, :edit, :update] do
       resources :events, only: [:index, :show], controller: 'professionals/events' do
+        put 'confirm', to: 'professionals/events#confirm'
         resources :reviews, only: [:index]
       end
     end
