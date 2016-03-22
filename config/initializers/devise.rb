@@ -31,7 +31,7 @@ Devise.setup do |config|
 
   config.sign_out_via = :delete
 
-  config.scoped_views = false
+  config.scoped_views = true
 
   Devise.setup do |config|
     config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"], scope: 'email', info_fields: 'email, first_name,last_name', image_size: 'large'

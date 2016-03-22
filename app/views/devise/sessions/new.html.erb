@@ -1,0 +1,39 @@
+<!-- Intro Section -->
+<section class="inner-intro inner-intro-small bg-imglogin overlay-dark light-color parallax parallax-background2">
+    <div class="container">
+        <div class="row title">
+            <h2 class="h2">Login</h2>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!-- End Intro Section -->
+
+
+<!-- Login Section -->
+<section id="Pricing" class="ptb ptb-sm-80">
+    <div class="container">
+
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <div class="border-box">
+                    <h4>Already registered?</h4>
+                    <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="nkAfXHW/PgW9EJlJ+bO5cwgOzzTOYz6DkZwYU66FSLG+zQ9OPjv+oIXJEAR6aYoQ1ScvrvHKoaUtwNK42LWbNA==" />
+                        <div class="form-field-wrapper">
+                            <label for="user_email">Email address</label>
+                            <input  placeholder="Enter your Email" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" class="input-sm form-full" >
+                        </div>
+                        <div class="form-field-wrapper">
+                            <label for="user_password">Password</label>
+                            <input placeholder="Enter your Password"  autocomplete="off" type="password" name="user[password]" id="user_password"  class="input-sm form-full" >
+                        </div>
+                        <button  id="form-submit" type="submit" name="commit" value="Log in" class="btn btn-xs btn-color-line">Sign In</button>
+                        <a href="/users/sign_up">Sign up</a><br />
+                        <a class="float-right" href="/users/password/new">Forgot your password?</a><br />
+                          <a class="float-right" href="/users/auth/facebook">Sign in with Facebook</a><br />
+                    </form>
+                </div>
+            </div>
+
+    </div>
+</section>
+<!-- End Login Section -->
