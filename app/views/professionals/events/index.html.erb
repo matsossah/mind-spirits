@@ -29,7 +29,7 @@
                       <i class="fa fa-check"></i> Event confirmed
                     </p>
                   <% else %>
-                    <%= link_to user_professional_event_confirm_path(current_user, event), method: :put, id: 'confirm-event', class: 'btn btn-xd btn-color-line' do %>
+                    <%= link_to user_professional_event_confirm_path(current_user, event), method: :put, id: 'confirm-event', class: 'btn btn-xd btn-color-line', id: 'confirm-event', remote: true do %>
                       <i class="fa fa-times"></i> Confirm this event
                     <% end %>
                   <% end %>
@@ -88,13 +88,6 @@
           $(".review-button[reference='<%= event.id %>']").click(function(){
             $(this).hide();
             $(".review-form[reference='<%= event.id %>']").show();
-          });
-        </script>
-        <script type="text/javascript">
-          $("#confirm-event").click(function(){
-            $(this).hide();
-            $("#confirmed-event").show();
-            <% event.is_confirmed = true %>
           });
         </script>
         <script type="text/javascript">
