@@ -75,10 +75,17 @@
               <div class="page-icon-top"><i class="fa fa-user"></i></div>
               <%= link_to "Edit your profile", edit_user_path(current_user), class:"btn btn-xd btn-color-line"%>
             </div>
-            <div class="col-md-4">
-              <div class="page-icon-top"><i class="fa fa-product-hunt"></i></div>
-                <%= link_to "Register as professional", user_professional_path(@user, @user.professional), class:"btn btn-xd btn-color-line"%>
-            </div>
+            <% if @user.professional %>
+              <div class="col-md-4">
+                <div class="page-icon-top"><i class="fa fa-product-hunt"></i></div>
+                  <%= link_to "Pro Account", new_user_professional_path(@user, @user.professional), class:"btn btn-xd btn-color-line"%>
+              </div>
+            <% else %>
+              <div class="col-md-4">
+                <div class="page-icon-top"><i class="fa fa-product-hunt"></i></div>
+                  <%= link_to "Register as professional", new_user_professional_path(@user, @user.professional), class:"btn btn-xd btn-color-line"%>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

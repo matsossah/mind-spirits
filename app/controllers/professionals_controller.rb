@@ -7,17 +7,22 @@ class ProfessionalsController < ApplicationController
   def show
     user = User.find(params[:user_id])
     @professional = user.professional
-    @professional_coordinates = { lat: @professional.latitude, lng: @professional.longitude }
+    @professional_coordinates = { lat: @professional.latitude, lng: @professional.longitude}
     @review = Review.new
   end
 
   def new
-    @professional = Professional.new
+    @professional = current_user.professionals.build
   end
 
   def create
-    @professional = Professional.create(professional_params)
-    @professional.user_id = current_user.id
+    @professional = current_user.professionals.build(professional_params)
+    @professional.user = current_user
+    @professional.name = current_user.name
+
+    #foreign key user/professional
+    #Build et pas create
+
     if @professional.save
       redirect_to user_professional_path(current_user, @professional)
     else
