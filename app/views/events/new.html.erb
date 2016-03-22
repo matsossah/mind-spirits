@@ -3,9 +3,6 @@
     <div class="container">
         <div class="row title">
             <h2 class="h2">Create an event</h2>
-            <div class="page-breadcrumb">
-                <%= link_to "Home", root_path %>/<span>Creation</span>
-            </div>
         </div>
     </div>
 </section>
@@ -51,8 +48,9 @@
                 </div>
               </div>
               <div class="form-actions">
-                <input type="submit" value="Create" class="btn btn-primary">
-                <%= link_to "cancel", user_path(current_user) %>
+                <input type="submit" value="Create" class="btn btn-xd btn-color-line">
+
+                <%= link_to "cancel", user_path(current_user), class:"btn btn-xd btn-black-line" %>
               </div>
             </form>
             <script type="text/javascript">
@@ -74,3 +72,5 @@
     </div>
   </div>
 </div>
+
+
