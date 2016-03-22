@@ -14,6 +14,17 @@ class Professional < ActiveRecord::Base
   enumerize :professional_role, in: [:barman, :brasseur, :sommelier, :cellar_man]
 
   validates_presence_of :business_address, :description, :phone_number, :professional_role
+
+  def rate
+    sum = 0
+    reviews.each do |review|
+      sum += review.rating
+    end
+    self.rating = sum / reviews.size
+    self.save
+    raise
+  end
+
 private
 
   def send_welcome_email
