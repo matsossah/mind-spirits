@@ -1,24 +1,33 @@
-<div class="banner">
-  <%= render "shared/navbar" %>
-  <div class="container">
-    <div class="col-xs-12 col-sm-6  col-sm-offset-3">
-      <div class="login">
-        <h2><%= t '.EditProfile'%> </h2>
-        <%= simple_form_for(@user) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :name, placeholder:"#{t 'users.edit.YourName'}"%>
-            <%= f.input :phone_number, placeholder:"#{t 'users.edit.YourPhone'}"%>
-            <%= f.input :address, input_html: { id: "user_input_autocomplete_address"}, placeholder:"#{t 'users.edit.YourAddress'}" %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit,"#{t 'users.edit.Edit'}", id:'log' %>
-          </div>
-        <% end %>
-      </div>
+<section class="inner-intro inner-intro-small bg-imglogin overlay-dark light-color parallax parallax-background2">
+    <div class="container">
+        <div class="row title">
+            <h2 class="h2">Edit your profile</h2>
+        </div>
     </div>
-  </div>
-</div>
+</section>
+<div class="clearfix"></div>
+<!-- End Intro Section -->
+<section id="Pricing" class="ptb ptb-sm-80">
+    <div class="container">
+        <div class="col-xs-12 col-sm-6  col-sm-offset-3">
+            <div class="login">
+                <h2><%= t '.EditProfile'%> </h2>
+                <%= simple_form_for(@user) do |f| %>
+                    <%= f.error_notification %>
+
+                    <div class="form-field-wrapper">
+                        <%= f.input :name, placeholder:"#{t 'users.edit.YourName'}"%>
+                        <%= f.input :phone_number, placeholder:"#{t 'users.edit.YourPhone'}"%>
+                        <%= f.input :address, input_html: { id: "user_input_autocomplete_address"}, placeholder:"#{t 'users.edit.YourAddress'}" %>
+                    </div>
+
+                    <div class="form-actions">
+                        <%= f.button :submit,"#{t 'users.edit.Edit'}", class:"btn btn-md btn-color-line" %>
+                        <%= link_to "CANCEL", user_path(current_user), style:"margin-left: 10px;"%>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
 
