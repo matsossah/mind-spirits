@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323133439) do
+ActiveRecord::Schema.define(version: 20160323170904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,8 +48,12 @@ ActiveRecord::Schema.define(version: 20160323133439) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "is_confirmed",           default: false, null: false
+    t.integer  "price_cents",            default: 5000,  null: false
+    t.string   "price_currency",         default: "EUR", null: false
+    t.integer  "order_id"
   end
 
+  add_index "events", ["order_id"], name: "index_events_on_order_id", using: :btree
   add_index "events", ["professional_id"], name: "index_events_on_professional_id", using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
@@ -58,6 +62,18 @@ ActiveRecord::Schema.define(version: 20160323133439) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "state"
+    t.integer  "amount_cents",    default: 0,     null: false
+    t.string   "amount_currency", default: "EUR", null: false
+    t.json     "payment"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "user_id"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "professionals", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -119,6 +135,8 @@ ActiveRecord::Schema.define(version: 20160323133439) do
 
   add_foreign_key "doses", "cocktails"
   add_foreign_key "doses", "ingredients"
+  add_foreign_key "events", "orders"
   add_foreign_key "events", "professionals"
   add_foreign_key "events", "users"
+  add_foreign_key "orders", "users"
 end

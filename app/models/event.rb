@@ -1,8 +1,10 @@
 class Event < ActiveRecord::Base
   belongs_to :user
+  belongs_to :order
   belongs_to :professional
   belongs_to :professional_review, class_name: "Review"
   belongs_to :user_review, class_name: "Review"
+  monetize :price_cents
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

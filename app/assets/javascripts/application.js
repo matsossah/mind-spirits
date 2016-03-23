@@ -95,10 +95,6 @@ function getAllPros(pros, coordinates, callback) {
   callback(pros_in_range);
 }
 
-$("#event-create").submit(function(event){
-  event.preventDefault();
-});
-
 $('#user_input_autocomplete_address').on('blur', function(event) {
   setTimeout(function(){
     geocodeAddress($(event.target).val(), function(coordinates) {

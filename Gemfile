@@ -21,6 +21,8 @@ gem "rails-i18n"
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'clearbit'
+gem 'money-rails'
+gem 'stripe'
 
 gem 'sidekiq'
 gem 'sinatra'  # Dependency of sidekiq
