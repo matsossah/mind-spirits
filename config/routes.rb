@@ -12,7 +12,7 @@
   #authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
   #end
-
+  resources :orders, only: [:show, :create]
   resources :cocktails, only: [:index, :show]
 
   resources :users do

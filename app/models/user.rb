@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   # after_commit :find_user_full_name
 
   has_many :professionals, through: :events
-  has_many :events
-
+  has_many :events, through: :orders
+  has_many :orders
   has_one :professional
   has_many :reviews, as: :reviewable
 

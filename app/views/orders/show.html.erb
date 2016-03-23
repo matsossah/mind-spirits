@@ -1,0 +1,9 @@
+<h1>Order</h1>
+<ul>
+  <% pro = Professional.find(@order.events.last.professional_id).name %>
+  <li>Barman: pro </li>
+  <li>Start: <%= @order.events.last.start_time.to_date.to_formatted_s(:long_ordinal) %></li>
+  <li>End: <%= @order.events.last.end_time.to_date.to_formatted_s(:long_ordinal) %></li>
+  <li>Amount: <%= humanized_money_with_symbol(@order.amount_cents) %></li>
+  <li>** The alcohol consumed at the event will remain at your charge **</li>
+<ul>
