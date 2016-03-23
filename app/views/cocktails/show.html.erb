@@ -51,17 +51,13 @@
         <% @cocktail.doses.each do |dose| %>
           <% if @cocktail.doses.first == dose %>
             <div class="col-md-2 col-md-offset-<%= @offset %> col-sm-4 col-xs-6">
-              <div class="tipped" data-title="Step1 - Skype Interview" data-tipper-options='{"direction":"top"}'>
-                  <div class="page-icon-top"><i class="ion ion-ios-people-outline"></i></div>
-                  <h6><%= dose.ingredient.name %>: <%= dose.quantity %></h6>
-              </div>
+                <div class="page-icon-top"><i class="ion ion-ios-people-outline"></i></div>
+                <h6><%= dose.ingredient.name %>: <%= dose.quantity %></h6>
             </div>
           <% else %>
             <div class="col-md-2 col-sm-4 col-xs-6">
-                <div class="tipped" data-title="Step1 - Skype Interview" data-tipper-options='{"direction":"top"}'>
-                    <div class="page-icon-top"><i class="ion ion-ios-people-outline"></i></div>
-                    <h6><%= dose.ingredient.name %>: <%= dose.quantity %></h6>
-                </div>
+              <div class="page-icon-top"><i class="ion ion-ios-people-outline"></i></div>
+              <h6><%= dose.ingredient.name %>: <%= dose.quantity %></h6>
             </div>
           <% end %>
         <% end %>

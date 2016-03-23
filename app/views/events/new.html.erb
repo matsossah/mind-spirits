@@ -15,7 +15,7 @@
       <div class="col-xs-12 col-sm-6 ">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2" style="height:750px; padding-top: 150px;">
         <h2>Create an event</h2>
-            <form action="<%= user_events_path(current_user) %>" method="POST">
+            <form id="event-create" action="<%= user_events_path(current_user) %>" method="POST">
               <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
                     <input type='text' class="form-control" name="start_time" placeholder="Start time" />
