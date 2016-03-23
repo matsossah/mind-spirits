@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322093831) do
+ActiveRecord::Schema.define(version: 20160323140642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20160322093831) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "is_confirmed",           default: false, null: false
+    t.integer  "price_cents",            default: 50,    null: false
+    t.string   "price_currency",         default: "EUR", null: false
   end
 
   add_index "events", ["professional_id"], name: "index_events_on_professional_id", using: :btree
