@@ -1,4 +1,6 @@
  Rails.application.routes.draw do
+  get 'payments/new'
+
   scope '(:locale)', locale: /fr|es/ do
     resources :cocktails
   end
@@ -12,7 +14,9 @@
   #authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
   #end
-  resources :orders, only: [:show, :create]
+  resources :orders, only: [:show] do
+    resources :payments, only: [:new, :create]
+  end
   resources :cocktails, only: [:index, :show]
 
   resources :users do

@@ -34,7 +34,7 @@ class EventsController < ApplicationController
       service = ReservationService.new(professional, current_user, start_time, end_time, address)
       begin
         event = service.reserve!
-        order = Order.create('amount_cents': 50, user: current_user, 'amount_cents': event.price_cents)
+        order = Order.create('state': 'pending', user: current_user, 'amount_cents': event.price_cents)
         event.order = order
         event.save
         flash[:notice] = "You event was successfully created!"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323150708) do
+ActiveRecord::Schema.define(version: 20160323170904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160323150708) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "is_confirmed",           default: false, null: false
-    t.integer  "price_cents",            default: 50,    null: false
+    t.integer  "price_cents",            default: 5000,  null: false
     t.string   "price_currency",         default: "EUR", null: false
     t.integer  "order_id"
   end

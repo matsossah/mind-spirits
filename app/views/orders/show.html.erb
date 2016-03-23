@@ -4,6 +4,23 @@
   <li>Barman: pro </li>
   <li>Start: <%= @order.events.last.start_time.to_date.to_formatted_s(:long_ordinal) %></li>
   <li>End: <%= @order.events.last.end_time.to_date.to_formatted_s(:long_ordinal) %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@order.amount_cents) %></li>
-  <li>** The alcohol consumed at the event will remain at your charge **</li>
 <ul>
+
+<%= form_tag order_payments_path(@order) do %>
+  <article>
+    <label class="amount">
+      <span>Amount: <%= humanized_money_with_symbol(@order.amount_cents / 100)  %></span>
+    </label>
+  </article>
+
+  <li>** The alcohol consumed at the event will remain at your charge **</li>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="Mind Spirit"
+    data-description="Your event with <%= pro %>"
+    data-amount="<%= @order.amount_cents %>"
+    data-currency="EUR">
+  </script>
+
+<% end %>
