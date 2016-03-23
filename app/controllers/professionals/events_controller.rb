@@ -1,7 +1,9 @@
 module Professionals
   class EventsController < ApplicationController
     def index
+      @events = current_user.professional.events
       @review = Review.new
+
     end
 
     def confirm
