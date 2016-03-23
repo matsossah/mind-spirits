@@ -6,6 +6,14 @@
       <div class="container">
         <h1>Find a barman</h1>
         <h2 class="h2">For your event</h2>
+        <br>
+        <div>
+          <% if user_signed_in? %>
+            <%= link_to "Create an Event", new_user_event_path(current_user), class: "btn btn-md btn-white-line xs-hidden" %>
+          <% else %>
+            <%= link_to "Create an Event", new_user_path, class: "btn btn-md btn-white-line xs-hidden" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

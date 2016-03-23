@@ -13,9 +13,7 @@
     mount Sidekiq::Web => '/sidekiq'
   #end
 
-  resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
-    resources :doses, only: [:new, :create]
-  end
+  resources :cocktails, only: [:index, :show]
 
   resources :users do
     resources :events do
