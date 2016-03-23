@@ -705,8 +705,8 @@ e8 = Event.create!(
 e9 = Event.create!(
   user: u9,
   address: "12 Rue du Pont du Lion d Or, Lille, France",
-  start_time: DateTime.strptime("06/24/2016 04:00 PM", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("06/24/2016 06:00 PM", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("03/15/2016 04:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("03/16/2016 06:00 PM", "%m/%d/%Y %H:%M"),
   professional: p7,
   latitude: 50.639496,
   longitude: 3.091187
@@ -728,6 +728,7 @@ r1 = Review.create!(
   reviewable: u10,
   reviewer: p6
   )
+r1.update_rate
 
 r2 = Review.create!(
   rating: 5,
@@ -735,6 +736,7 @@ r2 = Review.create!(
   reviewable: p6,
   reviewer: u10
   )
+r2.update_rate
 
 r3 = Review.create!(
   rating: 4,
@@ -742,6 +744,7 @@ r3 = Review.create!(
   reviewable: u8,
   reviewer: p9
   )
+r3.update_rate
 
 r4 = Review.create!(
   rating: 2,
@@ -749,13 +752,15 @@ r4 = Review.create!(
   reviewable: p9,
   reviewer: u8
   )
+r4.update_rate
 
 r5 = Review.create!(
-  rating: 4,
+  rating: 5,
   content: "Nice people, great place! It was a pleasure to work for them",
   reviewable: u8,
   reviewer: p9
   )
+r5.update_rate
 
 r6 = Review.create!(
   rating: 5,
@@ -763,6 +768,7 @@ r6 = Review.create!(
   reviewable: p9,
   reviewer: u8
   )
+r6.update_rate
 
 r7 = Review.create!(
   rating: 3,
@@ -770,6 +776,7 @@ r7 = Review.create!(
   reviewable: u5,
   reviewer: p1
   )
+r7.update_rate
 
 r8 = Review.create!(
   rating: 5,
@@ -777,6 +784,7 @@ r8 = Review.create!(
   reviewable: p1,
   reviewer: u5
   )
+r8.update_rate
 
 r9 = Review.create!(
   rating: 1,
@@ -784,6 +792,7 @@ r9 = Review.create!(
   reviewable: u6,
   reviewer: p10
   )
+r9.update_rate
 
 r10 = Review.create!(
   rating: 3,
@@ -791,6 +800,7 @@ r10 = Review.create!(
   reviewable: p10,
   reviewer: u6
   )
+r10.update_rate
 
 e5.update!(
   user_review: r7,

@@ -31,6 +31,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def rate
+    sum = 0
+    reviews.each do |review|
+      sum += review.rating
+    end
+    self.rating = sum / reviews.size
+    self.save
+  end
+
   private
 
   def send_welcome_email
