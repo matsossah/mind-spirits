@@ -2,9 +2,8 @@
     <div class="container">
         <div class="row title">
             <h2 class="h2"><%= current_user.name %></h2>
-            <div class="page-breadcrumb">
-                <a>Home</a>/<span>Profile</span>
-            </div>
+
+            <h3>User account</h3>
         </div>
     </div>
 </section>
@@ -16,11 +15,6 @@
 </section>
 
   <!-- Team -->
-
-
-
-
-
 
 <section class="pb pb-sm-80">
   <div class="container">
@@ -36,12 +30,45 @@
                 <div class="team-item-detail-inner light-color">
                   <h5><%= current_user.name %></h5>
                   <ul class="list-unstyled">
-                    <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
+                      <li class="profile-title"><i class="fa fa-envelope-o"></i>  <%= @user.email%></li>
                     <%  if @user.phone_number %>
-                    <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
+                      <li class="profile-title"><i class="fa fa-phone"></i>  <%= @user.phone_number%></li>
                     <% end %>
                     <% if @user.address %>
-                    <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
+                      <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
+                    <% end %>
+                    <% if @user.rating == 0 %>
+                      <li><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                    <% end %>
+                    <% if @user.rating < 1 && @user.rating > 0 %>
+                      <li><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                    <% end %>
+                    <% if @user.rating == 1 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                    <% end %>
+                    <% if @user.rating < 2 && @user.rating > 1 %>
+                      <li><i class="fa fa-star"><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
+                    <% end %>
+                    <% if @user.rating == 2 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
+                    <% end %>
+                    <% if @user.rating < 3 && @user.rating > 2 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                    <% end %>
+                    <% if @user.rating == 3 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                    <% end %>
+                    <% if @user.rating < 4 && @user.rating > 3 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
+                    <% end %>
+                    <% if @user.rating == 4 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+                    <% end %>
+                    <% if @user.rating < 5 && @user.rating > 4 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
+                    <% end %>
+                    <% if @user.rating == 5 %>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
                     <% end %>
                   </ul>
                   <ul class="social">
@@ -101,7 +128,7 @@
 
 
 <!-- Testimonials -->
-<section id="testimonial" class="overlay-dark80 dark-bg ptb ptb-sm-80" style="background-image: url('img/full/25.jpg');" data-stellar-background-ratio="0.4">
+<section id="testimonial" class="overlay-dark80 dark-bg ptb ptb-sm-80" style="background-image: url('http://7x24fl-al.org/Resources/Pictures/cocktail_drinks_1920x1080_89001.jpg');  background-position: 0% 900.5px;" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="owl-carousel testimonial-carousel nf-carousel-theme white">
             <div class="item">

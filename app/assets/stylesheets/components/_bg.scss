@@ -50,3 +50,11 @@ body {
     text-decoration: inherit;
   }
 }
+
+#bg {
+  background-image: url("banner.jpeg");
+    background-size: cover !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
