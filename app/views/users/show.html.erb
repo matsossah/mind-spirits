@@ -78,12 +78,12 @@
             <% if @user.professional %>
               <div class="col-md-4">
                 <div class="page-icon-top"><i class="fa fa-product-hunt"></i></div>
-                  <%= link_to "Pro Account", new_user_professional_path(@user, @user.professional), class:"btn btn-xd btn-color-line"%>
+                  <%= link_to "Pro Account", user_professional_path(@user, @user.professional), class:"btn btn-xd btn-color-line"%>
               </div>
             <% else %>
               <div class="col-md-4">
                 <div class="page-icon-top"><i class="fa fa-product-hunt"></i></div>
-                  <%= link_to "Register as professional", new_user_professional_path(@user, @user.professional), class:"btn btn-xd btn-color-line"%>
+                  <%= link_to "Register as professional", new_user_professional_path(current_user), class:"btn btn-xd btn-color-line"%>
               </div>
             <% end %>
           </div>

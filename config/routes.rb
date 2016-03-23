@@ -13,9 +13,7 @@
     mount Sidekiq::Web => '/sidekiq'
   #end
 
-  resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
-    resources :doses, only: [:new, :create]
-  end
+  resources :cocktails, only: [:index, :show]
 
   resources :users do
     resources :events do
@@ -24,7 +22,7 @@
 
     resources :reviews, only: [:index]
 
-    resource :professional, only: [:show, :new, :create, :edit, :update] do
+    resources :professionals, only: [:show, :new, :create, :edit, :update] do
       resources :events, only: [:index, :show], controller: 'professionals/events' do
         put 'confirm', to: 'professionals/events#confirm'
         resources :reviews, only: [:index]

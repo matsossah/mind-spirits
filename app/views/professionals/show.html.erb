@@ -61,7 +61,7 @@
           <div class="row text-center">
             <div class="col-md-4 col-md-offset-2">
               <div class="page-icon-top"><i class="fa fa-calendar-check-o"></i></div>
-              <%= link_to "Your events", user_professional_events_path(current_user.professional), class:"btn btn-xd btn-color-line"%>
+              <%= link_to "Your events", user_professional_events_path(current_user, current_user.professional), class:"btn btn-xd btn-color-line"%>
             </div>
           </div>
           <br>
@@ -69,7 +69,7 @@
           <div class="row text-center">
             <div class="col-md-4">
               <div class="page-icon-top"><i class="fa fa-user"></i></div>
-              <%= link_to "Edit your profile", edit_user_professional_path(current_user), class:"btn btn-xd btn-color-line"%>
+              <%= link_to "Edit your profile", edit_user_professional_path(current_user, current_user.professional), class:"btn btn-xd btn-color-line"%>
             </div>
             <div class="col-md-4">
               <div class="page-icon-top"><i class="fa fa-child"></i></div>
