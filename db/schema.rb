@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322142748) do
-
+ActiveRecord::Schema.define(version: 20160323133439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,7 +75,7 @@ ActiveRecord::Schema.define(version: 20160322142748) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "rating"
+    t.float    "rating"
     t.text     "content"
     t.integer  "reviewable_id"
     t.string   "reviewable_type"

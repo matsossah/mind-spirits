@@ -22,7 +22,6 @@ class Professional < ActiveRecord::Base
     end
     self.rating = sum / reviews.size
     self.save
-    raise
   end
 
 private

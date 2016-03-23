@@ -705,8 +705,8 @@ e8 = Event.create!(
 e9 = Event.create!(
   user: u9,
   address: "12 Rue du Pont du Lion d Or, Lille, France",
-  start_time: DateTime.strptime("06/24/2016 04:00 PM", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("06/24/2016 06:00 PM", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("03/15/2016 04:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("03/16/2016 06:00 PM", "%m/%d/%Y %H:%M"),
   professional: p7,
   latitude: 50.639496,
   longitude: 3.091187
