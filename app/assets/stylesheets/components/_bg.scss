@@ -58,3 +58,31 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.stripe-button-el span {
+  position: absolute !important;
+  top: 0px !important;
+  left: 0px !important;
+  width: 100% !important;
+  height: 50px !important;
+  display: inline-block !important;
+  text-align: center !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  padding-top: 10px !important;
+  padding-bottom: 25px !important;
+  color: #fff !important;
+  background: transparent !important;
+  border: none !important;
+  text-shadow: none !important;
+  font-family: Raleway !important;
+}
+
+.stripe-button-el {
+  position: relative !important;
+  border-radius: none !important;
+  width: 100% !important;
+  height: 50px !important;
+  padding: 15px 25px !important;
+  background: #e6ae49 !important;
+}

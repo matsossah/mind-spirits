@@ -37,7 +37,7 @@ class EventsController < ApplicationController
         order = Order.create('state': 'pending', user: current_user, 'amount_cents': event.price_cents)
         event.order = order
         event.save
-        flash[:notice] = "You event was successfully created!"
+        # flash[:notice] = "You event was successfully created!"
         # EventMailer.new_event_user(event).deliver_now
         # EventMailer.new_event_pro(event).deliver_now
         redirect_to order_path(order)

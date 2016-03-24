@@ -1,8 +1,6 @@
 <% if @event.errors.any? %>
   // Render new review form with errors
-  console.log('tata');
+  <%= render 'professionals/events#index' %>
 <% else %>
-  // Create a paragraph for the new review. But hide it.
-
   $('#confirm-event').html("<i class='fa fa-check'></i> Event confirmed");
 <% end %>
