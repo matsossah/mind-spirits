@@ -859,17 +859,29 @@ doses = Dose.all
 doses.each do |dose|
   case dose.ingredient.name.downcase
   when "vodka"
-    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "vodka")
+    cocktail = Cocktail.find(dose.cocktail_id)
+    cocktail['alcohol_type'] += " vodka"
+    cocktail.save
+  when "gin"
+    cocktail = Cocktail.find(dose.cocktail_id)
+    cocktail['alcohol_type'] += " gin"
+    cocktail.save
   when "rhum"
-    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "rhum")
-  when 'gin'
-    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "gin")
+    cocktail = Cocktail.find(dose.cocktail_id)
+    cocktail['alcohol_type'] += " rhum"
+    cocktail.save
   when 'whisky'
-    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "whisky")
+    cocktail = Cocktail.find(dose.cocktail_id)
+    cocktail['alcohol_type'] += " whisky"
+    cocktail.save
   when 'bourbon'
-    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "whisky")
+    cocktail = Cocktail.find(dose.cocktail_id)
+    cocktail['alcohol_type'] += " whisky"
+    cocktail.save
   when 'tequila'
-    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "tequila")
+    cocktail = Cocktail.find(dose.cocktail_id)
+    cocktail['alcohol_type'] += " tequila"
+    cocktail.save
   end
 end
 
