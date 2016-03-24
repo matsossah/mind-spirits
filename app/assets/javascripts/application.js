@@ -29,12 +29,6 @@
 //= require gmaps/google
 //= require contact-form
 
-
-
-
-
-
-
 $(document).ready(function(){
   $('#video').YTPlayer({
     fitToBackground: true,

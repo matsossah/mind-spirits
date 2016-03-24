@@ -20,9 +20,6 @@ class ProfessionalsController < ApplicationController
     @professional.user = current_user
     @professional.name = current_user.name
 
-    #foreign key user/professional
-    #Build et pas create
-
     if @professional.save
       redirect_to user_professional_path(current_user, @professional)
     else
