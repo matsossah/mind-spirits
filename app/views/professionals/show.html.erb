@@ -42,6 +42,41 @@
                     <% if @professional.business_address %>
                     <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @professional.business_address%></li>
                     <% end %>
+                    <% if @professional.rating %>
+                        <% if @professional.rating == 0 %>
+                          <li><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating < 1 && @professional.rating > 0 %>
+                          <li><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating == 1 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating < 2 && @professional.rating > 1 %>
+                          <li><i class="fa fa-star"><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
+                        <% end %>
+                        <% if @professional.rating == 2 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
+                        <% end %>
+                        <% if @professional.rating < 3 && @professional.rating > 2 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating == 3 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating < 4 && @professional.rating > 3 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating == 4 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating < 5 && @professional.rating > 4 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
+                        <% end %>
+                        <% if @professional.rating == 5 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <% end %>
+                    <% end %>
                   </ul>
                   <ul class="social">
                     <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
