@@ -15,6 +15,8 @@ class CocktailsController < ApplicationController
   def get_offset(nb_of_doses)
     offset = 0
     case nb_of_doses
+    when 2
+      offset = 4
     when 3
       offset = 3
     when 4
