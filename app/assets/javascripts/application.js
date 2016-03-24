@@ -31,12 +31,20 @@
 
 
 
+
+
+
+
 $(document).ready(function(){
   $('#video').YTPlayer({
     fitToBackground: true,
     videoId: 'hJH0ZITPGw4'
   });
 })
+
+$("#payment-button-styled").click(function(){
+  $(".stripe-button-el").trigger( "click" );
+});
 
 function initializeAutocomplete(id) {
   var element = document.getElementById(id);
