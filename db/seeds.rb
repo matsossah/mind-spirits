@@ -141,7 +141,7 @@ cocktail12.save!
 
 cocktail13 = Cocktail.new(
   name: "Cuba libre",
-  image: "cuba_libre.jpeg",
+  image: "cuba_libre.jpg",
   recipe_steps: "Fill a glass with lots of ice.Squeeze and drop 2 lime wedges into the glass, coating the ice well with the juices (it all makes a difference)
 Pour in the rhum, top up with chilled cola and stir gently"
 )
@@ -149,28 +149,28 @@ cocktail13.save!
 
 cocktail14 = Cocktail.new(
   name: "Daiquiri",
-  image: "daiquiri.jpeg",
+  image: "daiquiri.jpg",
   recipe_steps: "Shake all ingredients well with ice, then strain into a chilled cocktail glass."
 )
 cocktail14.save!
 
 cocktail15 = Cocktail.new(
   name: "Ti punch",
-  image: "ti_punch.jpeg",
+  image: "ti_punch.jpg",
   recipe_steps: "Mix all ingredients in a glass with ice (1 or 2 cubes) and either stir or swizzle with a bois lele (aka Swizzle Stick)"
 )
 cocktail15.save!
 
 cocktail16 = Cocktail.new(
   name: "Long Island Iced Tea",
-  image: "long_island.jpeg",
+  image: "long_island.jpg",
   recipe_steps: "Mix ingredients together over ice in a glass. Pour into a shaker and give one brisk shake. Pour back into the glass and make sure there is a touch of fizz at the top. Garnish with lemon."
 )
 cocktail16.save!
 
 cocktail17 = Cocktail.new(
   name: "Gin Tonic",
-  image: "gin_tonic.jpeg",
+  image: "gin_tonic.jpg",
   recipe_steps: "Take a chilled glass and fill halfway with ice cubes. Add the gin. Rub the lime wedge around the rim of the glass, squeeze in a few drops of juice, and drop the lime into the glass.Top with the tonic, give it a quick stir, and serve.
 ."
 )
@@ -185,49 +185,49 @@ cocktail18.save!
 
 cocktail19 = Cocktail.new(
   name: "Negroni",
-  image: "negroni.jpeg",
+  image: "negroni.jpg",
   recipe_steps: "Pour the gin, vermouth, and Campari into a chilled glass over ice.Garnish with the orange twist and serve."
 )
 cocktail19.save!
 
 cocktail20 = Cocktail.new(
   name: "Rusty nail",
-  image: "rusty_nail.jpeg",
+  image: "rusty_nail.jpg",
   recipe_steps: "Pour the scotch and drambuie into an old-fashioned glass almost filled with ice cubes. Stir well. Garnish with the lemon twist."
 )
 cocktail20.save!
 
 cocktail21 = Cocktail.new(
   name: "Godfather",
-  image: "godfather.jpeg",
+  image: "godfather.jpg",
   recipe_steps: "Build the ingredients in an old-fashioned glass with ice cubes.Stir well."
 )
 cocktail21.save!
 
 cocktail22 = Cocktail.new(
   name: "42 nd Street",
-  image: "42_street.jpeg",
+  image: "42_street.jpg",
   recipe_steps: "Fill a mixing glass with ice cubes. Add all ingredients. Stir and strain into a chilled cocktail glass. Garnish with lemon ."
 )
 cocktail22.save!
 
 cocktail23 = Cocktail.new(
   name: "cucaracha",
-  image: "cucaracha.jpeg",
+  image: "cucaracha.jpg",
   recipe_steps: "Place equal measures of tequila and kahlua in a glass with ice, stir, and serve. Serve in a glass ."
 )
 cocktail23.save!
 
 cocktail24 = Cocktail.new(
   name: "Black Russian",
-  image: "black_russian.jpeg",
+  image: "black_russian.jpg",
   recipe_steps: "Pour both ingredients into a mixing glass filled with ice.Stir, and strain into a glass filled with fresh ice."
 )
 cocktail24.save!
 
 cocktail25 = Cocktail.new(
   name: "Shotgun",
-  image: "shotgun.jpeg",
+  image: "shotgun.jpg",
   recipe_steps: "Hold lime between finger and thumb, and place salt at base of thumb on same hand. Quickly lick the salt, down the tequila, and bite the lime."
 )
 cocktail25.save!
