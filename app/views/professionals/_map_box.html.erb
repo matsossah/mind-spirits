@@ -1,3 +1,40 @@
 <h6><%= professional.user.name %></h6>
 <p><em><%= professional.description %></em></p>
-<p><a data-id="<%= professional.id %>" data-name="<%= professional.user.name %>" class="btn btn-primary professional-chosen" onclick="fillForm(this);">Choose me</a></p>
+<p>
+  <% if professional.rating %>
+    <% if professional.rating == 0 %>
+      <i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+    <% end %>
+    <% if professional.rating < 1 && professional.rating > 0 %>
+      <i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+    <% end %>
+    <% if professional.rating == 1 %>
+      <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+    <% end %>
+    <% if professional.rating < 2 && professional.rating > 1 %>
+      <i class="fa fa-star"><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i>
+    <% end %>
+    <% if professional.rating == 2 %>
+      <i class="fa fa-star"></i><i class="fa fa-star"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i>
+    <% end %>
+    <% if professional.rating < 3 && professional.rating > 2 %>
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+    <% end %>
+    <% if professional.rating == 3 %>
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+    <% end %>
+    <% if professional.rating < 4 && professional.rating > 3 %>
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+    <% end %>
+    <% if professional.rating == 4 %>
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+    <% end %>
+    <% if professional.rating < 5 && professional.rating > 4 %>
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+    <% end %>
+    <% if professional.rating == 5 %>
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+    <% end %>
+<% end %>
+</p>
+<p><a data-id="<%= professional.id %>" data-name="<%= professional.user.name %>" class="btn btn-xs btn-color-line professional-chosen" onclick="fillForm(this);">Choose me</a></p>
