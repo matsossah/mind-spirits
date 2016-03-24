@@ -100,15 +100,29 @@
     <div class="container">
         <h3>Our cockails</h3>
         <div class="spacer-30"></div>
-        <h5>The largest collection of cocktails for your event</h5>
+
         <div class="spacer-30"></div>
     </div>
+
+    <!-- work Filter -->
+    <div class="row">
+        <ul class="container-filter categories-filter">
+            <li><a class="categories active" data-filter="*">All</a></li>
+            <li><a class="categories" data-filter=".vodka">Vodka</a></li>
+            <li><a class="categories" data-filter=".tequila">Tequila</a></li>
+            <li><a class="categories" data-filter=".rhum">Rhum</a></li>
+            <li><a class="categories" data-filter=".gin">Gin</a></li>
+            <li><a class="categories" data-filter=".whisky">Whisky</a></li>
+        </ul>
+    </div>
+                <!-- End work Filter -->
+
     <!-- Work Gallary -->
     <div class="container-fluid ">
         <div class="row">
             <div class="container-grid nf-col-4">
               <% @cocktails.each do |cocktail| %>
-              <div class="nf-item">
+              <div class="nf-item <%= cocktail.alcohol_type %>">
                     <div class="item-box">
                         <a href= <%= cocktail_path(cocktail.id) %> title= <% cocktail.name %>>
                             <%= image_tag cocktail.image , class:"item-container", alt:"2" %>

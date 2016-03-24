@@ -32,6 +32,21 @@ class CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
+      doses = Dose.all
+      doses.each do |dose|
+        case dose.ingredient_id
+        when 7
+          Cocktail.find(dose.cocktail_id).alcohol_type = "vodka"
+        when 19
+          Cocktail.find(dose.cocktail_id).alcohol_type = "rhum"
+        when 20
+          Cocktail.find(dose.cocktail_id).alcohol_type = "gin"
+        when 8 || 31
+          Cocktail.find(dose.cocktail_id).alcohol_type = "whisky"
+        when 17
+          Cocktail.find(dose.cocktail_id).alcohol_type = "tequila"
+        end
+      end
       redirect_to cocktail_path(@cocktail)
     else
       render :new

@@ -37,38 +37,40 @@
                     <% if @user.address %>
                       <li class="profile-title"><i class="fa fa-map-marker"></i>  <%= @user.address%></li>
                     <% end %>
-                    <% if @user.rating == 0 %>
-                      <li><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
-                    <% end %>
-                    <% if @user.rating < 1 && @user.rating > 0 %>
-                      <li><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
-                    <% end %>
-                    <% if @user.rating == 1 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
-                    <% end %>
-                    <% if @user.rating < 2 && @user.rating > 1 %>
-                      <li><i class="fa fa-star"><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
-                    <% end %>
-                    <% if @user.rating == 2 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
-                    <% end %>
-                    <% if @user.rating < 3 && @user.rating > 2 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
-                    <% end %>
-                    <% if @user.rating == 3 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
-                    <% end %>
-                    <% if @user.rating < 4 && @user.rating > 3 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
-                    <% end %>
-                    <% if @user.rating == 4 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
-                    <% end %>
-                    <% if @user.rating < 5 && @user.rating > 4 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
-                    <% end %>
-                    <% if @user.rating == 5 %>
-                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                    <% if @user.rating %>
+                        <% if @user.rating == 0 %>
+                          <li><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @user.rating < 1 && @user.rating > 0 %>
+                          <li><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @user.rating == 1 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @user.rating < 2 && @user.rating > 1 %>
+                          <li><i class="fa fa-star"><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
+                        <% end %>
+                        <% if @user.rating == 2 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></i></li>
+                        <% end %>
+                        <% if @user.rating < 3 && @user.rating > 2 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @user.rating == 3 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @user.rating < 4 && @user.rating > 3 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @user.rating == 4 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></li>
+                        <% end %>
+                        <% if @user.rating < 5 && @user.rating > 4 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></li>
+                        <% end %>
+                        <% if @user.rating == 5 %>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                        <% end %>
                     <% end %>
                   </ul>
                   <ul class="social">
