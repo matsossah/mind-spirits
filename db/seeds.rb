@@ -19,7 +19,7 @@ lime = Ingredient.create(name: "Lime")
 cane_sugar = Ingredient.create(name: "Cane sugar")
 grapefruit = Ingredient.create(name: "Grapefruit")
 pineapple = Ingredient.create(name: "Pineapple")
-tea = Ingredient.create(name: "tea")
+tea = Ingredient.create(name: "Tea")
 orange_juice = Ingredient.create(name: "Orange juice")
 grenadine = Ingredient.create(name: "Grenadine")
 tequila = Ingredient.create(name: "Tequila")
@@ -28,19 +28,30 @@ rhum = Ingredient.create(name: "Rhum")
 gin = Ingredient.create(name: "Gin")
 kahlua = Ingredient.create(name: "Kahlúa")
 coco_cream = Ingredient.create(name: "Coco cream")
-agave_syrup = Ingredient.create(name: "agave syrup")
-lemon_juice = Ingredient.create(name: "lemon juice")
+agave_syrup = Ingredient.create(name: "Agave syrup")
+lemon_juice = Ingredient.create(name: "Lemon juice")
 cachaca = Ingredient.create(name: "cachaca")
 midori = Ingredient.create(name: "midori")
 chambord = Ingredient.create(name:"chambord")
 airelle_juice = Ingredient.create(name: "Airelle juice")
-strawberries = Ingredient.create(name: "strawberries")
-strawberries_liquor = Ingredient.create(name: "strawberries liquor")
+strawberries = Ingredient.create(name: "Strawberries")
+strawberries_liquor = Ingredient.create(name: "Strawberries liquor")
 cognac = Ingredient.create(name: "Cognac")
 kirsch = Ingredient.create(name: "Kirsch")
-
-
-
+coca = Ingredient.create(name: "Coca-Cola")
+triple = Ingredient.create(name: "Triple Sec")
+tonic = Ingredient.create(name: "Tonic water")
+cream = Ingredient.create(name: "Cream")
+eggwhite = Ingredient.create(name: "Eggwhite")
+vermouth = Ingredient.create(name: "Vermouth")
+campari = Ingredient.create(name: "Campari")
+drambuie = Ingredient.create(name: "Drambuie")
+whisky = Ingredient.create(name: "Whisky")
+amaretto = Ingredient.create(name: "Amaretto")
+coffee_liqueur = Ingredient.create(name: "Coffee liqueur")
+salt = Ingredient.create(name: "Salt")
+cassis = Ingredient.create(name: "Cassis cream")
+ginger = Ingredient.create(name: "Ginger Ale")
 
 cocktail1 = Cocktail.new(
   name: "Mojito",
@@ -128,6 +139,119 @@ cocktail12 = Cocktail.new(
 )
 cocktail12.save!
 
+cocktail13 = Cocktail.new(
+  name: "Cuba libre",
+  image: "cuba_libre.jpeg",
+  recipe_steps: "Fill a glass with lots of ice.Squeeze and drop 2 lime wedges into the glass, coating the ice well with the juices (it all makes a difference)
+Pour in the rhum, top up with chilled cola and stir gently"
+)
+cocktail13.save!
+
+cocktail14 = Cocktail.new(
+  name: "Daiquiri",
+  image: "daiquiri.jpeg",
+  recipe_steps: "Shake all ingredients well with ice, then strain into a chilled cocktail glass."
+)
+cocktail14.save!
+
+cocktail15 = Cocktail.new(
+  name: "Ti punch",
+  image: "ti_punch.jpeg",
+  recipe_steps: "Mix all ingredients in a glass with ice (1 or 2 cubes) and either stir or swizzle with a bois lele (aka Swizzle Stick)"
+)
+cocktail15.save!
+
+cocktail16 = Cocktail.new(
+  name: "Long Island Iced Tea",
+  image: "long_island.jpeg",
+  recipe_steps: "Mix ingredients together over ice in a glass. Pour into a shaker and give one brisk shake. Pour back into the glass and make sure there is a touch of fizz at the top. Garnish with lemon."
+)
+cocktail16.save!
+
+cocktail17 = Cocktail.new(
+  name: "Gin Tonic",
+  image: "gin_tonic.jpeg",
+  recipe_steps: "Take a chilled glass and fill halfway with ice cubes. Add the gin. Rub the lime wedge around the rim of the glass, squeeze in a few drops of juice, and drop the lime into the glass.Top with the tonic, give it a quick stir, and serve.
+."
+)
+cocktail17.save!
+
+cocktail18 = Cocktail.new(
+  name: "Pink Lady",
+  image: "pink_lady.jpg",
+  recipe_steps: "Place a cocktail glass in the freezer to chill.Place the gin, egg white (if using), cream, and grenadine in a cocktail shaker. Fill the shaker halfway with ice and shake until the outside is frosty, about 30 seconds. Strain into the chilled glass."
+)
+cocktail18.save!
+
+cocktail19 = Cocktail.new(
+  name: "Negroni",
+  image: "negroni.jpeg",
+  recipe_steps: "Pour the gin, vermouth, and Campari into a chilled glass over ice.Garnish with the orange twist and serve."
+)
+cocktail19.save!
+
+cocktail20 = Cocktail.new(
+  name: "Rusty nail",
+  image: "rusty_nail.jpeg",
+  recipe_steps: "Pour the scotch and drambuie into an old-fashioned glass almost filled with ice cubes. Stir well. Garnish with the lemon twist."
+)
+cocktail20.save!
+
+cocktail21 = Cocktail.new(
+  name: "Godfather",
+  image: "godfather.jpeg",
+  recipe_steps: "Build the ingredients in an old-fashioned glass with ice cubes.Stir well."
+)
+cocktail21.save!
+
+cocktail22 = Cocktail.new(
+  name: "42 nd Street",
+  image: "42_street.jpeg",
+  recipe_steps: "Fill a mixing glass with ice cubes. Add all ingredients. Stir and strain into a chilled cocktail glass. Garnish with lemon ."
+)
+cocktail22.save!
+
+cocktail23 = Cocktail.new(
+  name: "cucaracha",
+  image: "cucaracha.jpeg",
+  recipe_steps: "Place equal measures of tequila and kahlua in a glass with ice, stir, and serve. Serve in a glass ."
+)
+cocktail23.save!
+
+cocktail24 = Cocktail.new(
+  name: "Black Russian",
+  image: "black_russian.jpeg",
+  recipe_steps: "Pour both ingredients into a mixing glass filled with ice.Stir, and strain into a glass filled with fresh ice."
+)
+cocktail24.save!
+
+cocktail25 = Cocktail.new(
+  name: "Shotgun",
+  image: "shotgun.jpeg",
+  recipe_steps: "Hold lime between finger and thumb, and place salt at base of thumb on same hand. Quickly lick the salt, down the tequila, and bite the lime."
+)
+cocktail25.save!
+
+cocktail26 = Cocktail.new(
+  name: "Blue Shark",
+  image: "blue_shark.jpg",
+  recipe_steps: "Combine vodka and rum in a cocktail shaker with cracked ice. Add several dashes of blue curacao, and shake well.Serve "
+)
+cocktail26.save!
+
+cocktail27 = Cocktail.new(
+  name: "TGV",
+  image: "tgv.jpg",
+  recipe_steps: "Mix in shotglass(es).Serve in 'Shot Glass'"
+)
+cocktail27.save!
+
+cocktail28 = Cocktail.new(
+  name: "El Diablo",
+  image: "el_diablo.jpg",
+  recipe_steps: "Combine ice and tequila. Top with ginger beer, then slowly pour in crème de cassis. Squeeze lime wedge over, then drop wedge into drink and serve. "
+)
+cocktail28.save!
 
 Dose.create!(
   cocktail: cocktail1,
@@ -418,6 +542,336 @@ Dose.create!(
   quantity: '4,5 cl'
 )
 
+Dose.create!(
+  cocktail: cocktail13,
+  ingredient: rhum,
+  quantity: '6 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail13,
+  ingredient: lime,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail13,
+  ingredient: coca,
+  quantity: '15 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail14,
+  ingredient: rhum,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail14,
+  ingredient: lime,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail14,
+  ingredient: cane_sugar,
+  quantity: '1 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail15,
+  ingredient: rhum,
+  quantity: '6 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail15,
+  ingredient: lime,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail15,
+  ingredient: cane_sugar,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail16,
+  ingredient: vodka,
+  quantity: '1,5 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail16,
+  ingredient: gin,
+  quantity: '1,5 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail16,
+  ingredient: rhum,
+  quantity: '1,5 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail16,
+  ingredient: triple,
+  quantity: '1,5 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail16,
+  ingredient: tequila,
+  quantity: '1,5 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail16,
+  ingredient: lime,
+  quantity: '1 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail16,
+  ingredient: coca,
+  quantity: '3 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail17,
+  ingredient: gin,
+  quantity: '6 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail17,
+  ingredient: tonic,
+  quantity: '15 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail17,
+  ingredient: lemon,
+  quantity: '1 wedge'
+)
+
+Dose.create!(
+  cocktail: cocktail18,
+  ingredient: gin,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail18,
+  ingredient: lemon,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail18,
+  ingredient: grenadine,
+  quantity: '0,5 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail18,
+  ingredient: eggwhite,
+  quantity: '1'
+)
+
+Dose.create!(
+  cocktail: cocktail18,
+  ingredient: cream,
+  quantity: '1 spoon'
+)
+
+Dose.create!(
+  cocktail: cocktail19,
+  ingredient: campari,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail19,
+  ingredient: vermouth,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail19,
+  ingredient: gin,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail20,
+  ingredient: whisky,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail20,
+  ingredient: drambuie,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail21,
+  ingredient: whisky,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail21,
+  ingredient: amaretto,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail22,
+  ingredient: whisky,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail22,
+  ingredient: triple,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail22,
+  ingredient: vermouth,
+  quantity: '1 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail23,
+  ingredient: tequila,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail23,
+  ingredient: coffee_liqueur,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail24,
+  ingredient: vodka,
+  quantity: '6 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail24,
+  ingredient: coffee_liqueur,
+  quantity: '3 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail25,
+  ingredient: tequila,
+  quantity: '3 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail25,
+  ingredient: tonic,
+  quantity: '3 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail25,
+  ingredient: lime,
+  quantity: '1 wedge'
+)
+
+Dose.create!(
+  cocktail: cocktail25,
+  ingredient: salt,
+  quantity: '1 pinch'
+)
+
+Dose.create!(
+  cocktail: cocktail26,
+  ingredient: vodka,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail26,
+  ingredient: tequila,
+  quantity: '1 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail26,
+  ingredient: salt,
+  quantity: '1 pinch'
+)
+
+Dose.create!(
+  cocktail: cocktail27,
+  ingredient: tequila,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail27,
+  ingredient: gin,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail27,
+  ingredient: vodka,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail28,
+  ingredient: tequila,
+  quantity: '4 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail28,
+  ingredient: lime,
+  quantity: '2 wedges'
+)
+
+Dose.create!(
+  cocktail: cocktail28,
+  ingredient: cassis,
+  quantity: '2 cl'
+)
+
+Dose.create!(
+  cocktail: cocktail28,
+  ingredient: ginger,
+  quantity: '12 cl'
+)
+
+
+doses = Dose.all
+doses.each do |dose|
+  case dose.ingredient.name.downcase
+  when "vodka"
+    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "vodka")
+  when "rhum"
+    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "rhum")
+  when 'gin'
+    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "gin")
+  when 'whisky'
+    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "whisky")
+  when 'bourbon'
+    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "whisky")
+  when 'tequila'
+    Cocktail.find(dose.cocktail_id).update_attributes!(alcohol_type: "tequila")
+  end
+end
 
 u1 = User.new(
   name: "Greg Sion",
@@ -600,25 +1054,25 @@ p9 = Professional.create!(
   user: u9,
   name: u9.name,
   description: "New barman",
-  phone_number:"+49612345678",
+  phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "Malmöer Str. 27, 10439 Berlin, Germany",
-  latitude: 52.55039,
-  longitude: 13.403659999999945,
+  business_address: "78 Boulevard Louis XIV, Lille, France",
+  latitude: 50.643186,
+  longitude: 3.067307,
   rating: 3
   )
 
 p10 = Professional.create!(
   user: u10,
   name: u10.name,
-  description:" 20 years experience all over the world",
+  description:" 20 years expérience all over the world",
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address:"Via Vincenzo Monti, 12, 20123 Milano, Italy",
-  latitude: 45.4670906,
-  longitude: 9.17447459999994,
+  business_address:"98 Rue de Douai, Lille, France",
+  latitude: 50.621917,
+  longitude: 3.072078,
   rating: 5
   )
 
@@ -705,8 +1159,8 @@ e8 = Event.create!(
 e9 = Event.create!(
   user: u9,
   address: "12 Rue du Pont du Lion d Or, Lille, France",
-  start_time: DateTime.strptime("03/15/2016 04:00 PM", "%m/%d/%Y %H:%M"),
-  end_time: DateTime.strptime("03/16/2016 06:00 PM", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("06/24/2016 04:00 PM", "%m/%d/%Y %H:%M"),
+  end_time: DateTime.strptime("06/24/2016 06:00 PM", "%m/%d/%Y %H:%M"),
   professional: p7,
   latitude: 50.639496,
   longitude: 3.091187
@@ -728,7 +1182,6 @@ r1 = Review.create!(
   reviewable: u10,
   reviewer: p6
   )
-r1.update_rate
 
 r2 = Review.create!(
   rating: 5,
@@ -736,7 +1189,6 @@ r2 = Review.create!(
   reviewable: p6,
   reviewer: u10
   )
-r2.update_rate
 
 r3 = Review.create!(
   rating: 4,
@@ -744,7 +1196,6 @@ r3 = Review.create!(
   reviewable: u8,
   reviewer: p9
   )
-r3.update_rate
 
 r4 = Review.create!(
   rating: 2,
@@ -752,15 +1203,13 @@ r4 = Review.create!(
   reviewable: p9,
   reviewer: u8
   )
-r4.update_rate
 
 r5 = Review.create!(
-  rating: 5,
+  rating: 4,
   content: "Nice people, great place! It was a pleasure to work for them",
   reviewable: u8,
   reviewer: p9
   )
-r5.update_rate
 
 r6 = Review.create!(
   rating: 5,
@@ -768,7 +1217,6 @@ r6 = Review.create!(
   reviewable: p9,
   reviewer: u8
   )
-r6.update_rate
 
 r7 = Review.create!(
   rating: 3,
@@ -776,7 +1224,6 @@ r7 = Review.create!(
   reviewable: u5,
   reviewer: p1
   )
-r7.update_rate
 
 r8 = Review.create!(
   rating: 5,
@@ -784,7 +1231,6 @@ r8 = Review.create!(
   reviewable: p1,
   reviewer: u5
   )
-r8.update_rate
 
 r9 = Review.create!(
   rating: 1,
@@ -792,7 +1238,6 @@ r9 = Review.create!(
   reviewable: u6,
   reviewer: p10
   )
-r9.update_rate
 
 r10 = Review.create!(
   rating: 3,
@@ -800,7 +1245,6 @@ r10 = Review.create!(
   reviewable: p10,
   reviewer: u6
   )
-r10.update_rate
 
 e5.update!(
   user_review: r7,
