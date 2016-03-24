@@ -43,7 +43,7 @@ $(document).ready(function(){
 })
 
 $("#payment-button-styled").click(function(){
-  $(".stripe-button-el").trigger( "click" );
+  $(".stripe-button-el").html('«').trigger( "click" );
 });
 
 function initializeAutocomplete(id) {
