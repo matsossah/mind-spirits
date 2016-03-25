@@ -889,7 +889,7 @@ u1 = User.new(
   name: "Greg Sion",
   password: "12345678",
   email: "gregsion@mindspirits.fr",
-  picture: "greg.jpeg",
+  picture: "greg.jpg",
   admin: true,
   rating: 3
 )
