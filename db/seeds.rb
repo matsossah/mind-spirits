@@ -889,6 +889,7 @@ u1 = User.new(
   name: "Greg Sion",
   password: "12345678",
   email: "gregsion@mindspirits.fr",
+  picture: "greg.jpeg",
   admin: true,
   rating: 3
 )
@@ -897,6 +898,7 @@ u2 = User.create!(
   name: "Guillaume Caulier",
   password:'12345678',
   email: "guillaume@mindspirits.fr",
+  picture: "gui.jpg",
   admin: true,
   rating: 4
 )
