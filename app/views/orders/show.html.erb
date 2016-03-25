@@ -48,8 +48,8 @@
                             <h6>Barman: <%= pro %></h6>
                             <p class="mt-0">
                                 <small>Address: <%= @order.events.last.address %></small>
-                                <small>Start: <%= @order.events.last.start_time.to_date.to_formatted_s(:long_ordinal) %></small>
-                                <small>End: <%= @order.events.last.end_time.to_date.to_formatted_s(:long_ordinal) %></small>
+                                <small>Start: <%= @order.events.last.start_time.to_formatted_s(:long_ordinal) %></small>
+                                <small>End: <%= @order.events.last.end_time.to_formatted_s(:long_ordinal) %></small>
                                 <small>** The alcohol consumed at the event will remain at your charge **</small>
                             </p>
                         </td>
