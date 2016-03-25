@@ -1032,9 +1032,9 @@ p6 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "26 Rue de la Clef, Lille, France",
-  latitude: 50.635333,
-  longitude: 3.067002,
+  business_address: "Malmöer strasse 27, Berlin, Germany",
+  latitude: 52.550390,
+  longitude: 13.403660,
   rating: 4
   )
 
@@ -1045,9 +1045,9 @@ p7 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "125 Rue des Postes, Lille, France",
-  latitude: 50.623730,
-  longitude: 3.054609,
+  business_address: "Via Torino, 4, Milan, Italie",
+  latitude: 45.463609,
+  longitude: 9.188081,
   rating: 4.5
   )
 
@@ -1071,9 +1071,9 @@ p9 = Professional.create!(
   phone_number:"0612345678",
   max_travel_range: 50,
   professional_role: "barman",
-  business_address: "78 Boulevard Louis XIV, Lille, France",
-  latitude: 50.643186,
-  longitude: 3.067307,
+  business_address: "Van Vollenhovenstraat 62, Rotterdam, Pays-Bas",
+  latitude: 51.909334,
+  longitude: 4.478783,
   rating: 3
   )
 
