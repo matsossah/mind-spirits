@@ -66,7 +66,6 @@
                 Your Barman hasn't left a review yet
               </em></p>
             <% end %>
-            <br/><br/>
             <% if event.user_review_id %>
                 Your review:
                 <%= Review.find(event.user_review_id).rating %>/5

@@ -32,9 +32,9 @@ class ReviewsController < ApplicationController
 
     if @review.save
       if current_user == @event.professional
-        redirect_to user_professional_path(current_user)
+        redirect_to user_professional_events_path(current_user)
       else
-        redirect_to user_path(current_user)
+        redirect_to user_events_path(current_user)
       end
     else
       render user_path(@user)

@@ -23,6 +23,8 @@ gem 'simple_form'
 gem 'clearbit'
 gem 'money-rails'
 gem 'stripe'
+gem 'pg_search'
+gem 'sequel-pg-trgm'
 
 gem 'sidekiq'
 gem 'sinatra'  # Dependency of sidekiq
